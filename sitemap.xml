@@ -15,7 +15,7 @@
       도메인을 치환하실 때 슬래시가 다시 사라지지 않도록 주의해 주세요.
   ============================================================================
 -->
-<urlset xmlns="http://sitemaps.org" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- 1. 메인 허브 페이지 -->
   <url>
