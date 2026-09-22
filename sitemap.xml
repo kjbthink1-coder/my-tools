@@ -57,6 +57,22 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- 2-3. 스트레스 DSR 2단계 가이드 -->
+  <url>
+    <loc>https://salartool.com/loan/guide-dsr.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 2-4. 마이너스통장 vs 신용대출 가이드 -->
+  <url>
+    <loc>https://salartool.com/loan/guide-minus.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- 3. 복리 적금 + 연차·수당 계산기 -->
   <url>
     <!-- ⚠️ 도메인 치환 대상: salartool.com -->
@@ -80,6 +96,22 @@
     <!-- ⚠️ 도메인 치환 대상: salartool.com -->
     <loc>https://salartool.com/savings/guide-allowance.html</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 3-3. 2026 청년도약계좌 vs 일반 적금 가이드 -->
+  <url>
+    <loc>https://salartool.com/savings/guide-youth.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 3-4. 주 15시간 쪼개기 알바 주휴수당 가이드 -->
+  <url>
+    <loc>https://salartool.com/savings/guide-weekly.html</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -111,6 +143,22 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- 4-3. 3.3% 프리랜서 퇴직금 가이드 -->
+  <url>
+    <loc>https://salartool.com/severance/guide-freelancer.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 4-4. 퇴직금 IRP 계좌 절세 가이드 -->
+  <url>
+    <loc>https://salartool.com/severance/guide-irp.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- 5. 여권·증명사진 규격 변환기 -->
   <url>
     <!-- ⚠️ 도메인 치환 대상: salartool.com -->
@@ -138,6 +186,22 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- 5-3. 아기·영유아 셀프 여권사진 가이드 -->
+  <url>
+    <loc>https://salartool.com/passport-photo/guide-baby.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 5-4. 미국·중국·해외 비자 사진 규격 가이드 -->
+  <url>
+    <loc>https://salartool.com/passport-photo/guide-visa.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- 6. 일반 이미지 포맷 변환기 -->
   <url>
     <!-- ⚠️ 도메인 치환 대상: salartool.com -->
@@ -161,6 +225,22 @@
     <!-- ⚠️ 도메인 치환 대상: salartool.com -->
     <loc>https://salartool.com/image-converter/guide-heic.html</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 6-3. 사진 EXIF GPS 위치 삭제 가이드 -->
+  <url>
+    <loc>https://salartool.com/image-converter/guide-exif.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 6-4. 이미지 압축 품질 80% 가이드 -->
+  <url>
+    <loc>https://salartool.com/image-converter/guide-compression.html</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
