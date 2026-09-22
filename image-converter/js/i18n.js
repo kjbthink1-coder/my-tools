@@ -112,6 +112,10 @@ const I18N = {
     "guide.exif.desc": "스마트폰 사진 속 위도·경도 정보, 브라우저 1초 삭제로 개인정보 보호",
     "guide.comp.title": "⚡ 이미지 압축 품질 80%의 법칙 & 용량 절감 노하우",
     "guide.comp.desc": "화질 저하 없이 웹 로딩 속도를 극대화하는 WebP·JPG 최적 압축 스위트스팟",
+    "guide.webp.url": "./guide-webp.html",
+    "guide.heic.url": "./guide-heic.html",
+    "guide.exif.url": "./guide-exif.html",
+    "guide.comp.url": "./guide-compression.html",
     "footer.note": "100% 클라이언트 사이드 · 서버 저장 제로 · 무료",
     "footer.alltools": "🧰 계산기 모음",
     "footer.disclaimer": "본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.",
@@ -245,6 +249,10 @@ const I18N = {
     "guide.exif.desc": "Protect your home location and privacy by removing hidden GPS tags in 1 second",
     "guide.comp.title": "⚡ The 80% Image Quality Rule & Smart Compression Tips",
     "guide.comp.desc": "Find the sweet spot to slash image weight by 80% with zero visible quality degradation",
+    "guide.webp.url": "./guide-webp-en.html",
+    "guide.heic.url": "./guide-heic-en.html",
+    "guide.exif.url": "./guide-exif-en.html",
+    "guide.comp.url": "./guide-compression-en.html",
     "footer.note": "100% client-side · zero server storage · free",
     "footer.alltools": "🧰 All Tools",
     "footer.disclaimer": "This site is a free tool site operated by an individual developer. Actual financial transactions and legal effects follow the standards of the relevant institutions.",
@@ -345,6 +353,13 @@ const I18n = {
       const val = this.t(key);
       if (val && val !== key) {
         el.setAttribute("title", val);
+      }
+    });
+    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-href");
+      const val = this.t(key);
+      if (val && val !== key) {
+        el.setAttribute("href", val);
       }
     });
   }

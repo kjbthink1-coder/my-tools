@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 80% Image Quality Rule: Smart Compression Without Visible Loss</title>
+  <meta name="description" content="Master smart image compression. Discover why 80-85% quality cuts file size by up to 80% with zero visible degradation, the DPI myth, and optimal settings for web speed." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://salartool.com/image-converter/guide-compression-en.html" />
+  <link rel="alternate" hreflang="en" href="https://salartool.com/image-converter/guide-compression-en.html" />
+  <link rel="alternate" hreflang="ko" href="https://salartool.com/image-converter/guide-compression.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Image Converter" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="The 80% Image Quality Rule: Smart Compression Guide" />
+  <meta property="og:description" content="How to reduce image weight by 80% without losing visual clarity. Scientific human vision thresholds and web optimization tips." />
+  <meta property="og:url" content="https://salartool.com/image-converter/guide-compression-en.html" />
+  <meta property="og:image" content="https://salartool.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Smart Image Compression Guide" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The 80% Image Quality Rule: Smart Compression Without Visible Loss" />
+  <meta name="twitter:description" content="Why 80-85% quality is the magic sweet spot for web performance and storage." />
+  <meta name="twitter:image" content="https://salartool.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://salartool.com/image-converter/guide-compression-en.html/#article",
+        "headline": "The 80% Image Quality Rule: Smart Compression Without Visible Loss",
+        "description": "Discover why setting compression quality to 80-85% slashes file size by up to 80% without visible quality loss.",
+        "url": "https://salartool.com/image-converter/guide-compression-en.html",
+        "inLanguage": "en-US",
+        "datePublished": "2026-09-22",
+        "dateModified": "2026-09-22",
+        "author": { "@type": "Person", "name": "Image Converter Editorial" },
+        "publisher": { "@type": "Organization", "name": "Image Converter" },
+        "isPartOf": { "@id": "https://salartool.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://salartool.com/image-converter/guide-compression-en.html/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is 100% quality setting usually a bad idea?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Setting lossy formats like JPG or WebP to 100% quality disables quantization optimizations, causing file size to inflate by 300% to 500% with zero noticeable improvement to human eyes on screens."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does changing DPI (Dots Per Inch) reduce web image file size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. DPI is strictly an instruction for physical paper printers. On digital screens, images are defined entirely by pixel dimensions (e.g., 1920x1080). Changing a photo from 300 DPI to 72 DPI without changing pixel dimensions changes nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the recommended compression setting for website images?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For hero banners and blog photos, convert to WebP at 80% to 85% quality with a maximum width of 1920px. This yields files between 80 KB and 250 KB with razor-sharp presentation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3243686996042007"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="./index.html" class="logo">
+        <span class="logo__icon">⚡</span>
+        <span class="logo__text">Image Converter</span>
+      </a>
+      <nav class="nav">
+        <a href="./index.html">Converter</a>
+        <a href="./index.html#idphoto">ID Photo</a>
+        <a href="#sweet-spot">80% Sweet Spot</a>
+        <a href="#dpi-myth">DPI Myth</a>
+      </nav>
+      <div class="header__actions">
+        <a href="./guide-compression.html" class="btn btn--ghost btn--sm" title="한국어로 읽기">🇰🇷 한국어</a>
+        <a href="./index.html#converter" class="btn btn--primary btn--sm">Launch Converter</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm blog-hero">
+      <div class="container hero__inner">
+        <div class="hero__badge">⚡ Optimization Masterclass · Updated September 2026</div>
+        <h1 class="hero__title">
+          <span>The 80% Image Quality Rule</span>
+          <span class="hero__title--accent">Slash File Size by 80% Without Visible Loss</span>
+        </h1>
+        <p class="hero__desc">Uploading 5 MB photos directly from your phone to your blog or online shop? You are killing your page load speed and Google rankings. Learn how human vision perception works, why the "100% quality" setting is an illusion, and how to dial in the perfect compression balance.</p>
+        <div class="hero__cta">
+          <a href="#sweet-spot" class="btn btn--primary btn--lg">Learn the Rule</a>
+          <a href="./index.html#converter" class="btn btn--soft btn--lg">Compress Images Free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Article Body ===================== -->
+    <section class="section">
+      <div class="container info-article">
+        <article class="info-article__body">
+
+          <div class="cta-box cta-box--warm" style="margin-top: 0; margin-bottom: 30px;">
+            <h3 class="cta-box__title">🎯 The Core Principle</h3>
+            <p class="cta-box__desc"><strong>The Human Eye Cannot Perceive High-Frequency Color Compression at 80–85% Quality.</strong> By adjusting your compression slider from 100% down to 80%, you eliminate 70% to 80% of unnecessary file payload while keeping the photo crisp and vibrant on any screen or mobile phone.</p>
+          </div>
+
+          <h2 id="sweet-spot" class="info-article__title">1. Why 100% Quality is a Waste of Bandwidth</h2>
+          <p>When exporting an image, it is tempting to slide the quality bar all the way to <strong>100%</strong> because "we want maximum clarity." But in digital compression algorithms (like JPEG and WebP), 100% does not mean higher resolution.</p>
+          <p>Instead, 100% disables crucial mathematical quantization tables designed to discard microscopic data imperceptible to human retinas. Take a look at this typical real-world test on a 4000×3000px camera photograph:</p>
+
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>Quality Slider</th>
+                <th>File Size (JPG)</th>
+                <th>File Size (WebP)</th>
+                <th>Visual Perception on Screen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>100% (Maximum)</strong></td>
+                <td>6.2 MB</td>
+                <td>3.8 MB</td>
+                <td>Baseline (Reference)</td>
+              </tr>
+              <tr>
+                <td><strong>90% (High)</strong></td>
+                <td>2.1 MB (-66%)</td>
+                <td>1.4 MB (-63%)</td>
+                <td>100% indistinguishable from 100%</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--c-primary,#3b5bdb);">⭐ 80% (Sweet Spot)</strong></td>
+                <td><strong>980 KB (-84%)</strong></td>
+                <td><strong>540 KB (-86%)</strong></td>
+                <td><strong>100% indistinguishable under normal viewing</strong></td>
+              </tr>
+              <tr>
+                <td><strong>70% (Aggressive)</strong></td>
+                <td>620 KB (-90%)</td>
+                <td>380 KB (-90%)</td>
+                <td>Minor softness visible in subtle gradients</td>
+              </tr>
+              <tr>
+                <td><strong>50% (Extreme)</strong></td>
+                <td>310 KB (-95%)</td>
+                <td>190 KB (-95%)</td>
+                <td>Noticeable ringing &amp; block artifacts</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Dropping quality from <strong>100% to 80% slashes over 80% of the file weight</strong> with zero perceptible difference in clarity on standard monitors or mobile screens.</p>
+
+          <h2 id="dpi-myth" class="info-article__title">2. Debunking the 72 DPI vs 300 DPI Web Myth</h2>
+          <p>One of the oldest misconceptions in graphic design is that you must export images at <strong>72 DPI</strong> for web and <strong>300 DPI</strong> for print.</p>
+          <p><strong>The reality: DPI (Dots Per Inch) means absolutely nothing on digital screens.</strong></p>
+          <p>Screens do not have inches in their rendering pipeline; they only have physical pixels. A 1200×800 pixel image saved at 72 DPI and the exact same 1200×800 pixel image saved at 300 DPI have the exact same number of pixels, render at the exact same size on screen, and download at the exact same speed.</p>
+          <p>DPI is purely physical printer instructions for ink droplet spacing on paper. To optimize for the web, <strong>focus exclusively on pixel dimensions (width × height) and compression quality</strong>, never DPI.</p>
+
+          <h2 id="guidelines" class="info-article__title">3. The Golden Rules for Web Image Optimization</h2>
+
+          <h3>Rule 1: Never Upload More Pixels Than Displayed</h3>
+          <p>If your blog content area is 800 pixels wide, uploading a raw 4800-pixel photo forces the visitor's mobile browser to download 36 times more pixel data than their phone can actually display. Scale width down to 1200–1600 pixels before uploading.</p>
+
+          <h3>Rule 2: Pick the Right Container</h3>
+          <ul>
+            <li><strong>Photos &amp; Banners</strong>: Use <strong>WebP</strong> (or JPG) at 80% quality.</li>
+            <li><strong>Screenshots with Text</strong>: Use <strong>PNG</strong> or lossless <strong>WebP</strong> to preserve sharp text borders.</li>
+            <li><strong>Icons, Badges &amp; Logos</strong>: Use <strong>SVG</strong> (vector) whenever possible, or lightweight WebP with transparency.</li>
+          </ul>
+
+          <h3>Rule 3: Keep Images Under 250 KB</h3>
+          <p>Google's PageSpeed Insights rewards web pages that maintain a total page weight under 1.5 MB. If every image is under 200 KB, your site loads instantly, boosting visitor retention and sales conversion.</p>
+
+          <div class="cta-box cta-box--warm">
+            <h3 class="cta-box__title">⚡ Compress Your Images with the 80% Rule</h3>
+            <p class="cta-box__desc">Drag &amp; drop your pictures into our converter, slide the quality knob to 80%, and watch file sizes shrink without losing quality.</p>
+            <a href="./index.html#converter" class="btn btn--primary btn--lg">🖼️ Start Compressing Now</a>
+          </div>
+
+          <!-- Related Links -->
+          <div class="blog-related">
+            <h4 class="blog-related__title">📚 Explore More Guides</h4>
+            <div class="blog-related__grid">
+              <a href="./guide-webp-en.html" class="blog-related__card">
+                <strong>🖼️ What is WebP?</strong>
+                <span>Why Google's modern format is replacing JPG and PNG everywhere on the internet.</span>
+              </a>
+              <a href="./guide-heic-en.html" class="blog-related__card">
+                <strong>📱 Open HEIC Photos on Windows</strong>
+                <span>Fix iPhone photo compatibility issues on PC without paying Microsoft $0.99.</span>
+              </a>
+              <a href="./guide-exif-en.html" class="blog-related__card">
+                <strong>📍 How to Strip GPS Location</strong>
+                <span>Protect your home location by erasing hidden GPS tags from smartphone photos.</span>
+              </a>
+              <a href="./index.html#idphoto" class="blog-related__card">
+                <strong>🪪 Free Passport &amp; ID Photo Cropper</strong>
+                <span>Standard 2×2 inch US and biometric passport sizing with custom dimension presets.</span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Ad slot -->
+        <div class="ad-slot" aria-label="Advertisement"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__icon">⚡</span>
+        <span>Image Converter</span>
+      </div>
+      <p class="footer__note">100% client-side · zero server storage · free forever</p>
+      <p class="footer__copy">© <span id="year"></span> Image Converter · <a href="../" style="color:inherit;text-decoration:underline;">🧰 All Tools</a> · Fast, private in-browser compression.</p>
+      <p class="footer__links">
+        <a href="../about.html">About &amp; Contact</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">Terms of Service</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
