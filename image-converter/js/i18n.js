@@ -312,7 +312,7 @@ const I18n = {
 
   t(key, vars) {
     let s = (I18N[this.lang] && I18N[this.lang][key]) || (I18N.en && I18N.en[key]) || (I18N.ko && I18N.ko[key]) || key;
-    if (vars) {
+    if (vars && s !== key) {
       Object.keys(vars).forEach((k) => {
         s = s.replace(new RegExp("\\{" + k + "\\}", "g"), vars[k]);
       });
@@ -322,18 +322,30 @@ const I18n = {
 
   apply() {
     document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const val = this.t(el.getAttribute("data-i18n"));
-      if (val.includes("<")) {
-        el.innerHTML = val;
-      } else {
-        el.textContent = val;
+      const key = el.getAttribute("data-i18n");
+      const val = this.t(key);
+      // Never overwrite elements with raw key name if key is missing
+      if (val && val !== key) {
+        if (val.includes("<")) {
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
       }
     });
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-      el.setAttribute("aria-label", this.t(el.getAttribute("data-i18n-aria")));
+      const key = el.getAttribute("data-i18n-aria");
+      const val = this.t(key);
+      if (val && val !== key) {
+        el.setAttribute("aria-label", val);
+      }
     });
     document.querySelectorAll("[data-i18n-title]").forEach((el) => {
-      el.setAttribute("title", this.t(el.getAttribute("data-i18n-title")));
+      const key = el.getAttribute("data-i18n-title");
+      const val = this.t(key);
+      if (val && val !== key) {
+        el.setAttribute("title", val);
+      }
     });
   }
 };

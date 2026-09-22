@@ -609,6 +609,23 @@ a { text-decoration: none; color: inherit; }
   border-right: 1px solid rgba(255,255,255,.7);
 }
 
+/* ---------- Related Guides Cards ---------- */
+.blog-related { margin-top: 36px; }
+.blog-related__title { font-size: 1.15rem; font-weight: 700; color: var(--c-ink); margin-bottom: 14px; text-align: center; }
+.blog-related__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.blog-related__card {
+  display: block; padding: 18px 20px; background: var(--c-surface, #fff); border: 1px solid var(--c-line, #e2e8f0);
+  border-radius: var(--radius, 12px); box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.06)); text-decoration: none;
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+}
+.blog-related__card:hover {
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+  transform: translateY(-2px);
+  border-color: var(--c-primary, #3b5bdb);
+}
+.blog-related__card strong { display: block; margin-bottom: 6px; font-size: .95rem; color: var(--c-ink, #1a202c); line-height: 1.4; }
+.blog-related__card span { display: block; font-size: .82rem; color: var(--c-ink-3, #718096); line-height: 1.5; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .converter__grid { grid-template-columns: 1fr; }
