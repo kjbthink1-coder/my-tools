@@ -85,4 +85,4 @@
 - [ ] **운영자 사전 조치 (배포 시 필수)**:
   - [ ] 도메인 확정 후 모든 파일 내 `salartool.com`, `salartool.com`을 실제 도메인으로 일괄 치환.
   - [ ] `about.html` 및 `privacy.html` 내 `kjbthink1@gmail.com`을 실제 수신 가능한 이메일로 교체.
-  - [ ] AdSense 승인 후 발급된 게시자 ID로 `ads.txt` 내 `pub-0000000000000000` 치환.
+  - [x] AdSense 승인 후 발급된 게시자 ID로 `ads.txt` 내 `pub-3243686996042007` 치환 완료.
