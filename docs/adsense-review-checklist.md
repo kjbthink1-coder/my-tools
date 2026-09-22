@@ -83,6 +83,6 @@
   - [x] `sitemap.xml`: 신규 `about.html`, `terms.html` 및 가이드 10편, 도구 5종 등 총 21개 URL 정상 등재 및 무결성 검증 완료.
   - [x] `robots.txt`: 모든 검색 봇 허용 (`User-agent: *`, `Allow: /`).
 - [ ] **운영자 사전 조치 (배포 시 필수)**:
-  - [ ] 도메인 확정 후 모든 파일 내 `yourdomain.com`, `example.com`을 실제 도메인으로 일괄 치환.
-  - [ ] `about.html` 및 `privacy.html` 내 `support@yourdomain.com`을 실제 수신 가능한 이메일로 교체.
+  - [ ] 도메인 확정 후 모든 파일 내 `salartool.com`, `salartool.com`을 실제 도메인으로 일괄 치환.
+  - [ ] `about.html` 및 `privacy.html` 내 `kjbthink1@gmail.com`을 실제 수신 가능한 이메일로 교체.
   - [ ] AdSense 승인 후 발급된 게시자 ID로 `ads.txt` 내 `pub-0000000000000000` 치환.

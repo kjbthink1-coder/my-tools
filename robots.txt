@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# ⚠️ 도메인 치환 대상: yourdomain.com
-Sitemap: https://yourdomain.com/sitemap.xml
+# ⚠️ 도메인 치환 대상: salartool.com
+Sitemap: https://salartool.com/sitemap.xml
