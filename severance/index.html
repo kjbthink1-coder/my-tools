@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>퇴직금 계산기 - 평균임금 기준 퇴직소득세 자동 계산기</title>
+  <meta name="description" content="최근 3개월간의 임금을 바탕으로 정확한 퇴직금과 예상 퇴직소득세를 누구나 쉽게 3초 만에 계산할 수 있습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://example.com/severance/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="계산기 모음" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="퇴직금 계산기 - 평균임금 기준 퇴직소득세 자동 계산기" />
+  <meta property="og:description" content="최근 3개월간의 임금을 바탕으로 정확한 퇴직금과 예상 퇴직소득세, 연봉별 실수령액을 3초 만에 계산해 드립니다." />
+  <meta property="og:url" content="https://example.com/severance/" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="퇴직금 및 연봉 실수령액 계산기 화면" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="퇴직금 계산기 - 평균임금 기준 퇴직소득세 자동 계산기" />
+  <meta name="twitter:description" content="평균임금 기준 퇴직금, 예상 퇴직소득세, 4대보험 뺀 연봉 실수령액까지 무료 계산." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://example.com/severance/#webapp-severance",
+        "name": "퇴직금 계산기",
+        "alternateName": "퇴직금 계산기 - 평균임금 기준 퇴직소득세 자동 계산기",
+        "url": "https://example.com/severance/",
+        "description": "최근 3개월간의 임금을 바탕으로 퇴직금과 예상 퇴직소득세, 중간정산 시 수령액까지 3초 만에 계산하는 무료 퇴직금 계산기.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ko-KR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "featureList": [
+          "평균임금 자동 계산",
+          "예상 퇴직소득세 모의 산출",
+          "중간정산 조건 반영",
+          "비과세 한도 확인"
+        ],
+        "isPartOf": { "@id": "https://example.com/#website" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://example.com/severance/#webapp-salary",
+        "name": "연봉 실수령액 계산기",
+        "alternateName": "연봉 실수령액 계산기 - 4대보험 및 소득세 반영",
+        "url": "https://example.com/severance/#salary",
+        "description": "4대보험과 근로소득세, 지방소득세를 떼고 실제로 손에 쥐는 연봉 실수령액을 직장인과 프리랜서 모두의 조건에서 계산하는 무료 도구.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ko-KR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "featureList": [
+          "4대보험료 자연수 반영",
+          "근로소득세 및 지방소득세 계산",
+          "프리랜서 3.3% 원천징수 계산"
+        ],
+        "isPartOf": { "@id": "https://example.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://example.com/severance/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "퇴직금 계산의 기준이 되는 평균임금은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "퇴직금은 퇴직 전 3개월간 받은 임금총액을 그 기간의 일수로 나누어 산정하는 평균임금에, 재직일수를 곱해 계산합니다. 1년 미만 근무자는 1년으로 간주합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "퇴직소득세는 왜 내야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "퇴직금은 근로소득이 아닌 퇴직소득으로 분류되어 분리과세됩니다. 일정 한도(2026년 기준 3억 원 등 비과세 한도)를 초과하는 금액에 대해 퇴직소득세가 부과됩니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <span class="logo__icon">🏖️</span>
+        <span class="logo__text">퇴직금 계산기</span>
+      </a>
+      <nav class="nav">
+        <a href="../">전체 계산기</a>
+        <a href="#retire">퇴직금</a>
+        <a href="#salary">실수령액</a>
+        <a href="#guide">퇴직금 계산법</a>
+        <a href="./guide.html">📖 지급 조건 가이드</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../" class="btn btn--ghost btn--sm">🧰 계산기 모음</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm">
+      <div class="container hero__inner">
+        <div class="hero__badge">🔒 100% 브라우저 처리 · 금액 입력 정보 저장 없음</div>
+        <h1 class="hero__title">
+          <span>퇴직금 계산기</span>
+          <span class="hero__title--accent">3초 만에 확인하세요</span>
+        </h1>
+        <p class="hero__desc">퇴직 직전 3개월 평균임금과 근무연수만 입력하면 퇴직금은 물론, 일시금 수령 시 퇴직소득세까지 자동으로 계산해요. 중간정산 차액도 확인 가능합니다.</p>
+      </div>
+    </section>
+
+    <!-- ===================== Severance Calculator ===================== -->
+    <section id="severance" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">🏖️ 퇴직금 계산기</h2>
+          <p class="section__desc">퇴직금 = (일 평균임금 × 재직일수) ÷ 365 × 30</p>
+        </div>
+
+        <div class="calc__grid">
+          <!-- Inputs -->
+          <div class="panel">
+            <h3 class="panel__title">퇴직 조건 입력</h3>
+
+            <div class="field">
+              <label class="field__label">근무 형태</label>
+              <div class="seg" id="rtypeGroup">
+                <button class="seg__btn active" data-rtype="continue">계속 근무 (예상)</button>
+                <button class="seg__btn" data-rtype="mid">중간정산 (퇴직연금 인출)</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="retireSalary">퇴직 직전 3개월 평균임금 <span class="field__unit">원/월</span></label>
+              <input type="text" id="retireSalary" class="input" inputmode="numeric" placeholder="예) 4,000,000" value="4,000,000" />
+              <p class="field__note">퇴직일 전 3개월 동안 지급된 월 평균 임금입니다. (기본급 + 수당) 일 평균임금으로 자동 환산해 계산해요.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="retireYears">총 근무연수 <span class="field__unit">년</span></label>
+              <input type="text" id="retireYears" class="input" inputmode="decimal" placeholder="예) 5" value="5" />
+            </div>
+
+            <div class="field hidden" id="alreadyField">
+              <label class="field__label" for="alreadyReceived">이미 수령한 퇴직금 <span class="field__unit">원</span></label>
+              <input type="text" id="alreadyReceived" class="input" inputmode="numeric" placeholder="0" value="0" />
+              <p class="field__note">중간정산 시 이미 수령한 금액이 있다면 입력하세요.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label">퇴직소득세</label>
+              <div class="seg" id="rtaxGroup">
+                <button class="seg__btn active" data-rtax="no">면세 (퇴직연금·연금계좌)</button>
+                <button class="seg__btn" data-rtax="yes">과세 (일시금)</button>
+              </div>
+            </div>
+
+            <button id="retireCalcBtn" class="btn btn--primary btn--lg btn--block">계산하기</button>
+            <p class="field__note field__note--center">🔒 모든 계산은 브라우저 내부에서 처리되며, 어느 서버에도 전송·저장되지 않습니다.</p>
+          </div>
+
+          <!-- Results -->
+          <div class="panel" id="retireResult">
+            <div class="result-empty">
+              <div class="result-empty__icon">🏖️</div>
+              <p>조건을 입력하고 <strong>계산하기</strong>를 누르면<br />퇴직금과 세금이 표시됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 작업 D: 정보성 텍스트 -->
+        <section id="guide" class="info-article">
+          <h3 class="info-article__title">📖 퇴직금, 어떻게 계산하나요?</h3>
+          <div class="info-article__body">
+            <h4>퇴직금 계산 공식</h4>
+            <p>근로기준법에 따라 퇴직금은 <strong>'(일 평균임금 × 재직일수) ÷ 365 × 30'</strong>으로 계산해요. 쉽게 말해 <strong>1년 근무 시 약 한 달 치 급여</strong>를 받는 구조랍니다. 5년을 일했다면 약 5개월 치, 10년을 일했다면 약 10개월 치 급여가 퇴직금으로 지급돼요.</p>
+            <h4>평균임금이 핵심이에요</h4>
+            <p>'일 평균임금'은 퇴직일 직전 3개월 동안 지급된 총임금을 그 기간의 일수로 나눠서 구해요. 여기엔 기본급뿐만 아니라 정기 상여금, 고정 수당(직책수당·연장수당 등)도 포함돼요. 반면 식대·차량비 같은 비과세 수당은 제외되는 경우가 많아요. 본 계산기는 월 평균임금을 입력하면 일 평균임금으로 자동 환산해 드려요.</p>
+            <h4>퇴직소득세, 일시금 vs 연금</h4>
+            <p>퇴직금을 <strong>일시금</strong>으로 받으면 퇴직소득세가 부과돼요. 대신 근속연수당 300만 원씩 비과세 혜택이 있고, 나머지 금액에 대해 6%~45% 누진세율이 적용돼요. 반면 <strong>퇴직연금이나 연금계좌</strong>로 수령하면 세금이 면제되거나 크게 줄어들어요. 수령 방식에 따라 수백만 원 차이가 나니 꼭 비교해 보세요.</p>
+            <h4>중간정산이 가능해요</h4>
+            <p>퇴직연금에 가입한 근로자는 재직 중에도 퇴직금의 일부를 미리 찾을 수 있어요(중간정산). 이때 이미 수령한 금액은 최종 퇴직금에서 차감돼요. 본 계산기의 '중간정산' 모드를 켜면 차감 후 남은 금액까지 바로 확인할 수 있어요.</p>
+            <p class="info-article__warn">⚠️ 본 계산 결과는 <strong>참고용</strong> 근사치예요. 평균임금 산정 기준, 재직일수, 중간정산 차감액, 퇴직소득세율 등은 실제와 다를 수 있어요. 정확한 금액은 인사·노무 담당자에게 확인하세요.</p>
+          </div>
+        </section>
+
+        <!-- ===================== Salary Calculator ===================== -->
+        <div id="salary" class="section__head" style="margin-top:56px;">
+          <h2 class="section__title">💸 연봉 실수령액 계산기</h2>
+          <p class="section__desc">4대보험과 소득세를 떼고 실제 손에 쥐는 금액을 계산해요. (직장인 · 프리랜서)</p>
+        </div>
+
+        <div class="calc__grid">
+          <div class="panel">
+            <h3 class="panel__title">근로 소득 입력</h3>
+
+            <div class="field">
+              <label class="field__label">근로 형태</label>
+              <div class="seg" id="workerGroup">
+                <button class="seg__btn active" data-worker="employee">직장인 (4대보험)</button>
+                <button class="seg__btn" data-worker="freelancer">프리랜서 (사업소득)</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label">입력 방식</label>
+              <div class="seg" id="modeGroup">
+                <button class="seg__btn active" data-mode="annual">연봉 → 월 실수령액</button>
+                <button class="seg__btn" data-mode="monthly">월급 → 연봉 역산</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="salaryInput"><span id="salaryInputLabel">연봉</span> <span class="field__unit">원 (세전)</span></label>
+              <input type="text" id="salaryInput" class="input" inputmode="numeric" placeholder="예) 40,000,000" value="40,000,000" />
+              <div class="quick-amounts" id="salaryQuick">
+                <button data-sal="30000000">3천만</button>
+                <button data-sal="40000000">4천만</button>
+                <button data-sal="50000000">5천만</button>
+                <button data-sal="70000000">7천만</button>
+              </div>
+            </div>
+
+            <div class="field" id="dependentsField">
+              <label class="field__label" for="dependents">부양가족 수 <span class="field__unit">명 (본인 포함)</span></label>
+              <input type="text" id="dependents" class="input" inputmode="numeric" placeholder="1" value="1" />
+            </div>
+
+            <div class="field" id="nonTaxField">
+              <label class="field__label" for="nonTaxIncome">비과세 수당 <span class="field__unit">원/월 (식대·차량 등)</span></label>
+              <input type="text" id="nonTaxIncome" class="input" inputmode="numeric" placeholder="0" value="0" />
+            </div>
+
+            <div class="field" id="ftypeField">
+              <label class="field__label">프리랜서 과세 구분 <span class="field__unit">(사업소득)</span></label>
+              <div class="seg" id="ftypeGroup">
+                <button class="seg__btn active" data-ftype="general">일반 사업소득 (3~40%)</button>
+                <button class="seg__btn" data-ftype="other">기타 사업소득 (21.5%)</button>
+              </div>
+            </div>
+
+            <button id="salaryCalcBtn" class="btn btn--primary btn--lg btn--block">계산하기</button>
+          </div>
+
+          <div class="panel" id="salaryResult">
+            <div class="result-empty">
+              <div class="result-empty__icon">🧾</div>
+              <p>소득을 입력하고 <strong>계산하기</strong>를 누르면<br />세금과 실수령액이 표시됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salary 정보성 텍스트 -->
+        <section class="info-article">
+          <h3 class="info-article__title">📖 연봉 실수령액, 왜 적게 나올까요?</h3>
+          <div class="info-article__body">
+            <h4>4대보험, 내 월급에서 얼마나 빠질까?</h4>
+            <p>직장인 월급에서는 <strong>국민연금 4.5%, 건강보험 3.545%(장기요양·돌봄 포함), 고용보험 0.9%</strong>가 매월 빠져요. 연봉 4천만 원 기준으로 대략 월 37만 원 정도가 4대보험료로 지출돼요.</p>
+            <h4>소득세, 누진구조라 많이 벌수록 세금이 커져요</h4>
+            <p>소득세는 초과 누진 방식이라, 과세표준액 구간이 올라갈수록 높은 세율이 적용돼요. 근로소득공제(최대 4,970만 원)와 인적공제(부양가족당 150만 원), 표준공제(12만 원) 등을 빼고 세금을 매기기 때문에, <strong>세금 공제 항목을 잘 챙기면 실수령액이 달라져요</strong>.</p>
+            <h4>프리랜서는 어떻게 다를까?</h4>
+            <p>프리랜서는 4대보험 의무 가입이 아니에요. 대신 총수입금액에서 필요경비를 뺀 '사업소득금액'에 대해 3~40% 누진세율(일반 사업소득) 또는 21.5% 분리과세(기타 사업소득)를 적용받아요. 직장인과 달리 소득공제 혜택이 제한적이에요.</p>
+            <p class="info-article__warn">⚠️ 본 결과는 2026년 최신 세제 및 4대보험 요율 기준의 <strong>참고용</strong> 근사치예요. 연말정산 공제 항목(주택자금, 월세, 의료비 등)에 따라 실제 납부액은 달라질 수 있어요.</p>
+          </div>
+
+          <!-- 심층 가이드 연결 -->
+          <div class="blog-related" style="margin-top: 28px;">
+            <h4 class="blog-related__title">📚 함께 읽으면 도움되는 퇴직금 &amp; 급여 전문 가이드</h4>
+            <div class="blog-related__grid">
+              <a href="./guide.html" class="blog-related__card">
+                <strong>🏖️ 퇴직금 지급 기준 &amp; 평균임금 계산법</strong>
+                <span>1년 미만 근무, 아르바이트, 프리랜서의 수령 자격과 퇴직 소득세 절세 팁</span>
+              </a>
+              <a href="./guide-salary.html" class="blog-related__card">
+                <strong>💰 2026년 연봉 실수령액 &amp; 4대보험 공제 분석</strong>
+                <span>국민연금, 건강보험, 고용보험 공제율과 구간별 실제 입금액을 확인하세요</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
+        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand"><span class="logo__icon">🏖️</span> 퇴직금 계산기</div>
+      <p class="footer__note">100% 클라이언트 사이드 · 서버 저장 제로 · 완전 무료</p>
+      <p class="footer__copy">© <span id="year"></span> 퇴직금 계산기 · <a href="../" style="color:inherit;text-decoration:underline;">🧰 계산기 모음</a> · 본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.</p>
+      <p class="footer__links">
+        <a href="../about.html">소개 및 문의</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">이용약관</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html">개인정보처리방침</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="../js/severance.js"></script>
+  <script src="../js/salary.js"></script>
+  <script src="../js/page-severance.js"></script>
+</body>
+</html>

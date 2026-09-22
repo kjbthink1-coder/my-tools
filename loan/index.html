@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대출 이자 계산기 - 원리금균등 및 중도상환수수료 시뮬레이터</title>
+  <meta name="description" content="매달 내야 하는 대출 이자와 원금을 원리금균등, 원금균등 상환 방식별로 정확하게 계산합니다. 중도상환 수수료까지 한눈에 확인하세요." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://example.com/loan/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="계산기 모음" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="대출 이자 계산기 - 원리금균등 및 중도상환수수료 시뮬레이터" />
+  <meta property="og:description" content="매달 내야 하는 대출 이자와 원금을 원리금균등, 원금균등 상환 방식별로 정확하게 계산합니다. 중도상환 수수료까지 한눈에 확인하세요." />
+  <meta property="og:url" content="https://example.com/loan/" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="대출 이자 계산기 - 상환 방식별 월 상환액 비교 화면" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="대출 이자 계산기 - 원리금균등 및 중도상환수수료 시뮬레이터" />
+  <meta name="twitter:description" content="상환 방식별 월 상환액과 총 이자, 중도상환수수료까지 한눈에. 회원가입 없이 무료." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://example.com/loan/#webapp",
+        "name": "대출 이자 계산기",
+        "alternateName": "대출 이자 계산기 - 원리금균등 및 중도상환수수료 시뮬레이터",
+        "url": "https://example.com/loan/",
+        "description": "원리금균등, 원금균등, 만기일시 상환 방식별 월 상환액과 총 이자, 거치 기간 및 중도상환수수료까지 반영하여 계산하는 무료 대출 이자 계산기.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ko-KR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "featureList": [
+          "원리금균등상환 방식별 월 상환액 계산",
+          "원금균등상환 방식별 월 상환액 계산",
+          "만기일시상환 이자 계산",
+          "거치 기간 반영",
+          "중도상환수수료 시뮬레이션",
+          "월별 상환 스케줄 표 및 CSV 다운로드"
+        ],
+        "isPartOf": { "@id": "https://example.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://example.com/loan/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "대출 이자 계산기는 어떤 상환 방식을 지원하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "원리금균등상환, 원금균등상환, 만기일시상환 세 가지 방식을 지원하며, 거치 기간과 중도상환수수료까지 반영해 월 상환액과 총 이자를 계산합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "입력한 대출 금액 정보가 서버에 저장되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요. 모든 계산은 브라우저 안에서만 처리되며 금액 정보는 서버로 전송되거나 저장되지 않습니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <span class="logo__icon">🏦</span>
+        <span class="logo__text">대출 이자 계산기</span>
+      </a>
+      <nav class="nav">
+        <a href="../">전체 계산기</a>
+        <a href="#calculator">계산하기</a>
+        <a href="#guide">이자 계산법</a>
+        <a href="./guide.html">📖 방식 비교 가이드</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../" class="btn btn--ghost btn--sm">🧰 계산기 모음</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm">
+      <div class="container hero__inner">
+        <div class="hero__badge">🔒 100% 브라우저 처리 · 금액 입력 정보 저장 없음</div>
+        <h1 class="hero__title">
+          <span>대출 이자 계산기</span>
+          <span class="hero__title--accent">월 상환액 · 총 이자 한눈에</span>
+        </h1>
+        <p class="hero__desc">원리금균등 · 원금균등 · 만기일시 상환 방식별로 월 상환액과 총 이자, 거치 기간과 중도상환수수료까지 반영해요. 브라우저에서 즉시 계산됩니다.</p>
+      </div>
+    </section>
+
+    <!-- ===================== Calculator ===================== -->
+    <section id="calculator" class="section">
+      <div class="container">
+        <div class="calc__grid">
+          <!-- Inputs -->
+          <div class="panel">
+            <h3 class="panel__title">대출 조건 입력</h3>
+
+            <div class="field">
+              <label class="field__label" for="loanType">대출 종류</label>
+              <select id="loanType" class="select">
+                <option value="mortgage">주택담보대출</option>
+                <option value="credit">신용대출</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label">상환 방식</label>
+              <div class="seg" id="methodGroup">
+                <button class="seg__btn active" data-method="equal">원리금균등</button>
+                <button class="seg__btn" data-method="principal">원금균등</button>
+                <button class="seg__btn" data-method="bullet">만기일시</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="loanAmount">대출 원금 <span class="field__unit">원</span></label>
+              <input type="text" id="loanAmount" class="input" inputmode="numeric" placeholder="예) 300,000,000" value="300,000,000" />
+              <div class="quick-amounts" id="quickAmounts">
+                <button data-amt="100000000">1억</button>
+                <button data-amt="200000000">2억</button>
+                <button data-amt="300000000">3억</button>
+                <button data-amt="500000000">5억</button>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="loanRate">연이율 <span class="field__unit">%</span></label>
+                <input type="text" id="loanRate" class="input" inputmode="decimal" placeholder="예) 4.5" value="4.5" />
+              </div>
+              <div class="field">
+                <label class="field__label" for="loanPeriod">상환 기간 <span class="field__unit">년</span></label>
+                <input type="text" id="loanPeriod" class="input" inputmode="numeric" placeholder="예) 30" value="30" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="gracePeriod">거치 기간 <span class="field__unit">년 (원금 상환 유예)</span></label>
+              <input type="text" id="gracePeriod" class="input" inputmode="numeric" placeholder="0" value="0" />
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="prepayFee">중도상환수수료율 <span class="field__unit">%</span></label>
+              <input type="text" id="prepayFee" class="input" inputmode="decimal" placeholder="0" value="0" />
+              <p class="field__note">1년 이상 대출의 중도상환수수료는 법적 상한(주담 0.5% / 그 외 2%·신용 1% 내외)이 적용될 수 있어요.</p>
+            </div>
+
+            <button id="loanCalcBtn" class="btn btn--primary btn--lg btn--block">계산하기</button>
+            <p class="field__note field__note--center">🔒 모든 계산은 브라우저 내부에서 처리되며, 어느 서버에도 전송·저장되지 않습니다.</p>
+          </div>
+
+          <!-- Results -->
+          <div class="panel" id="loanResult">
+            <div class="result-empty">
+              <div class="result-empty__icon">📊</div>
+              <p>조건을 입력하고 <strong>계산하기</strong>를 누르면<br />월 상환액과 총 이자가 표시됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule table -->
+        <div id="loanScheduleWrap" class="schedule hidden">
+          <div class="schedule__head">
+            <h3 class="panel__title">월별 상환 스케줄</h3>
+            <div class="schedule__actions">
+              <label class="check"><input type="checkbox" id="showAllRows" checked /> 전체 보기</label>
+              <button id="csvBtn" class="btn btn--soft btn--sm">CSV 다운로드</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="loanTable">
+              <thead>
+                <tr>
+                  <th>회차</th><th>월 상환액</th><th>원금</th><th>이자</th><th>잔액</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 작업 D: 정보성 텍스트 영역 -->
+        <section id="guide" class="info-article">
+          <h3 class="info-article__title">📖 대출 이자, 어떻게 계산하나요?</h3>
+          <div class="info-article__body">
+            <h4>원리금균등 · 원금균등 · 만기일시, 무엇이 다를까요?</h4>
+            <p>대출을 갚을 때 가장 먼저 선택해야 하는 것이 '상환 방식'이에요. <strong>원리금균등상환</strong>은 매월 갚는 총액(원금+이자)이 매월 같도록 설계된 방식이에요. 첫 달부터 마지막 달까지 똑같은 금액을 내기 때문에 가계 예산을 세우기 가장 편해요. 반면 매월 갚는 원금은 점점 늘어나고 이자는 점점 줄어드는 구조랍니다.</p>
+            <p><strong>원금균등상환</strong>은 빌린 원금을 월수로 똑같이 나눠서 매월 갚는 방식이에요. 원금이 매월 같은 속도로 줄어들기 때문에 전체 이자는 원리금균등보다 적게 나와요. 대신 첫 달 상환액이 가장 높고 점점 줄어드는 특징이 있어서, 초기 감당이 가능한 분들에게 유리해요.</p>
+            <p><strong>만기일시상환</strong>은 매월 이자만 내고, 대출 만기일에 원금을 한 번에 갚는 방식이에요. 매월 부담은 가장 적지만, 만기에 돌아올 원금을 따로 모아두지 않으면 큰 부담이 될 수 있어요. 보통 단기 운전자금이나 거치 후 분할 상환으로 전환할 계획이 있을 때 써요.</p>
+            <h4>거치 기간은 왜 넣을까요?</h4>
+            <p>거치 기간 동안은 원금을 갚지 않고 이자만 냅니다. 주택담보대출에서 '3년 거치 30년 상환' 같은 형태로 자주 쓰여요. 초기 상환 부담은 줄어들지만, 그만큼 총 이자는 커진다는 점을 꼭 시뮬레이션으로 확인하세요.</p>
+            <h4>중도상환수수료, 꼭 확인하세요</h4>
+            <p>대출 중간에 미리 갚으면 수수료가 발생할 수 있어요. 주택담보대출은 3년 이상 경과 시 면제되는 경우가 많고, 신용대출은 3년 경과 시 전액 면제된답니다. 조기 상환을 계획 중이라면 본 계산기의 수수료 입력칸을 활용해 찬스 비용을 비교해 보세요.</p>
+            <p class="info-article__warn">⚠️ 본 계산 결과는 일반적인 금융 수식을 바탕으로 한 <strong>참고용</strong> 근사치예요. 실제 금리(고정·변동), 가계채권, 기관별 약관에 따라 달라지므로 정확한 금액은 대출 기관에 확인하세요.</p>
+          </div>
+
+          <!-- 심층 가이드 연결 -->
+          <div class="blog-related" style="margin-top: 28px;">
+            <h4 class="blog-related__title">📚 함께 읽으면 도움되는 대출 전문 가이드</h4>
+            <div class="blog-related__grid">
+              <a href="./guide.html" class="blog-related__card">
+                <strong>📖 원리금균등 vs 원금균등 이자 차이 비교</strong>
+                <span>5천만 원 대출 시 실제 이자 차이와 월 상환액 추이, 내게 맞는 선택법 총정리</span>
+              </a>
+              <a href="./guide-fee.html" class="blog-related__card">
+                <strong>💡 중도상환수수료 계산법 &amp; 면제 시점</strong>
+                <span>대출 조기 상환 시 아낄 수 있는 이자와 수수료 슬라이딩 공식을 확인하세요</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
+        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand"><span class="logo__icon">🏦</span> 대출 이자 계산기</div>
+      <p class="footer__note">100% 클라이언트 사이드 · 서버 저장 제로 · 완전 무료</p>
+      <p class="footer__copy">© <span id="year"></span> 대출 이자 계산기 · <a href="../" style="color:inherit;text-decoration:underline;">🧰 계산기 모음</a> · 본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.</p>
+      <p class="footer__links">
+        <a href="../about.html">소개 및 문의</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">이용약관</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html">개인정보처리방침</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="../js/loan-calc.js"></script>
+  <script src="../js/page-loan.js"></script>
+</body>
+</html>

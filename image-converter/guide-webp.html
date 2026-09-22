@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebP 확장자란? JPG, PNG 대신 WebP를 써야 하는 이유</title>
+  <meta name="description" content="WebP가 JPG·PNG보다 용량이 작은 원리, 무손실·애니메이션·투명 지원 여부, 브라우저 호환성과 실제 용량 비교 결과를 정리했어요." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://example.com/image-converter/guide-webp.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="계산기 모음" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="WebP 확장자란? JPG, PNG 대신 WebP를 써야 하는 이유" />
+  <meta property="og:description" content="WebP의 용량 절감 원리와 브라우저 호환성, JPG·PNG와의 실제 용량 비교 결과를 정리했어요." />
+  <meta property="og:url" content="https://example.com/image-converter/guide-webp.html" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="WebP vs JPG vs PNG 포맷 비교 가이드" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WebP 확장자란? JPG, PNG 대신 WebP를 써야 하는 이유" />
+  <meta name="twitter:description" content="WebP의 용량 절감 원리와 브라우저 호환성, 실제 용량 비교." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://example.com/image-converter/guide-webp.html/#article",
+        "headline": "WebP 확장자란? JPG, PNG 대신 WebP를 써야 하는 이유",
+        "description": "WebP가 JPG·PNG보다 용량이 작은 원리, 무손실·애니메이션·투명 지원 여부, 브라우저 호환성과 실제 용량 비교 결과를 정리했어요.",
+        "url": "https://example.com/image-converter/guide-webp.html",
+        "inLanguage": "ko-KR",
+        "datePublished": "2026-09-21",
+        "dateModified": "2026-09-21",
+        "author": { "@type": "Person", "name": "계산기 모음" },
+        "publisher": { "@type": "Organization", "name": "계산기 모음" },
+        "isPartOf": { "@id": "https://example.com/#website" },
+        "about": { "@id": "https://example.com/image-converter/#webapp" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://example.com/image-converter/guide-webp.html/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "WebP는 모든 브라우저에서 열리나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chrome, Edge, Firefox, Safari(macOS 14 이상)에서 열립니다. 구형 브라우저나 일부 환경에서는 보이지 않을 수 있어요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "WebP로 바꾸면 화질이 떨어지나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "손실 WebP는 품질 설정에 따라 다르지만, 품질 85~90%에서는 JPG와 비교해 눈에 띄는 화질 저하가 없어요. 무손실 WebP는 아예 손실이 없습니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <span class="logo__icon">🖼️</span>
+        <span class="logo__text" data-i18n="brand">이미지변환기</span>
+      </a>
+      <nav class="nav">
+        <a href="../">전체 계산기</a>
+        <a href="./">변환기로 이동</a>
+        <a href="#compat">호환성</a>
+      </nav>
+      <div class="header__actions">
+        <a href="./index.html#converter" class="btn btn--ghost btn--sm">🖼️ 변환기 실행</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm blog-hero">
+      <div class="container hero__inner">
+        <div class="hero__badge">📖 이미지 포맷 가이드 · 2026년 9월 21일 작성</div>
+        <h1 class="hero__title">
+          <span>WebP란 무엇인가</span>
+          <span class="hero__title--accent">JPG·PNG 대신 써야 하는 이유</span>
+        </h1>
+        <p class="hero__desc">웹사이트에서 WebP 이미지를 점점 더 많이 봅니다. 왜 이 확장자가 빠르게 퍼지고 있을까요? 압축 원리부터 브라우저 호환성, 그리고 "내가 써야 할까"라는 질문까지 답을 정리했어요.</p>
+        <div class="hero__cta">
+          <a href="#compat" class="btn btn--primary btn--lg">호환성 보기</a>
+          <a href="./index.html#converter" class="btn btn--soft btn--lg">지금 변환하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Article ===================== -->
+    <section class="section">
+      <div class="container">
+        <article class="info-article" style="max-width: 820px; margin: 0 auto;">
+
+          <div class="blog-meta">
+            <span class="blog-meta__tag">WebP</span>
+            <span class="blog-meta__tag">이미지 포맷</span>
+            <span class="blog-meta__tag">용량 최적화</span>
+            <span>작성일 2026-09-21</span>
+          </div>
+
+          <div class="blog-toc">
+            <h4>목차</h4>
+            <ol>
+              <li><a href="#what">WebP란</a></li>
+              <li><a href="#how">왜 용량이 작을까</a></li>
+              <li><a href="#compare">JPG·PNG와 실제 용량 비교</a></li>
+              <li><a href="#features">지원 기능 4가지</a></li>
+              <li><a href="#compat">호환성: 어디까지 열릴까</a></li>
+              <li><a href="#when">내가 써야 할 때 vs 아닐 때</a></li>
+            </ol>
+          </div>
+
+          <h2 id="what" class="info-article__title">WebP란</h2>
+          <p><a href="./index.html#converter" style="color:var(--c-primary);font-weight:600;text-decoration:underline;">WebP 이미지 변환 포맷</a>은 <strong>구글이 2010년에 만든 차세대 웹 이미지 기술</strong>이에요. VP8이라는 동영상 압축 기술에서 파생된 압축 방식을 정지 화상에 적용했어요. 목적은 단 하나, <strong>"같은 화질로 더 작은 파일"</strong>을 만드는 거예요.</p>
+          <p>이름 그대로 <strong>웹(Web)에 최적화</strong>된 포맷이에요. 웹페이지에서 이미지가 로딩되는 데 시간이 오래 걸리면 사용자가 이탈하니까, 이미지 파일 크기를 줄여서 로딩 속도를 높이는 게 핵심 목표예요. 구글이 직접 Chrome과 자사 서비스에 적용하면서 빠르게 퍼졌어요.</p>
+
+          <h2 id="how" class="info-article__title">왜 용량이 작을까</h2>
+          <p>일반적인 압축은 "픽셀 데이터를 있는 그대로 저장"하는 방식이에요. 하지만 WebP는 <strong>"화면에 보이는 정보 중 실제로 필요한 것만 남기고, 중복을 줄이는 방식"</strong>이에요.</p>
+          <p>예를 들어 하늘 배경이 있는 사진을 상상해 보세요. 하늘 픽셀 수천 개는 거의 똑같은 파란색이에요. JPG는 이걸 <strong>"픽셀 블록별로 비슷하면 평균색으로 통일"</strong>해서 용량을 줄여요. WebP는 여기서 한 걸음 더 나아가 <strong>움직임 예측 기술</strong>을 이미지에 적용해서, 비슷한 패턴을 더 효율적으로 묶어요. 구조적으로 더 적은 데이터로 같은 장면을 표현하는 거예요.</p>
+          <p>결과적으로 브라우저에서 직접 <a href="./index.html#converter" style="color:var(--c-primary);font-weight:600;text-decoration:underline;">WebP 압축 변환</a>을 거치면 <strong>같은 화질 기준으로 JPG보다 약 25~35% 작고</strong>, 무손실 모드에서는 <strong>PNG보다 약 20~30% 작아요</strong>. 서버 비용과 트래픽을 아껴야 하는 웹사이트 입장에서는 무시할 수 없는 차이예요.</p>
+
+          <div class="cta-box">
+            <h3 class="cta-box__title">💡 내 사진, WebP로 바꾸면 얼마나 작아질까</h3>
+            <p class="cta-box__desc">파일을 올리기만 하면 WebP와 원본의 용량 차이를 바로 보여드려요. 여러 장도 한 번에. 사진은 서버로 올라가지 않아요.</p>
+            <a href="./index.html#converter" class="btn btn--primary">🖼️ 이미지 변환기 실행</a>
+          </div>
+
+          <h2 id="compare" class="info-article__title">JPG·PNG와 실제 용량 비교</h2>
+          <p>같은 사진을 각 포맷으로 변환했을 때의 대략적인 용량이에요. (해상도 1920×1080, 품질 85% 기준)</p>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>포맷</th>
+                <th>대략적 용량</th>
+                <th>특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>JPG</td>
+                <td>100 (기준)</td>
+                <td>가장 호환성이 좋지만, 텍스트·로고에 손실이 잘 보여요</td>
+              </tr>
+              <tr>
+                <td>PNG</td>
+                <td>약 400~600</td>
+                <td>무손실, 투명 지원. 용량이 너무 커요</td>
+              </tr>
+              <tr>
+                <td>WebP (손실)</td>
+                <td>약 65~75</td>
+                <td>JPG보다 25~35% 작아요</td>
+              </tr>
+              <tr>
+                <td>WebP (무손실)</td>
+                <td>약 280~420</td>
+                <td>PNG보다 20~30% 작아요</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>표에서 보듯 <strong>손실 압축 쪽에서 압도적인 이득</strong>이 있어요. 일반적인 사진·배경 이미지라면 손실 WebP(품질 85~90%)로 충분하고, 로고·다이어그램처럼 텍스트가 중요한 이미지는 무손실 WebP나 PNG가 남아요.</p>
+
+          <h2 id="features" class="info-article__title">지원 기능 4가지</h2>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>기능</th>
+                <th>지원</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>손실 압축</td>
+                <td>가능. 품질 0~100% 조절</td>
+              </tr>
+              <tr>
+                <td>무손실 압축</td>
+                <td>가능. JPG는 불가능한 기능이에요</td>
+              </tr>
+              <tr>
+                <td>투명 배경(알파 채널)</td>
+                <td>가능. JPG는 투명을 지원하지 않아요</td>
+              </tr>
+              <tr>
+                <td>애니메이션</td>
+                <td>가능. GIF처럼 움직이는 이미지도 작은 용량으로</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>한마디로 <strong>"JPG·PNG·GIF의 장점을 모두 가진 포맷"</strong>이에요. 그래서 웹에서는 WebP 하나로 세 가지 역할을 다 할 수 있어요.</p>
+
+          <h2 id="compat" class="info-article__title">호환성: 어디까지 열릴까</h2>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>환경</th>
+                <th>WebP 지원</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chrome</td>
+                <td>모든 버전</td>
+              </tr>
+              <tr>
+                <td>Edge</td>
+                <td>모든 버전</td>
+              </tr>
+              <tr>
+                <td>Firefox</td>
+                <td>2020년 이후</td>
+              </tr>
+              <tr>
+                <td>Safari (macOS)</td>
+                <td>macOS 14 Sonoma 이후</td>
+              </tr>
+              <tr>
+                <td>Safari (iOS)</td>
+                <td>iOS 14 이후</td>
+              </tr>
+              <tr>
+                <td>구형 환경·일부 사내망</td>
+                <td>미지원 가능. 이럴 때는 JPG 폴백 필요</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>2026년 현재 <strong>대부분의 브라우저에서 문제 없이 열려요</strong>. 다만 100%가 아닌 게 사실이에요. 그래서 웹사이트에서는 <strong>&lt;picture&gt; 태그</strong>로 WebP를 먼저 보여주고, 지원하지 않으면 JPG를 보여주는 방식을 써요.</p>
+          <p>여러분의 경우가 중요해요. 만약 <strong>파일을 누군가에게 전송하거나, 오래된 환경에서 쓸 가능성</strong>이 있다면 WebP 대신 JPG가 더 안전해요. 반대로 웹사이트나 블로그에 올리는 거라면 <a href="./index.html#converter" style="color:var(--c-primary);font-weight:600;text-decoration:underline;">WebP 포맷 변환</a>이 무조건 유리합니다.</p>
+
+          <div class="cta-box cta-box--warm">
+            <h3 class="cta-box__title">💡 WebP↔JPG↔PNG, 한 번에 상호 변환</h3>
+            <p class="cta-box__desc">드래그 앤 드롭으로 여러 장을 올리고 원하는 포맷을 고르면 끝. 품질 슬라이더와 배경색 설정도 있어요.</p>
+            <a href="./index.html#converter" class="btn btn--primary btn--lg">🖼️ 이미지 변환기 실행</a>
+          </div>
+
+          <h2 id="when" class="info-article__title">내가 써야 할 때 vs 아닐 때</h2>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>추천 상황</th>
+                <th>비추천 상황</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>웹사이트·블로그 이미지</td>
+                <td>인쇄용 고해상도 작업물</td>
+              </tr>
+              <tr>
+                <td>사진 다수 보관 (용량 절약)</td>
+                <td>구형 장비·사내망에서 공유</td>
+              </tr>
+              <tr>
+                <td>모바일 앱 에셋</td>
+                <td>전문 사진 작업(원본 보관)</td>
+              </tr>
+              <tr>
+                <td>빠른 전송이 필요한 채팅·메일</td>
+                <td>수정 작업이 계속될 파일</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>보관용 원본</strong>은 무손실 포맷(PNG·TIFF)으로 두고, <strong>전송·게시용</strong>으로 WebP를 만드는 방식이 가장 효율적이에요. 둘 중 하나를 고를 필요 없이 용도별로 나누면 돼요.</p>
+          <p>한 가지 더. <strong>WebP도 손실 압축은 반복 저장할수록 화질이 떨어져요</strong>. JPG처럼 편집할 때마다 다시 저장하지 말고, 작업은 원본으로 하되 최종 결과물을 WebP로 내보내는 방식을 쓰세요.</p>
+
+          <p class="info-article__warn">⚠️ 이 글은 2026년 9월 21일 기준으로 작성됐어요. 브라우저 지원 현황은 계속 바뀌고 있어요. 정확한 호환성은 사용 중인 브라우저의 최신 정보를 확인하세요.</p>
+
+          <div class="blog-related">
+            <h3 class="info-article__title">관련 도구 및 가이드</h3>
+            <div class="blog-related__grid">
+              <a href="./index.html" class="blog-related__card">
+                <strong>🖼️ 이미지 포맷 변환기 (WebP·JPG·PNG)</strong>
+                <span>JPG·PNG·WebP·AVIF·HEIC를 상호 변환하고 실시간으로 용량을 줄여보세요.</span>
+              </a>
+              <a href="./guide-heic.html" class="blog-related__card">
+                <strong>📦 HEIC·AVIF 최신 포맷 가이드</strong>
+                <span>아이폰 사진의 윈도우 호환성 문제와 차세대 고효율 포맷 AVIF를 상세히 비교합니다.</span>
+              </a>
+              <a href="../passport-photo/" class="blog-related__card">
+                <strong>🪪 여권·증명사진 규격 변환기</strong>
+                <span>여권 3.5×4.5cm, 이력서 3×4cm 규격 크롭과 온라인 접수용 용량 관리를 지원합니다.</span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
+        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand"><span class="logo__icon">🖼️</span> <span data-i18n="brand">이미지변환기</span></div>
+      <p class="footer__note" data-i18n="footer.note">100% 클라이언트 사이드 · 서버 저장 제로 · 무료</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="brand">이미지변환기</span> · <a href="../" style="color:inherit;text-decoration:underline;">🧰 계산기 모음</a> · <span data-i18n="footer.disclaimer">본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.</span></p>
+      <p class="footer__links">
+        <a href="../about.html">소개 및 문의</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">이용약관</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/i18n.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

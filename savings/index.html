@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>복리 적금 계산기 및 직장인 연차 수당 시뮬레이터</title>
+  <meta name="description" content="복리와 단리 적금의 이자 차이를 시뮬레이션하고 세후 실수령액을 계산합니다. 직장인 미사용 연차수당과 알바생 주휴수당까지 한 페이지에서 확인하세요." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://example.com/savings/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="계산기 모음" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="복리 적금 계산기 및 직장인 연차 수당 시뮬레이터" />
+  <meta property="og:description" content="복리와 단리 적금의 이자 차이를 시뮬레이션하고 세후 실수령액을 계산합니다. 직장인 미사용 연차수당과 알바생 주휴수당까지 한 페이지에서 확인하세요." />
+  <meta property="og:url" content="https://example.com/savings/" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="복리 적금 계산기 및 연차 수당 시뮬레이터 화면" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="복리 적금 계산기 및 직장인 연차 수당 시뮬레이터" />
+  <meta name="twitter:description" content="단리 vs 복리 이자 비교, 세후 실수령액, 미사용 연차수당과 주휴수당까지 무료 계산." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://example.com/savings/#webapp",
+        "name": "복리 적금 계산기 및 직장인 연차 수당 시뮬레이터",
+        "alternateName": "복리 적금 계산기",
+        "url": "https://example.com/savings/",
+        "description": "단리와 복리 적금의 이자 차이를 시뮬레이션하고 일반과세 및 세금우대 적용 후 세후 실수령액을 계산합니다. 직장인 미사용 연차수당과 알바생 주휴수당까지 한 페이지에서 계산하는 무료 도구.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "ko-KR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "featureList": [
+          "단리 및 복리 이자 비교",
+          "월 적립식 및 거치식 계산",
+          "이자소득세 15.4% 및 세금우대 반영",
+          "미사용 연차수당 환산",
+          "주휴수당 대상 여부 확인",
+          "최저시급 기준 적용"
+        ],
+        "isPartOf": { "@id": "https://example.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://example.com/savings/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "단리와 복리의 차이가 뭔가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "단리는 원금에 대해서만 이자가 붙고, 복리는 이자가 다시 원금에 합쳐져(이자에 이자) 누적됩니다. 복리는 같은 금리와 기간이어도 단리보다 수령액이 커집니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "미사용 연차수당은 어떻게 계산하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "퇴직 시 사용하지 못한 연차에 대해 통상임금(일급기준)으로 정산하여 받을 수 있으며, 본 계산기는 근속기간과 발생 연차, 이미 사용한 연차를 입력해 환산 금액을 보여줍니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <span class="logo__icon">📈</span>
+        <span class="logo__text">복리 적금 계산기</span>
+      </a>
+      <nav class="nav">
+        <a href="../">전체 계산기</a>
+        <a href="#savings">복리 적금</a>
+        <a href="#allowance">연차 · 수당</a>
+        <a href="#guide">복리의 힘</a>
+      </nav>
+      <div class="header__actions">
+        <a href="../" class="btn btn--ghost btn--sm">🧰 계산기 모음</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm">
+      <div class="container hero__inner">
+        <div class="hero__badge">🔒 100% 브라우저 처리 · 금액 입력 정보 저장 없음</div>
+        <h1 class="hero__title">
+          <span>복리 적금 계산기</span>
+          <span class="hero__title--accent">세후 실수령액까지</span>
+        </h1>
+        <p class="hero__desc">단리와 복리의 차이를 시뮬레이션하고, 이자소득세(14%) 또는 비과세 적용 후 실제로 손에 쥐는 금액을 계산해요. 월 적립식과 거치식을 모두 지원합니다.</p>
+      </div>
+    </section>
+
+    <!-- ===================== Savings Calculator ===================== -->
+    <section id="savings" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">📈 복리 · 적금 계산기</h2>
+          <p class="section__desc">월 적립식(적금)과 거치식(예금)을 선택하세요.</p>
+        </div>
+
+        <div class="calc__grid">
+          <!-- Inputs -->
+          <div class="panel">
+            <h3 class="panel__title">적금 조건 입력</h3>
+
+            <div class="field">
+              <label class="field__label">계산 방식</label>
+              <div class="seg" id="ctypeGroup">
+                <button class="seg__btn active" data-ctype="compound">복리 (이자 재투자)</button>
+                <button class="seg__btn" data-ctype="simple">단리</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label">납입 방식</label>
+              <div class="seg" id="ptypeGroup">
+                <button class="seg__btn active" data-ptype="monthly">월 적립식 (적금)</button>
+                <button class="seg__btn" data-ptype="lump">거치식 (예금·목돈)</button>
+              </div>
+            </div>
+
+            <div class="field" id="monthlyField">
+              <label class="field__label" for="monthlyAmount">월 납입액 <span class="field__unit">원</span></label>
+              <input type="text" id="monthlyAmount" class="input" inputmode="numeric" placeholder="예) 500,000" value="500,000" />
+              <div class="quick-amounts" id="monthlyQuick">
+                <button data-mam="100000">10만</button>
+                <button data-mam="300000">30만</button>
+                <button data-mam="500000">50만</button>
+                <button data-mam="1000000">100만</button>
+              </div>
+            </div>
+
+            <div class="field hidden" id="lumpField">
+              <label class="field__label" for="lumpAmount">초기 금액 <span class="field__unit">원</span></label>
+              <input type="text" id="lumpAmount" class="input" inputmode="numeric" placeholder="예) 10,000,000" value="10,000,000" />
+              <div class="quick-amounts" id="lumpQuick">
+                <button data-lam="1000000">100만</button>
+                <button data-lam="5000000">500만</button>
+                <button data-lam="10000000">1천만</button>
+                <button data-lam="100000000">1억</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="compoundRate">연이율 <span class="field__unit">%</span></label>
+              <input type="text" id="compoundRate" class="input" inputmode="decimal" placeholder="예) 3.5" value="3.5" />
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="compoundPeriod">기간 <span class="field__unit">년</span></label>
+              <input type="text" id="compoundPeriod" class="input" inputmode="numeric" placeholder="예) 5" value="5" />
+            </div>
+
+            <div class="field" id="taxField">
+              <label class="field__label">이자소득세 <span class="field__unit">14% (일반 과세)</span></label>
+              <div class="seg" id="taxGroup">
+                <button class="seg__btn active" data-tax="yes">과세 (14%)</button>
+                <button class="seg__btn" data-tax="no">비과세 · 세금우대</button>
+              </div>
+            </div>
+
+            <button id="compoundCalcBtn" class="btn btn--primary btn--lg btn--block">계산하기</button>
+            <p class="field__note field__note--center">🔒 모든 계산은 브라우저 내부에서 처리되며, 어느 서버에도 전송·저장되지 않습니다.</p>
+          </div>
+
+          <!-- Results -->
+          <div class="panel" id="compoundResult">
+            <div class="result-empty">
+              <div class="result-empty__icon">📈</div>
+              <p>조건을 입력하고 <strong>계산하기</strong>를 누르면<br />만기 금액과 이자가 표시됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 작업 D: 정보성 텍스트 -->
+        <section id="guide" class="info-article">
+          <h3 class="info-article__title">📖 단리와 복리, 무엇이 다를까요?</h3>
+          <div class="info-article__body">
+            <h4>단리(Simple Interest)</h4>
+            <p>단리는 <strong>처음에 넣은 원금에만 이자가 붙는</strong> 방식이에요. 예를 들어 1,000만 원을 연 3% 단리로 5년 동안 예금하면, 매년 30만 원씩 5년간 총 150만 원의 이자가 발생해요. 계산이 직관적이고 단기 상품에 많이 쓰여요.</p>
+            <h4>복리(Compound Interest)</h4>
+            <p>복리는 <strong>이자가 발생할 때마다 원금에 더해져서, 그 이자에도 다시 이자가 붙는</strong> 방식이에요. 눈덩이처럼 불어난다고 해서 '눈덩이 효과(Snowball Effect)'라고도 불려요. 같은 1,000만 원을 연 3% 복리로 5년 예금하면 약 159만 원의 이자가 발생해서 단리보다 많아요. 기간이 길수록, 이율이 높을수록 그 격차는 훨씬 커져요.</p>
+            <h4>이자소득세 14%, 꼭 알아두세요</h4>
+            <p>이자를 받을 때는 <strong>이자소득세 14%</strong>(농어촌특별세 0.14% 포함 시 15.4%)를 떼고 받아요. 1천만 원짜리 상품에 100만 원 이자가 발생했다면, 실제로 손에 쥐는 건 약 860만 원의 이자랍니다. 하지만 비과세 상품이나 세금우대종합저축, 연금계좌를 활용하면 이 세금을 줄이거나 없앨 수 있어요. 본 계산기에서 '비과세' 옵션을 켜면 세후 수령액을 바로 비교할 수 있어요.</p>
+            <h4>월 적립식 vs 거치식</h4>
+            <p><strong>월 적립식</strong>은 매월 일정 금액을 부어나가는 적금 방식이고, <strong>거치식</strong>은 목돈을 한 번에 예치해 두는 예금 방식이에요. 월 적립식은 첫 납입액이 가장 오래 이자를 붙이고 마지막 납입액은 1개월만 이자가 붙기 때문에, 같은 연이율이라도 총이자가 거치식보다 적어요. 목돈이 있다면 거치식이, 매월 저축할 여력이 있다면 적금이 유리해요.</p>
+            <p class="info-article__warn">⚠️ 본 계산 결과는 <strong>참고용</strong> 근사치예요. 금융기관의 이율, 이자 계산 주기(일·월·년), 세금 우대 조건에 따라 실제 수령액은 달라질 수 있어요.</p>
+          </div>
+        </section>
+
+        <!-- ===================== Allowance (연차·수당) ===================== -->
+        <div id="allowance" class="section__head" style="margin-top:56px;">
+          <h2 class="section__title">📅 연차수당 · 주휴수당 시뮬레이터</h2>
+          <p class="section__desc">남은 연차를 돈으로 환산하고, 알바생 주휴수당 대상 여부까지 확인하세요.</p>
+        </div>
+
+        <div class="calc__grid">
+          <div class="panel">
+            <h3 class="panel__title">근무 조건 입력</h3>
+
+            <div class="field">
+              <label class="field__label">계산 항목</label>
+              <div class="seg" id="atypeGroup">
+                <button class="seg__btn active" data-atype="annual">연차 수당 (미사용 연차)</button>
+                <button class="seg__btn" data-atype="weekly">주휴수당 (알바비)</button>
+              </div>
+            </div>
+
+            <div class="field" id="annualFields">
+              <div class="field" style="margin-bottom:14px;">
+                <label class="field__label" for="aSalary">월 통상임금 <span class="field__unit">원</span></label>
+                <input type="text" id="aSalary" class="input" inputmode="numeric" placeholder="예) 3,000,000" value="3,000,000" />
+                <p class="field__note">기본급 + 고정 수당을 합친 금액이에요. (식대·차량비 등 비과세 제외)</p>
+              </div>
+              <div class="field-row">
+                <div class="field" style="margin-bottom:0;">
+                  <label class="field__label" for="aTotalDays">총 발생 연차 <span class="field__unit">일</span></label>
+                  <input type="text" id="aTotalDays" class="input" inputmode="numeric" placeholder="예) 15" value="15" />
+                </div>
+                <div class="field" style="margin-bottom:0;">
+                  <label class="field__label" for="aUsedDays">이미 사용 연차 <span class="field__unit">일</span></label>
+                  <input type="text" id="aUsedDays" class="input" inputmode="numeric" placeholder="0" value="0" />
+                </div>
+              </div>
+            </div>
+
+            <div class="field hidden" id="weeklyFields">
+              <div class="field" style="margin-bottom:14px;">
+                <label class="field__label" for="wHourlyPay">시급 <span class="field__unit">원</span></label>
+                <input type="text" id="wHourlyPay" class="input" inputmode="numeric" placeholder="예) 10,030" value="10,030" />
+                <p class="field__note">2026년 최저시급 10,030원이에요.</p>
+              </div>
+              <div class="field-row">
+                <div class="field" style="margin-bottom:0;">
+                  <label class="field__label" for="wHours">일일 근로시간 <span class="field__unit">시간</span></label>
+                  <input type="text" id="wHours" class="input" inputmode="decimal" placeholder="예) 8" value="8" />
+                </div>
+                <div class="field" style="margin-bottom:0;">
+                  <label class="field__label" for="wDays">주당 근무일수 <span class="field__unit">일</span></label>
+                  <input type="text" id="wDays" class="input" inputmode="numeric" placeholder="예) 5" value="5" />
+                </div>
+              </div>
+            </div>
+
+            <button id="allowanceCalcBtn" class="btn btn--primary btn--lg btn--block">계산하기</button>
+          </div>
+
+          <div class="panel" id="allowanceResult">
+            <div class="result-empty">
+              <div class="result-empty__icon">📅</div>
+              <p>조건을 입력하고 <strong>계산하기</strong>를 누르면<br />수당 금액이 표시됩니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Allowance 정보성 텍스트 -->
+        <section class="info-article">
+          <h3 class="info-article__title">📖 연차수당 · 주휴수당 계산하는 법</h3>
+          <div class="info-article__body">
+            <h4>연차수당은 어떻게 계산하나요?</h4>
+            <p>연차수당은 <strong>'1일 치 통상임금 × 남은 연차 일수'</strong>로 계산해요. 1일 치 통상임금은 '월 통상임금 ÷ 21.5일(월 평균 근무일)'로 구하는 것이 일반적이랍니다.</p>
+            <p>예를 들어 월 300만 원을 받고 연차 15일 중 5일만 썼다면, 남은 10일에 대해 약 139만 원의 연차수당을 받을 수 있어요. 퇴사 시 정산하지 않은 연차는 회사가 반드시 지급해야 해요.</p>
+            <h4>주휴수당은 무엇인가요?</h4>
+            <p>주휴수당은 한 주 동안 <strong>소정 근로시간을 15시간 이상</strong> 채우고 일주일에 하루 이상 쉬면 받는 수당이에요. 단기 알바생도 조건만 맞으면 받을 수 있어요.</p>
+            <p>계산식은 <strong>'시급 × (주당 소정근로시간 ÷ 7)'</strong> 형태예요. 본 계산기는 월 기준으로 환산해 보여드려요.</p>
+            <h4>퇴사할 때 꼭 챙기세요</h4>
+            <p>1) 미사용 연차 수당 정산 여부, 2) 주휴수당 포함 여부, 3) 퇴직금(1년 이상 근무 시) — 이 세 가지를 회사에 확인하고, 받지 못했다면 노동청(국번 1350)에 신고할 수 있어요.</p>
+            <p class="info-article__warn">⚠️ 본 계산 결과는 근로기준법의 일반적인 공식을 바탕으로 한 <strong>참고용</strong> 근사치예요. 통상임금 산정 범위, 회사 규정, 단체협약에 따라 실제 금액은 달라질 수 있어요.</p>
+          </div>
+
+          <!-- 심층 가이드 연결 -->
+          <div class="blog-related" style="margin-top: 28px;">
+            <h4 class="blog-related__title">📚 함께 읽으면 도움되는 적금 &amp; 수당 전문 가이드</h4>
+            <div class="blog-related__grid">
+              <a href="./guide-compound.html" class="blog-related__card">
+                <strong>📈 복리의 마법과 72 법칙 가이드</strong>
+                <span>단리와 복리의 세후 실수령액 차이와 원금 2배 달성 공식을 확인하세요</span>
+              </a>
+              <a href="./guide-allowance.html" class="blog-related__card">
+                <strong>📅 2026년 연차수당 &amp; 주휴수당 총정리</strong>
+                <span>미사용 연차 보상금 계산 공식과 주 15시간 이상 근무 시 주휴수당 기준</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
+        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand"><span class="logo__icon">📈</span> 복리 적금 계산기</div>
+      <p class="footer__note">100% 클라이언트 사이드 · 서버 저장 제로 · 완전 무료</p>
+      <p class="footer__copy">© <span id="year"></span> 복리 적금 계산기 · <a href="../" style="color:inherit;text-decoration:underline;">🧰 계산기 모음</a> · 본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.</p>
+      <p class="footer__links">
+        <a href="../about.html">소개 및 문의</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">이용약관</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html">개인정보처리방침</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="../js/savings.js"></script>
+  <script src="../js/allowance.js"></script>
+  <script src="../js/page-savings.js"></script>
+</body>
+</html>

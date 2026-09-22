@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 연봉의 배신, 4대보험 요율과 소득세 공제 후 진짜 실수령액 가이드</title>
+  <meta name="description" content="연봉 4천만 원·6천만 원·1억 원의 실수령액을 4대보험 요율과 소득세 누진세율까지 직접 계산. 비과세 수단으로 실수령액을 올리는 방법도 정리했어요." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../favicon.ico">
+  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
+  <link rel="canonical" href="https://example.com/severance/guide-salary.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="계산기 모음" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="내 연봉의 배신, 4대보험 요율과 소득세 공제 후 진짜 실수령액 가이드" />
+  <meta property="og:description" content="연봉별 실수령액을 4대보험과 소득세 누진세율까지 직접 계산. 비과세 수단으로 실수령액을 올리는 방법." />
+  <meta property="og:url" content="https://example.com/severance/guide-salary.html" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="연봉별 실수령액과 4대보험 공제 가이드" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="내 연봉의 배신, 4대보험 요율과 소득세 공제 후 진짜 실수령액 가이드" />
+  <meta name="twitter:description" content="연봉별 실수령액을 4대보험과 소득세까지 직접 계산해요." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://example.com/severance/guide-salary.html/#article",
+        "headline": "내 연봉의 배신, 4대보험 요율과 소득세 공제 후 진짜 실수령액 가이드",
+        "description": "연봉 4천만 원·6천만 원·1억 원의 실수령액을 4대보험 요율과 소득세 누진세율까지 직접 계산. 비과세 수단으로 실수령액을 올리는 방법도 정리했어요.",
+        "url": "https://example.com/severance/guide-salary.html",
+        "inLanguage": "ko-KR",
+        "datePublished": "2026-09-21",
+        "dateModified": "2026-09-21",
+        "author": { "@type": "Person", "name": "계산기 모음" },
+        "publisher": { "@type": "Organization", "name": "계산기 모음" },
+        "isPartOf": { "@id": "https://example.com/#website" },
+        "about": { "@id": "https://example.com/severance/#webapp-salary" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://example.com/severance/guide-salary.html/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "실수령액이 연봉보다 훨씬 적은 이유가 뭔가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "국민연금·건강보험·장기요양·고용보험 4대보험과 근로소득세·지방소득세가 매달 원천징수되기 때문입니다. 합하면 연봉의 약 17~25%가 빠져나갑니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "실수령액을 높이는 가장 효과적인 방법은?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "식대·차량유지비 같은 비과세 수당을 활용하고, 연금저축·신용카드 공제로 과세표준을 낮추는 것입니다. 단, 비과세 한도와 공제 한도를 초과하면 효과가 줄어듭니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <span class="logo__icon">💸</span>
+        <span class="logo__text">연봉 실수령액 계산기</span>
+      </a>
+      <nav class="nav">
+        <a href="../">전체 계산기</a>
+        <a href="./">계산기로 이동</a>
+        <a href="#by-salary">연봉별 실수령액</a>
+      </nav>
+      <div class="header__actions">
+        <a href="./#salary" class="btn btn--ghost btn--sm">💸 계산기 실행</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero hero--sm blog-hero">
+      <div class="container hero__inner">
+        <div class="hero__badge">📖 연봉 가이드 · 2026년 9월 21일 작성</div>
+        <h1 class="hero__title">
+          <span>연봉 명세서에 속았다면</span>
+          <span class="hero__title--accent">진짜 내 통장 금액 계산</span>
+        </h1>
+        <p class="hero__desc">"연봉 5천만 원"이라는 말만 듣고 계약서에 도장을 찍었는데, 매달 통장에 들어오는 건 330만 원 남짍. 왜 이렇게 차이가 나는지, 어디로 빠져나가는지 하나씩 짚어봤어요.</p>
+        <div class="hero__cta">
+          <a href="#by-salary" class="btn btn--primary btn--lg">연봉별 비교 보기</a>
+          <a href="./index.html#salary" class="btn btn--soft btn--lg">내 연봉 계산하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Article ===================== -->
+    <section class="section">
+      <div class="container">
+        <article class="info-article" style="max-width: 820px; margin: 0 auto;">
+
+          <div class="blog-meta">
+            <span class="blog-meta__tag">실수령액</span>
+            <span class="blog-meta__tag">4대보험</span>
+            <span class="blog-meta__tag">소득세</span>
+            <span>작성일 2026-09-21</span>
+          </div>
+
+          <div class="blog-toc">
+            <h4>목차</h4>
+            <ol>
+              <li><a href="#why">명목 연봉과 실수령액의 갭</a></li>
+              <li><a href="#insurance">4대보험: 어디로 빠지나</a></li>
+              <li><a href="#tax">근로소득세와 누진세율</a></li>
+              <li><a href="#by-salary">연봉별 실수령액 비교</a></li>
+              <li><a href="#raise">실수령액을 올리는 4가지</a></li>
+            </ol>
+          </div>
+
+          <h2 id="why" class="info-article__title">명목 연봉과 실수령액의 갭</h2>
+          <p>회사가 제시하는 연봉은 <strong>"내가 회사에 지급받기로 한 총액"</strong>일 뿐, 내가 쓸 수 있는 돈이 아닙니다. 여기서 법정 공제(4대보험·소득세)가 빠지고, 추가로 내가 선택한 공제까지 들어가면 <a href="./index.html#salary" style="color:var(--c-primary);font-weight:700;text-decoration:underline;">실수령액</a>은 연봉의 <strong>약 75~83%</strong> 수준으로 줄어듭니다. 연봉이 높을수록 세율이 높아져 비율은 더 떨어져요.</p>
+          <p>같은 연봉이라도 <strong>월 급여 구성</strong>에 따라 실수령액이 다릅니다. 비과세 수당(식대, 차량유지비)이 포함되어 있으면 그만큼 과세 대상이 줄어 실수령액이 올라가요. 이직 면접에서 "연봉 5천"과 "연봉 5천(비과세 60만 포함)"은 같은 말이 아닙니다. 협상할 때 꼭 <strong>비과세 구성</strong>까지 물어봐야 해요.</p>
+
+          <h2 id="insurance" class="info-article__title">4대보험: 어디로 빠지나</h2>
+          <p>4대보험은 <strong>나와 회사가 각각 일부를 부담</strong>합니다. 내 급여에서 빠지는 건 "본인 부담분"이에요.</p>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>보험</th>
+                <th>본인 부담률(2026)</th>
+                <th>용도</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>국민연금</td>
+                <td>4.5%</td>
+                <td>노후 연금. 부과 한도(상한액)가 있어서 고소득자는 비율이 떨어져요</td>
+              </tr>
+              <tr>
+                <td>건강보험</td>
+                <td>약 3.49%</td>
+                <td>의료비. 매년 보험료율이 고시돼요</td>
+              </tr>
+              <tr>
+                <td>장기요양보험</td>
+                <td>건강보험료의 12.95%</td>
+                <td>노인 장기요양. 건강보험료에 곱해서 계산</td>
+              </tr>
+              <tr>
+                <td>고용보험</td>
+                <td>0.9%(일반)</td>
+                <td>실업급여. 일용직·75세 이상은 적용 제외</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>국민연금은 과세표준(소득월액)이 <strong>상한액을 초과하면 그 이상에는 부과되지 않습니다</strong>. 그래서 연봉이 아주 높은 분들은 4대보험 총 공제액이 월급의 10% 안쪽으로 떨어지기도 해요. 반대로 중간 소득자가 체감하는 공제 비율이 가장 큽니다.</p>
+
+          <div class="cta-box">
+            <h3 class="cta-box__title">💡 내 연봉, 3초 만에 진짜 실수령액으로</h3>
+            <p class="cta-box__desc">연봉과 비과세 수단, 공제 항목만 입력하면 4대보험과 세금이 반영된 실수령액이 바로 나와요. 직장인·프리랜서 모드를 지원해요.</p>
+            <a href="./index.html#salary" class="btn btn--primary">💸 연봉 실수령액 계산기 실행</a>
+          </div>
+
+          <h2 id="tax" class="info-article__title">근로소득세와 누진세율</h2>
+          <p>근로소득세는 <strong>"근로소득금액 × 세율 − 누진공제액"</strong>으로 계산해요. 근로소득금액은 총급여에서 근로소득공제를 뺀 금액입니다. 세율은 과세표준 구간에 따라 6%에서 45%까지 누진 방식이에요.</p>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>과세표준</th>
+                <th>세율</th>
+                <th>누진공제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1,200만 원 이하</td><td>6%</td><td>0원</td></tr>
+              <tr><td>4,600만 원 이하</td><td>15%</td><td>108만 원</td></tr>
+              <tr><td>8,800만 원 이하</td><td>24%</td><td>522만 원</td></tr>
+              <tr><td>1.5억 원 이하</td><td>35%</td><td>1,490만 원</td></tr>
+              <tr><td>3억 원 이하</td><td>38%</td><td>1,940만 원</td></tr>
+              <tr><td>5억 원 이하</td><td>40%</td><td>2,540만 원</td></tr>
+              <tr><td>5억 원 초과</td><td>45%</td><td>5,040만 원</td></tr>
+            </tbody>
+          </table>
+          <p>여기에 <strong>지방소득세(세액의 10%)</strong>가 붙습니다. 그리고 여기서 계산된 "기납부세액"과 5월에 정산하는 "연말정산 결정세액"이 다르기 때문에, 5월에 환급을 받거나 추가로 내는 일이 생겨요. 매달 떼이는 세금은 <strong>가불</strong> 같은 개념이라 보면 됩니다.</p>
+
+          <h2 id="by-salary" class="info-article__title">연봉별 실수령액 비교</h2>
+          <p>일반적인 직장인(비과세 없음, 공제 없음) 기준으로 대략적인 실수령액을 비교해 봤어요.</p>
+          <table class="blog-compare">
+            <thead>
+              <tr>
+                <th>명목 연봉</th>
+                <th>월 실수령액</th>
+                <th>공제율</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>3,000만 원</td><td>약 210만 원</td><td>약 16%</td></tr>
+              <tr><td>4,000만 원</td><td>약 270~280만 원</td><td>약 17~19%</td></tr>
+              <tr><td>5,000만 원</td><td>약 330~340만 원</td><td>약 19~20%</td></tr>
+              <tr><td>6,000만 원</td><td>약 390~400만 원</td><td>약 20~22%</td></tr>
+              <tr><td>8,000만 원</td><td>약 510~520만 원</td><td>약 23~24%</td></tr>
+              <tr><td>1억 원</td><td>약 620~640만 원</td><td>약 24~26%</td></tr>
+            </tbody>
+          </table>
+          <p>보시다시피 연봉이 오를 때마다 <strong>실수령액의 증가 폭이 명목 연봉의 증가 폭보다 작습니다</strong>. 연봉 4천에서 5천으로 1천이 오르면 실수령액은 약 55만 원 정도 오르지만, 8천에서 1억으로 2천이 오르면 실수령액은 약 110만 원 정도 오릅니다. 이걸 <strong>"세금의 진도율"</strong>이라고 부르기도 해요.</p>
+
+          <h2 id="raise" class="info-article__title">실수령액을 올리는 4가지</h2>
+          <p>1. <strong>비과세 수단 활용</strong> — 식대(월 10만 원), 차량유지비(월 20만 원), 자가운전보조금 등. 과세 대상에서 빠지니까 세금과 4대보험 부담이 줄어 실수령액이 그대로 올라가요. 회사가 지원하는 항목인지 먼저 확인.</p>
+          <p>2. <strong>연말정산 공제 챙기기</strong> — 부양가족 공제, 신용카드·체크카드 공제, 의료비·교육비 공제. 특히 월세 세액공제(월 75만 원 한도 내 15~20%)는 꼭 챙기세요.</p>
+          <p>3. <strong>연금저축펀드·개인연금</strong> — 연 900만 원 한도 내에서 13.2~16.5% 세액공제. 과세표준을 낮춰 세율 구간 자체를 내릴 수 있어요.</p>
+          <p>4. <strong>고소득자는 부부 합산·장기집필 중개</strong> — 배우자 소득 분산, ISA 계좌, 장기펀드 소득 분리과세 등. 단, 8천만 원 이상의 급여 소득자는 공제 효율이 떨어지니 전문가 상담이 필요해요.</p>
+          <p>주의할 점은 <strong>세액공제와 비과세는 공제 한도가 있다</strong>는 거예요. 한도를 초과한 식대는 과세 대상이 되고, 신용카드 공제 한도를 넘으면 공제가 줄어듭니다. <a href="./index.html#salary" style="color:var(--c-primary);font-weight:700;text-decoration:underline;">연봉 실수령액 계산기</a>에 내 조건을 그대로 넣어보면 한도 내에서 얼마나 아낄 수 있는지 바로 나와요.</p>
+
+          <div class="cta-box cta-box--warm">
+            <h3 class="cta-box__title">💡 이직·연봉 협상 전, 제안받은 연봉의 진짜 가치 확인</h3>
+            <p class="cta-box__desc">두 회사의 연봉 제안을 비교하거나, 비과세 수단을 추가했을 때 실수령액이 얼마나 오르는지 바로 계산해요.</p>
+            <a href="./index.html#salary" class="btn btn--primary btn--lg">💸 연봉 실수령액 계산기 실행</a>
+          </div>
+
+          <p class="info-article__warn">⚠️ 이 글의 공제 요율과 세율은 2026년 9월 21일 기준이에요. 보험료율·세율·비과세 한도는 매년 변경되며, 개인의 공제 항목에 따라 실수령액이 달라져요. 정확한 금액은 국세청·고용노동부 공식 자료와 회사 급여 담당자에게 확인하세요.</p>
+
+          <!-- 내부 링크 선순환: 관련 도구 및 자매 가이드 -->
+          <div class="blog-related">
+            <h3 class="info-article__title">관련 도구 및 추천 가이드</h3>
+            <div class="blog-related__grid">
+              <a href="./index.html" class="blog-related__card">
+                <strong>💸 연봉 실수령액 계산기 (메인 도구)</strong>
+                <span>4대보험·소득세·비과세 옵션을 반영해 진짜 통장 입금액을 3초 만에 계산해요.</span>
+              </a>
+              <a href="./guide.html" class="blog-related__card">
+                <strong>📖 퇴직금 지급 기준 &amp; 계산 가이드</strong>
+                <span>퇴사할 때 챙겨야 할 퇴직금 지급 조건, 평균임금 산정식과 서류를 확인하세요.</span>
+              </a>
+              <a href="../savings/" class="blog-related__card">
+                <strong>📅 연차수당 · 주휴수당</strong>
+                <span>퇴사 전 정산받아야 할 미사용 연차 보상금과 알바 주휴수당을 함께 확인해요.</span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
+        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand"><span class="logo__icon">💸</span> 퇴직금 계산기</div>
+      <p class="footer__note">100% 클라이언트 사이드 · 서버 저장 제로 · 완전 무료</p>
+      <p class="footer__copy">© <span id="year"></span> 퇴직금 계산기 · <a href="../" style="color:inherit;text-decoration:underline;">🧰 계산기 모음</a> · 본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.</p>
+      <p class="footer__links">
+        <a href="../about.html">소개 및 문의</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../terms.html">이용약관</a>
+        <span style="color:#ccc;margin:0 6px;">|</span>
+        <a href="../privacy.html">개인정보처리방침</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status"></div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

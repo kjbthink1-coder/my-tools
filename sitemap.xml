@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  ⚠️  SITEMAP.XML 도메인 치환 안내 (반드시 읽고 수정하세요)
+  ============================================================================
+  아래에 있는 모든  https://yourdomain.com  은 가상(임시) 도메인입니다.
+  실제 도메인을 구매/연결한 다음, 이 파일 안의 yourdomain.com 을
+  실제 도메인으로 모두 찾아바꾸기 해주세요. (총 7곳)
+
+  예) https://yourdomain.com          ➜  https://mytools.kr
+      https://yourdomain.com/loan/    ➜  https://mytools.kr/loan/
+  ============================================================================
+  ⚠️  원본 코드에서 yourdomain.com 뒤에 슬래시(/)가 빠진 URL 오타를 바로잡았습니다.
+      yourdomain.comloan/  (X)   ➜   yourdomain.com/loan/  (O)
+      도메인을 치환하실 때 슬래시가 다시 사라지지 않도록 주의해 주세요.
+  ============================================================================
+-->
+<urlset xmlns="http://sitemaps.org" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- 1. 메인 허브 페이지 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/og-image.png</image:loc>
+      <image:title>직장인 금융 계산기 &amp; 이미지 변환 도구 모음</image:title>
+    </image:image>
+  </url>
+
+  <!-- 2. 대출 이자 계산기 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/loan/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 2-1. 대출 이자 비교 가이드 (블로그형 정보성 문서) -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/loan/guide.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 2-2. 중도상환수수료 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/loan/guide-fee.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 3. 복리 적금 + 연차·수당 계산기 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/savings/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 3-1. 복리의 마법 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/savings/guide-compound.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 3-2. 연차수당·주휴수당 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/savings/guide-allowance.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 4. 퇴직금 + 연봉 실수령액 계산기 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/severance/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 4-1. 퇴직금 지급 기준 가이드 (블로그형 정보성 문서) -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/severance/guide.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 4-2. 연봉 실수령액 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/severance/guide-salary.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 5. 여권·증명사진 규격 변환기 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/passport-photo/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 5-1. 여권사진 규격 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/passport-photo/guide-passport.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 5-2. 이력서·민증 사진 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/passport-photo/guide-id.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 6. 일반 이미지 포맷 변환기 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/image-converter/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 6-1. WebP 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/image-converter/guide-webp.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 6-2. HEIC·AVIF 가이드 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/image-converter/guide-heic.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 7. 개인정보처리방침 (애드센스 승인 필수) -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/privacy.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/og-image.png</image:loc>
+      <image:title>직장인 금융 계산기 &amp; 이미지 변환 도구 모음</image:title>
+    </image:image>
+  </url>
+
+  <!-- 8. 서비스 소개 및 문의 (애드센스 신뢰도 E-E-A-T 필수) -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/about.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 9. 이용약관 및 면책조항 -->
+  <url>
+    <!-- ⚠️ 도메인 치환 대상: yourdomain.com -->
+    <loc>https://yourdomain.com/terms.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
