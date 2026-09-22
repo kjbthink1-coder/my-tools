@@ -52,11 +52,11 @@
   ---------------------------------------------------------------- */
   function handleFile(file) {
     if (!file || !/^image\//.test(file.type)) {
-      el.hint.textContent = "⚠️ 이미지 파일만 올 수 있어요.";
+      el.hint.textContent = window.I18n ? window.I18n.t("crop.msg.only.image") : "⚠️ Only image files are supported.";
       el.hint.style.color = "var(--c-err)";
       return;
     }
-    el.hint.textContent = "🔒 사진은 서버에 전송되지 않고 브라우저에서만 잘려요.";
+    el.hint.textContent = window.I18n ? window.I18n.t("crop.privacy") : "🔒 Photos are processed locally in your browser only.";
     el.hint.style.color = "";
     state.fileName = file.name.replace(/\.[^.]+$/, "") || "photo";
 
@@ -85,7 +85,7 @@
       el.downloadBtn.disabled = false;
     };
     img.onerror = () => {
-      el.hint.textContent = "⚠️ 이 사진은 열 수 없어요. 다른 파일을 올려주세요.";
+      el.hint.textContent = window.I18n ? window.I18n.t("crop.msg.load.fail") : "⚠️ Failed to load this photo. Please try another.";
       el.hint.style.color = "var(--c-err)";
     };
     img.src = url;
@@ -269,20 +269,21 @@
   async function run() {
     if (!state.img) return;
     el.downloadBtn.disabled = true;
-    el.downloadBtn.textContent = "✂️ 자르는 중...";
+    el.downloadBtn.textContent = window.I18n ? window.I18n.t("crop.msg.cropping") : "✂️ Cropping...";
     try {
       const blob = await buildOutput();
       const ext = state.format === "jpeg" ? "jpg" : state.format;
       download(blob, state.fileName + "-" + state.preset + "-" + state.targetW + "x" + state.targetH + "." + ext);
-      el.hint.textContent =
-        "✅ 완료! " + state.targetW + "×" + state.targetH + "px · " + fmtBytes(blob.size) + "로 저장했어요.";
+      el.hint.textContent = window.I18n
+        ? window.I18n.t("crop.msg.done", { w: state.targetW, h: state.targetH, size: fmtBytes(blob.size) })
+        : "✅ Done! " + state.targetW + "×" + state.targetH + "px · " + fmtBytes(blob.size);
       el.hint.style.color = "var(--c-ok)";
     } catch (e) {
-      el.hint.textContent = "⚠️ 자르기에 실패했어요. 다시 시도해 주세요.";
+      el.hint.textContent = window.I18n ? window.I18n.t("crop.msg.crop.fail") : "⚠️ Failed to crop. Please try again.";
       el.hint.style.color = "var(--c-err)";
     } finally {
       el.downloadBtn.disabled = false;
-      el.downloadBtn.textContent = "✂️ 자르고 다운로드";
+      el.downloadBtn.textContent = window.I18n ? window.I18n.t("crop.download") : "✂️ Crop & Download";
     }
   }
 
@@ -395,4 +396,13 @@
 
   injectHandles();
   bind();
+
+  window.crop = {
+    onLangChange() {
+      if (!state.img) {
+        el.hint.textContent = window.I18n.t("crop.privacy");
+      }
+      el.downloadBtn.textContent = window.I18n.t("crop.download");
+    }
+  };
 })();
