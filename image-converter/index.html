@@ -1,464 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image Converter - Free PNG, JPG, WebP, AVIF, HEIC Batch Converter</title>
-  <meta name="description" content="Free online batch image converter. Convert PNG, JPG, WebP, AVIF, GIF, BMP, ICO & HEIC directly in your browser. Resize, compress quality, change background and crop ID photos locally." />
+  <title>살라툴 이미지 스튜디오 - 블로그 상위노출 & 애드센스 사진 최적화 · EXIF 스튜디오</title>
+  <meta name="description" content="블로그 상위 노출과 애드센스 승인을 위한 프로 크리에이터 이미지 스튜디오. AI 흔적·메타데이터 100% 무결 세탁, 최신 갤럭시·아이폰 실촬영 EXIF & GPS 위치 주입, 1200px 300KB 블로그 규격 자동 정리. 100% 브라우저 로컬 안전 처리." />
   <meta name="robots" content="index, follow" />
-  <meta name="naver-site-verification" content="93c583a834dca0dfcd0e19b6dd1d1ed112e6b1de" />
+  <link rel="canonical" href="https://salartool.com/image-converter/" />
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="../favicon.ico">
-  <link rel="mask-icon" href="../favicon.svg" color="#3B5BDB">
-  <link rel="canonical" href="https://salartool.com/image-converter/" />
+  
+  <!-- Fonts & Global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260922v3" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./css/studio.css" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Image Converter" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Free Image Converter - JPG PNG WebP AVIF HEIC" />
-  <meta property="og:description" content="Batch convert PNG, JPG, WebP, AVIF, GIF, BMP, ICO and HEIC. Adjust quality, size, and background without uploading to any server." />
+  <meta property="og:site_name" content="살라툴" />
+  <meta property="og:title" content="살라툴 이미지 스튜디오 - 블로그 상위노출 & 애드센스 사진 최적화" />
+  <meta property="og:description" content="AI 메타데이터 무결 세탁, 최신 스마트폰 EXIF·GPS 위치 생성, 1200px 300KB 블로그 규격화. 100% 브라우저 로컬 처리." />
   <meta property="og:url" content="https://salartool.com/image-converter/" />
   <meta property="og:image" content="https://salartool.com/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Image Converter - In-browser batch conversion" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Image Converter - JPG PNG WebP AVIF HEIC" />
-  <meta name="twitter:description" content="Batch convert PNG, JPG, WebP, AVIF, HEIC with compression, resizing and background fill. 100% private in-browser." />
-  <meta name="twitter:image" content="https://salartool.com/og-image.png" />
-
-  <!-- Schema.org structured data -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://salartool.com/image-converter/#webapp",
-        "name": "Image Converter",
-        "alternateName": "Free Image Converter - JPG PNG WebP AVIF HEIC",
-        "url": "https://salartool.com/image-converter/",
-        "description": "Free client-side batch image converter supporting JPG, PNG, WebP, AVIF, GIF, BMP, ICO and HEIC formats. Resize, compress quality, and crop ID photos locally in the browser.",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Web Browser",
-        "browserRequirements": "Requires JavaScript. Requires HTML5.",
-        "inLanguage": ["en", "ko-KR"],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "featureList": [
-          "Convert between JPG, PNG, WebP, AVIF, GIF, BMP, ICO",
-          "HEIC iPhone photo conversion",
-          "Batch multi-file upload and processing",
-          "Custom quality compression slider",
-          "Custom resize and background filling",
-          "One-click batch ZIP download",
-          "ID and Passport photo cropping",
-          "100% client-side with zero server storage"
-        ],
-        "isPartOf": { "@id": "https://salartool.com/#website" }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://salartool.com/image-converter/#faqpage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are my files stored on a server?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Every conversion happens inside your browser and no file is ever transmitted over the internet. Close the tab and everything is gone."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does it convert HEIC (iPhone photos)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. HEIC/HEIF files can be converted to JPG, PNG, WEBP and more. We recommend a modern browser such as Chrome, Edge or Safari."
-            }
-          }
-        ]
-      }
-    ]
+    "@type": "WebApplication",
+    "name": "살라툴 이미지 스튜디오",
+    "url": "https://salartool.com/image-converter/",
+    "description": "블로그 상위노출 및 애드센스 사진 규격화, EXIF 메타데이터 세탁 및 최신 스마트폰 GPS 주입 도구",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
   }
   </script>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3243686996042007"
-     crossorigin="anonymous"></script>
 
-  <!-- Inlined i18n to guarantee immediate, cache-proof language switching -->
-  <script>
-  const I18N = {
-    ko: {
-      "brand": "이미지변환기",
-      "nav.convert": "변환하기",
-      "nav.idphoto": "🪪 증명사진",
-      "nav.features": "기능",
-      "nav.faq": "FAQ",
-      "nav.cta": "시작하기",
-      "hero.badge": "🔒 100% 브라우저 처리 · 서버 저장 없음",
-      "hero.title1": "이미지 변환은",
-      "hero.title2": "클릭 한 번이면 끝!",
-      "hero.desc": "PNG, JPG, WEBP, AVIF, GIF, BMP, ICO까지. 여러 장을 한 번에 변환하고, 품질·크기·배경까지 내 마음대로. 파일은 내 컴퓨터에서만 처리됩니다.",
-      "hero.cta1": "무료로 변환하기",
-      "hero.cta2": "기능 둘러보기",
-      "hero.supports": "지원 포맷",
-      "convert.title": "이미지 변환하기",
-      "convert.desc": "아래 영역에 파일을 끌어다 놓거나 클릭해서 선택하세요.",
-      "drop.title": "여기로 끌어다 놓으세요",
-      "drop.sub": "또는 클릭해서 파일 선택 · 여러 장 가능",
-      "drop.hint": "지원: PNG · JPG · WEBP · AVIF · GIF · BMP · ICO · HEIC · TIFF",
-      "drop.aria": "파일 선택",
-      "opt.title": "변환 설정",
-      "opt.format": "변환할 포맷",
-      "opt.quality": "품질 (압축률)",
-      "opt.quality.low": "압축↑",
-      "opt.quality.high": "고품질",
-      "opt.resize": "이미지 크기",
-      "opt.resize.none": "원본 유지",
-      "opt.resize.ratio": "비율로",
-      "opt.resize.custom": "직접 지정",
-      "opt.resize.scale": "배율",
-      "opt.resize.w": "가로",
-      "opt.resize.h": "세로",
-      "opt.resize.keep": "비율 유지",
-      "opt.bg": "배경 (투명 → 채우기)",
-      "opt.bg.fill": "배경색으로 채우기",
-      "opt.bg.note": "PNG·WEBP·GIF는 투명을 유지할 수 있어요. JPG·BMP·ICO는 투명을 지원하지 않아 배경색이 필요합니다.",
-      "opt.bg.title": "배경색",
-      "opt.exif": "메타데이터 (EXIF)",
-      "opt.exif.remove": "제거 (용량↓)",
-      "opt.exif.keep": "유지 (JPG)",
-      "opt.convert": "변환 시작",
-      "opt.privacy": "🔒 모든 변환은 브라우저 내부에서 처리되며, 어느 서버에도 전송·저장되지 않습니다.",
-      "list.title": "파일 목록",
-      "list.clear": "전체 삭제",
-      "list.total": "전체 용량 변화",
-      "list.zip": "전체 ZIP 다운로드",
-      "list.each": "각각 다운로드",
-      "ad.text": "",
-      "crop.title": "🪪 증명사진 · 여권사진 규격 맞추기",
-      "crop.desc": "사진을 올리고 규격을 고르면, 점선 가이드에 맞춰 영역을 드래그해서 자를 수 있어요. 용량까지 알아서 줄여드려요.",
-      "crop.step1": "1. 사진 업로드",
-      "crop.drop.aria": "크롭할 파일 선택",
-      "crop.drop.title": "증명사진으로 만들 사진을 올려주세요",
-      "crop.drop.sub": "또는 클릭해서 파일 선택",
-      "crop.step2": "2. 용도 선택 (규격 프리셋)",
-      "crop.preset.passport": "여권 사진",
-      "crop.preset.resume": "이력서 사진",
-      "crop.preset.visa": "미국 비자",
-      "crop.preset.idcard": "신분증",
-      "crop.preset.profile": "프로필(정방)",
-      "crop.preset.custom": "직접 지정",
-      "crop.preset.custom.sub": "픽셀 입력",
-      "crop.custom.w": "가로 px",
-      "crop.custom.h": "세로 px",
-      "crop.step3": "3. 영역 선택",
-      "crop.stage.empty": "사진을 올리면 이곳에 미리보기가 나와요.<br />점선 박스를 드래그해서 얼굴 영역을 맞춰주세요.",
-      "crop.step4": "4. 출력 품질 · 목적",
-      "crop.step5": "5. 저장 포맷",
-      "crop.download": "✂️ 자르고 다운로드",
-      "crop.privacy": "🔒 사진은 서버에 전송되지 않고 브라우저에서만 잘려요.",
-      "crop.msg.only.image": "⚠️ 이미지 파일만 올 수 있어요.",
-      "crop.msg.load.fail": "⚠️ 이 사진은 열 수 없어요. 다른 파일을 올려주세요.",
-      "crop.msg.cropping": "✂️ 자르는 중...",
-      "crop.msg.done": "✅ 완료! {w}×{h}px · {size}로 저장했어요.",
-      "crop.msg.crop.fail": "⚠️ 자르기에 실패했어요. 다시 시도해 주세요.",
-      "feat.title": "왜 이 이미지변환기인가요?",
-      "feat.desc": "설치도, 가입도, 서버 업로드도 필요 없어요.",
-      "feat.f1.t": "압도적으로 빠르고 가벼움",
-      "feat.f1.d": "내 PC의 브라우저가 직접 변환합니다. 업로드 대기 시간이 0초, 여러 장도 찰나에.",
-      "feat.f2.t": "개인정보 100% 보호",
-      "feat.f2.d": "사진이 서버로 한 장도 올라가지 않습니다. 캡처, 유출, 추적 걱정 끝.",
-      "feat.f3.t": "다양한 포맷 지원",
-      "feat.f3.d": "PNG · JPG · WEBP · AVIF · GIF · BMP · ICO 출력은 물론 HEIC·TIFF 입력까지.",
-      "feat.f4.t": "세부 설정 자유로움",
-      "feat.f4.d": "품질, 리사이즈, 배경 채우기, EXIF 유지/제거까지 디테일하게.",
-      "feat.f5.t": "일괄 변환 & ZIP",
-      "feat.f5.d": "수십 장도 드래그 한 번에. 결과는 ZIP으로 한 번에 받으세요.",
-      "feat.f6.t": "완전 무료 · 횟수 제한 없음",
-      "feat.f6.d": "회원가입도 결제도 필요 없어요. 몇 번이든 무제한으로 사용하세요.",
-      "faq.title": "자주 묻는 질문",
-      "faq.q1": "파일이 서버에 저장되나요?",
-      "faq.a1": "아니요. 모든 변환은 브라우저 안에서만 처리되고, 어떤 파일도 인터넷으로 전송되지 않습니다. 페이지를 닫으면 모두 사라져요.",
-      "faq.q2": "HEIC(iPhone 사진)도 변환되나요?",
-      "faq.a2": "네. HEIC/HEIF 파일을 JPG·PNG·WEBP 등으로 변환할 수 있습니다. 최신 브라우저(Chrome·Edge·Safari)를 권장해요.",
-      "faq.q3": "한 번에 몇 장까지 변환할 수 있나요?",
-      "faq.a3": "장당 제한은 없습니다. 단, 매우 많은 파일은 PC 성능에 따라 시간이 조금 걸릴 수 있어요.",
-      "faq.q4": "AVIF는 모든 브라우저에서 되나요?",
-      "faq.a4": "AVIF 저장은 Chrome 85+, Edge, Opera 등에서 지원합니다. Safari/Firefox에서는 다른 포맷을 선택해 주세요.",
-      "faq.q5": "변환 후 화질이 떨어져요.",
-      "faq.a5": "품질 슬라이더를 90~100%로 올려 보세요. PNG는 무손실이라 화질 손실이 아예 없습니다.",
-      "guide.title": "📚 함께 읽으면 도움되는 이미지 포맷 전문 가이드",
-      "guide.webp.title": "🖼️ WebP란? JPG·PNG 대신 써야 하는 이유",
-      "guide.webp.desc": "웹사이트 속도를 높이는 압축 원리와 호환성, 실무 활용법 총정리",
-      "guide.heic.title": "📱 HEIC·AVIF 호환성 완벽 해결 가이드",
-      "guide.heic.desc": "아이폰 HEIC 사진이 윈도우에서 안 열릴 때 해결하는 3가지 방법",
-      "guide.exif.title": "📍 사진 속 집 주소·GPS 위치 EXIF 메타데이터 삭제법",
-      "guide.exif.desc": "스마트폰 사진 속 위도·경도 정보, 브라우저 1초 삭제로 개인정보 보호",
-      "guide.comp.title": "⚡ 이미지 압축 품질 80%의 법칙 & 용량 절감 노하우",
-      "guide.comp.desc": "화질 저하 없이 웹 로딩 속도를 극대화하는 WebP·JPG 최적 압축 스위트스팟",
-      "guide.webp.url": "./guide-webp.html",
-      "guide.heic.url": "./guide-heic.html",
-      "guide.exif.url": "./guide-exif.html",
-      "guide.comp.url": "./guide-compression.html",
-      "footer.note": "100% 클라이언트 사이드 · 서버 저장 제로 · 무료",
-      "footer.alltools": "🧰 계산기 모음",
-      "footer.disclaimer": "본 사이트는 개인 개발자가 운영하는 무료 도구 사이트이며, 실제 금융 거래 및 법적 효력은 해당 기관의 기준을 따릅니다.",
-      "footer.about": "소개 및 문의",
-      "footer.terms": "이용약관",
-      "footer.privacy": "개인정보처리방침",
-      "overlay.convert": "변환 중입니다...",
-      "msg.format.note.transparent": "JPG·BMP·ICO는 투명을 지원하지 않아 배경색으로 채워집니다.",
-      "msg.format.note.lossless": "무손실 포맷입니다. 품질 설정은 적용되지 않아요.",
-      "msg.format.note.quality": "품질 슬라이더로 압축률을 조절하세요.",
-      "msg.no.file": "파일을 먼저 선택해 주세요.",
-      "msg.converting": "변환 중...",
-      "msg.done": "변환 완료! 총 {n}장",
-      "msg.fail": "{name} 변환 실패",
-      "msg.empty.result": "변환 결과가 없습니다.",
-      "msg.cleared": "목록을 비웠습니다.",
-      "msg.zip.done": "ZIP 다운로드 완료!",
-      "msg.zip.fail": "ZIP 생성 실패",
-      "msg.downloading": "{n}장을 각각 다운로드합니다...",
-      "msg.drop.only.images": "이미지 파일만 넣을 수 있어요.",
-      "msg.added": "{n}장 추가됨",
-      "msg.limit": "파일이 너무 많아요. 50장 이하로 넣어주세요."
-    },
-    en: {
-      "brand": "Image Converter",
-      "nav.convert": "Convert",
-      "nav.idphoto": "🪪 ID Photo",
-      "nav.features": "Features",
-      "nav.faq": "FAQ",
-      "nav.cta": "Get Started",
-      "hero.badge": "🔒 100% in-browser · never uploaded",
-      "hero.title1": "Convert images in",
-      "hero.title2": "just one click!",
-      "hero.desc": "PNG, JPG, WEBP, AVIF, GIF, BMP and ICO. Batch convert many files at once with full control over quality, size and background. Everything is processed locally on your device.",
-      "hero.cta1": "Convert for free",
-      "hero.cta2": "See features",
-      "hero.supports": "Supported formats",
-      "convert.title": "Convert your images",
-      "convert.desc": "Drop files into the box below, or click to browse. Multiple files are supported.",
-      "drop.title": "Drop your files here",
-      "drop.sub": "or click to browse · multiple files allowed",
-      "drop.hint": "Supports: PNG · JPG · WEBP · AVIF · GIF · BMP · ICO · HEIC · TIFF",
-      "drop.aria": "Select files",
-      "opt.title": "Conversion settings",
-      "opt.format": "Target format",
-      "opt.quality": "Quality (compression)",
-      "opt.quality.low": "Smaller",
-      "opt.quality.high": "Higher quality",
-      "opt.resize": "Image size",
-      "opt.resize.none": "Keep original",
-      "opt.resize.ratio": "By scale",
-      "opt.resize.custom": "Custom",
-      "opt.resize.scale": "Scale",
-      "opt.resize.w": "Width",
-      "opt.resize.h": "Height",
-      "opt.resize.keep": "Keep aspect ratio",
-      "opt.bg": "Background (transparent → fill)",
-      "opt.bg.fill": "Fill with background color",
-      "opt.bg.note": "PNG · WEBP · GIF keep transparency. JPG · BMP · ICO don't support transparency, so a background color is used.",
-      "opt.bg.title": "Background color",
-      "opt.exif": "Metadata (EXIF)",
-      "opt.exif.remove": "Remove (smaller)",
-      "opt.exif.keep": "Keep (JPG)",
-      "opt.convert": "Convert",
-      "opt.privacy": "🔒 All conversions run inside your browser. Nothing is ever sent to or stored on a server.",
-      "list.title": "Files",
-      "list.clear": "Clear all",
-      "list.total": "Total size change",
-      "list.zip": "Download all as ZIP",
-      "list.each": "Download each",
-      "ad.text": "Ad space",
-      "crop.title": "🪪 ID & Passport Photo Resizer",
-      "crop.desc": "Upload your photo, select a standard preset, and drag the guide box to crop. File size is automatically optimized.",
-      "crop.step1": "1. Upload Photo",
-      "crop.drop.aria": "Select photo to crop",
-      "crop.drop.title": "Drop your photo here",
-      "crop.drop.sub": "or click to browse from device",
-      "crop.step2": "2. Select Purpose (Presets)",
-      "crop.preset.passport": "Passport",
-      "crop.preset.resume": "Resume",
-      "crop.preset.visa": "US Visa",
-      "crop.preset.idcard": "National ID",
-      "crop.preset.profile": "Square Profile",
-      "crop.preset.custom": "Custom",
-      "crop.preset.custom.sub": "Enter px",
-      "crop.custom.w": "Width px",
-      "crop.custom.h": "Height px",
-      "crop.step3": "3. Select Area",
-      "crop.stage.empty": "Upload a photo to preview here.<br />Drag the dotted box to fit your face.",
-      "crop.step4": "4. Output Quality & Purpose",
-      "crop.step5": "5. Save Format",
-      "crop.download": "✂️ Crop & Download",
-      "crop.privacy": "🔒 Photos are processed locally in your browser only.",
-      "crop.msg.only.image": "⚠️ Only image files are supported.",
-      "crop.msg.load.fail": "⚠️ Failed to load this photo. Please try another.",
-      "crop.msg.cropping": "✂️ Cropping...",
-      "crop.msg.done": "✅ Done! Saved as {w}×{h}px · {size}.",
-      "crop.msg.crop.fail": "⚠️ Failed to crop. Please try again.",
-      "feat.title": "Why this image converter?",
-      "feat.desc": "No installation, no sign-up, no uploads.",
-      "feat.f1.t": "Fast & lightweight",
-      "feat.f1.d": "Your browser does the work locally. Zero upload time — even dozens of files in a flash.",
-      "feat.f2.t": "100% private",
-      "feat.f2.d": "Not a single photo leaves your device. No servers, no leaks, no tracking.",
-      "feat.f3.t": "Many formats",
-      "feat.f3.d": "Export to PNG · JPG · WEBP · AVIF · GIF · BMP · ICO. HEIC and TIFF input supported too.",
-      "feat.f4.t": "Fine-grained settings",
-      "feat.f4.d": "Quality, resize, background fill, and EXIF keep/remove — exactly the way you want.",
-      "feat.f5.t": "Batch & ZIP",
-      "feat.f5.d": "Drag in dozens of files at once and grab the results as a single ZIP archive.",
-      "feat.f6.t": "Free & unlimited",
-      "feat.f6.d": "No account, no payment. Use it as many times as you like.",
-      "faq.title": "Frequently asked questions",
-      "faq.q1": "Are my files stored on a server?",
-      "faq.a1": "No. Every conversion happens inside your browser and no file is ever transmitted over the internet. Close the tab and everything is gone.",
-      "faq.q2": "Does it convert HEIC (iPhone photos)?",
-      "faq.a2": "Yes. HEIC/HEIF files can be converted to JPG, PNG, WEBP and more. We recommend a modern browser such as Chrome, Edge or Safari.",
-      "faq.q3": "How many files can I convert at once?",
-      "faq.a3": "There is no per-file limit. Very large batches may take a little longer depending on your computer.",
-      "faq.q4": "Does AVIF work in every browser?",
-      "faq.a4": "AVIF export is supported in Chrome 85+, Edge and Opera. On Safari or Firefox, please choose another format.",
-      "faq.q5": "The quality seems lower after conversion.",
-      "faq.a5": "Try raising the quality slider to 90–100%. PNG is lossless, so there is no quality loss at all.",
-      "guide.title": "📚 Helpful Guides on Image Formats",
-      "guide.webp.title": "🖼️ What is WebP? Why You Should Switch from JPG & PNG",
-      "guide.webp.desc": "Compression mechanics, browser compatibility, and real-world loading speed tests",
-      "guide.heic.title": "📱 How to Open & Convert HEIC & AVIF Photos",
-      "guide.heic.desc": "3 simple ways to open iPhone HEIC images on Windows PCs without quality loss",
-      "guide.exif.title": "📍 How to Strip GPS Location & EXIF Metadata from Photos",
-      "guide.exif.desc": "Protect your home location and privacy by removing hidden GPS tags in 1 second",
-      "guide.comp.title": "⚡ The 80% Image Quality Rule & Smart Compression Tips",
-      "guide.comp.desc": "Find the sweet spot to slash image weight by 80% with zero visible quality degradation",
-      "guide.webp.url": "./guide-webp-en.html",
-      "guide.heic.url": "./guide-heic-en.html",
-      "guide.exif.url": "./guide-exif-en.html",
-      "guide.comp.url": "./guide-compression-en.html",
-      "footer.note": "100% client-side · zero server storage · free",
-      "footer.alltools": "🧰 All Tools",
-      "footer.disclaimer": "This site is a free tool site operated by an individual developer. Actual financial transactions and legal effects follow the standards of the relevant institutions.",
-      "footer.about": "About & Contact",
-      "footer.terms": "Terms of Service",
-      "footer.privacy": "Privacy Policy",
-      "overlay.convert": "Converting...",
-      "msg.format.note.transparent": "JPG · BMP · ICO don't support transparency, so the background color is applied.",
-      "msg.format.note.lossless": "Lossless format. The quality setting doesn't apply.",
-      "msg.format.note.quality": "Use the quality slider to adjust compression.",
-      "msg.no.file": "Please select files first.",
-      "msg.converting": "Converting...",
-      "msg.done": "Done! {n} files converted",
-      "msg.fail": "Failed to convert {name}",
-      "msg.empty.result": "No conversion results.",
-      "msg.cleared": "List cleared.",
-      "msg.zip.done": "ZIP downloaded!",
-      "msg.zip.fail": "Failed to create ZIP",
-      "msg.downloading": "Downloading {n} files individually...",
-      "msg.drop.only.images": "Only image files are allowed.",
-      "msg.added": "{n} added",
-      "msg.limit": "Too many files. Please add 50 or fewer."
-    }
-  };
-
-  const I18n = {
-    lang: "en",
-
-    init() {
-      const saved = localStorage.getItem("ic_lang");
-      if (saved && I18N[saved]) {
-        this.lang = saved;
-      } else {
-        this.lang = "en";
-      }
-      this.apply();
-      this.updateToggleBtn();
-      document.documentElement.lang = this.lang;
-    },
-
-    updateToggleBtn() {
-      const label = document.getElementById("langLabel");
-      if (label) {
-        label.textContent = this.lang === "en" ? "KO" : "EN";
-      }
-    },
-
-    toggle() {
-      this.lang = this.lang === "en" ? "ko" : "en";
-      localStorage.setItem("ic_lang", this.lang);
-      this.apply();
-      this.updateToggleBtn();
-      document.documentElement.lang = this.lang;
-      if (window.app && typeof window.app.onLangChange === "function") {
-        window.app.onLangChange();
-      }
-      if (window.crop && typeof window.crop.onLangChange === "function") {
-        window.crop.onLangChange();
-      }
-    },
-
-    t(key, vars) {
-      let s = (I18N[this.lang] && I18N[this.lang][key]) || (I18N.en && I18N.en[key]) || (I18N.ko && I18N.ko[key]) || key;
-      if (vars && s !== key) {
-        Object.keys(vars).forEach((k) => {
-          s = s.replace(new RegExp("\\{" + k + "\\}", "g"), vars[k]);
-        });
-      }
-      return s;
-    },
-
-    apply() {
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        const val = this.t(key);
-        if (val && val !== key) {
-          if (val.includes("<")) {
-            el.innerHTML = val;
-          } else {
-            el.textContent = val;
-          }
-        }
-      });
-      document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-aria");
-        const val = this.t(key);
-        if (val && val !== key) {
-          el.setAttribute("aria-label", val);
-        }
-      });
-      document.querySelectorAll("[data-i18n-title]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-title");
-        const val = this.t(key);
-        if (val && val !== key) {
-          el.setAttribute("title", val);
-        }
-      });
-      document.querySelectorAll("[data-i18n-href]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-href");
-        const val = this.t(key);
-        if (val && val !== key) {
-          el.setAttribute("href", val);
-        }
-      });
-    }
-  };
-
-  window.I18n = I18n;
-  document.addEventListener("DOMContentLoaded", () => I18n.init());
-  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCVG85XVHF"></script>
   <script>
@@ -468,411 +53,441 @@
 
     gtag('config', 'G-YCVG85XVHF');
   </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3243686996042007"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- ===================== Header ===================== -->
+  <!-- Header -->
   <header class="header">
     <div class="container header__inner">
-      <a href="#top" class="logo">
-        <span class="logo__icon">🖼️</span>
-        <span class="logo__text" data-i18n="brand">Image Converter</span>
+      <a href="../" class="logo">
+        <span class="logo__icon">🧰</span>
+        <span class="logo__text">살라툴 (Salartool)</span>
       </a>
       <nav class="nav">
-        <a href="#converter" data-i18n="nav.convert">Convert</a>
-        <a href="#idphoto" data-i18n="nav.idphoto">🪪 ID Photo</a>
-        <a href="#features" data-i18n="nav.features">Features</a>
-        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="../">전체 도구</a>
+        <a href="#studio">스튜디오</a>
+        <a href="#guide">SEO 가이드</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="header__actions">
-        <button id="langToggle" class="btn btn--ghost btn--sm" title="Language / 언어">
-          <span id="langLabel">KO</span>
-        </button>
-        <a href="#converter" class="btn btn--primary btn--sm" data-i18n="nav.cta">Get Started</a>
+        <a href="../freelance-tax/" class="btn btn--ghost btn--sm">💼 3.3% 계산기</a>
+        <a href="../loan/" class="btn btn--primary btn--sm">🏦 대출이자 계산</a>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- ===================== Hero ===================== -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__badge" data-i18n="hero.badge">🔒 100% in-browser · never uploaded</div>
-        <h1 class="hero__title">
-          <span data-i18n="hero.title1">Convert images in</span>
-          <span class="hero__title--accent" data-i18n="hero.title2">just one click!</span>
-        </h1>
-        <p class="hero__desc" data-i18n="hero.desc">PNG, JPG, WEBP, AVIF, GIF, BMP and ICO. Batch convert many files at once with full control over quality, size and background. Everything is processed locally on your device.</p>
-        <div class="hero__cta">
-          <a href="#converter" class="btn btn--primary btn--lg" data-i18n="hero.cta1">Convert for free</a>
-          <a href="#features" class="btn btn--soft btn--lg" data-i18n="hero.cta2">See features</a>
-        </div>
-        <div class="hero__formats">
-          <span data-i18n="hero.supports">Supported formats</span>
-          <div class="chips">
-            <span class="chip">PNG</span><span class="chip">JPG</span><span class="chip">WEBP</span>
-            <span class="chip">AVIF</span><span class="chip">GIF</span><span class="chip">BMP</span>
-            <span class="chip">ICO</span><span class="chip">HEIC ↞</span><span class="chip">TIFF ↞</span>
-          </div>
-        </div>
+  <main class="studio-wrapper" id="studio">
+    <!-- Hero Section -->
+    <section class="studio-hero">
+      <div class="studio-badge">
+        <span>🔒 100% 브라우저 로컬 안전 처리</span>
+        <span>·</span>
+        <span>서버 전송 0%</span>
+      </div>
+      <h1>
+        블로그 상위 노출 & 애드센스를 위한<br />
+        <span class="highlight">스마트 이미지 최적화 & EXIF 스튜디오</span>
+      </h1>
+      <p>
+        AI 생성 이미지와 캡처본의 이전 메타데이터를 100% 무결 세탁하고,<br />
+        최신 갤럭시·아이폰 실촬영 EXIF 및 전국 핫플 GPS 위치를 자연스럽게 생성해 보세요.
+      </p>
+
+      <div class="studio-pills">
+        <span class="studio-pill">🧹 AI 메타데이터 완전 세탁</span>
+        <span class="studio-pill">📱 최신 플래그십 EXIF 생성</span>
+        <span class="studio-pill">📍 전 세계 GPS 장소 & 오차 지터</span>
+        <span class="studio-pill">⚡ 1200px 300KB 원클릭 규격화</span>
+        <span class="studio-pill">📦 무제한 ZIP 일괄 다운로드</span>
       </div>
     </section>
 
-    <!-- ===================== Converter ===================== -->
-    <section id="converter" class="section converter">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-i18n="convert.title">Convert your images</h2>
-          <p class="section__desc" data-i18n="convert.desc">Drop files into the box below, or click to browse. Multiple files are supported.</p>
+    <!-- Tab Switcher -->
+    <div class="studio-tabs">
+      <button class="studio-tab-btn active" data-tab="exif" onclick="switchStudioTab('exif')">
+        <span>📸 스마트 EXIF & GPS 스튜디오</span>
+        <span class="badge-pill">SEO 추천</span>
+      </button>
+      <button class="studio-tab-btn" data-tab="prep" onclick="switchStudioTab('prep')">
+        <span>⚡ 블로그 & 애드센스 규격화</span>
+        <span class="badge-pill">원클릭 정리</span>
+      </button>
+    </div>
+
+    <!-- ========================================================
+         TAB 1: 스마트 EXIF & GPS 스튜디오
+         ======================================================== -->
+    <div class="studio-panel active" id="panel-exif">
+      <div class="studio-card">
+        <!-- Dropzone -->
+        <div class="studio-dropzone" id="tab1DropZone">
+          <span class="studio-dropzone__icon">📥</span>
+          <div class="studio-dropzone__title">이미지를 여기에 끌어놓거나 클릭하여 선택하세요</div>
+          <div class="studio-dropzone__desc">JPG, PNG, WebP, GIF, HEIC/HEIF 지원 · 수십 장 일괄 드래그 가능</div>
+          <div class="studio-dropzone__tags">
+            <span class="studio-dropzone__tag">개인정보 유출 제로</span>
+            <span class="studio-dropzone__tag">원본 보존</span>
+            <span class="studio-dropzone__tag">고속 처리</span>
+          </div>
+          <input type="file" id="tab1FileInput" multiple accept="image/*,.heic,.heif" style="display:none;" />
         </div>
 
-        <div class="converter__grid">
-          <!-- Dropzone -->
-          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Select files" data-i18n-aria="drop.aria">
-            <input type="file" id="fileInput" multiple accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif,image/x-icon,image/heic,image/heif,image/tiff" hidden />
-            <div class="dropzone__icon">📥</div>
-            <p class="dropzone__title" data-i18n="drop.title">Drop your files here</p>
-            <p class="dropzone__sub" data-i18n="drop.sub">or click to browse · multiple files allowed</p>
-            <div class="dropzone__hint">
-              <span data-i18n="drop.hint">Supports: PNG · JPG · WEBP · AVIF · GIF · BMP · ICO · HEIC · TIFF</span>
-            </div>
+        <!-- Basic Controls -->
+        <div class="studio-grid-options">
+          <div class="studio-opt-box">
+            <label class="opt-title" for="optFormat">출력 형식</label>
+            <select id="optFormat" class="studio-select">
+              <option value="image/jpeg" selected>JPG (스마트폰 EXIF & GPS 완벽 지원 · 권장)</option>
+              <option value="image/png">PNG (무손실 · eXIf 청크 지원)</option>
+              <option value="image/webp">WebP (고압축 웹 최적화용)</option>
+            </select>
           </div>
-
-          <!-- Options -->
-          <div class="panel options">
-            <h3 class="panel__title" data-i18n="opt.title">Conversion settings</h3>
-
-            <!-- Target format -->
-            <div class="field">
-              <label class="field__label" data-i18n="opt.format">Target format</label>
-              <div id="formatGroup" class="seg">
-                <button class="seg__btn" data-fmt="jpeg">JPG</button>
-                <button class="seg__btn" data-fmt="png">PNG</button>
-                <button class="seg__btn" data-fmt="webp">WEBP</button>
-                <button class="seg__btn" data-fmt="avif">AVIF</button>
-                <button class="seg__btn" data-fmt="gif">GIF</button>
-                <button class="seg__btn" data-fmt="bmp">BMP</button>
-                <button class="seg__btn" data-fmt="ico">ICO</button>
-              </div>
-              <p id="formatNote" class="field__note"></p>
+          <div class="studio-opt-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <label class="opt-title" for="optQuality" style="margin:0;">압축 품질 (JPG/WebP)</label>
+              <span id="optQualityText" style="font-size:13px; font-weight:700; color:#4f46e5;">90%</span>
             </div>
-
-            <!-- Quality -->
-            <div class="field" id="qualityField">
-              <label class="field__label">
-                <span data-i18n="opt.quality">Quality (compression)</span>
-                <span id="qualityValue" class="field__value">85%</span>
-              </label>
-              <input type="range" id="quality" min="10" max="100" value="85" step="1" class="range" />
-              <div class="range__labels"><span data-i18n="opt.quality.low">Smaller</span><span data-i18n="opt.quality.high">Higher quality</span></div>
-            </div>
-
-            <!-- Resize -->
-            <div class="field">
-              <label class="field__label" data-i18n="opt.resize">Image size</label>
-              <div class="seg seg--3">
-                <button class="seg__btn" data-resize="none" data-i18n="opt.resize.none">Keep original</button>
-                <button class="seg__btn" data-resize="ratio" data-i18n="opt.resize.ratio">By scale</button>
-                <button class="seg__btn" data-resize="custom" data-i18n="opt.resize.custom">Custom</button>
-              </div>
-              <div id="ratioBox" class="resize-box hidden">
-                <label class="inline"><span data-i18n="opt.resize.scale">Scale</span>
-                  <select id="ratioSel">
-                    <option value="0.25">25%</option>
-                    <option value="0.5">50%</option>
-                    <option value="0.75">75%</option>
-                    <option value="1.5">150%</option>
-                    <option value="2">200%</option>
-                  </select>
-                </label>
-              </div>
-              <div id="customBox" class="resize-box hidden">
-                <label class="inline"><span data-i18n="opt.resize.w">Width</span> <input type="number" id="dstW" min="1" placeholder="auto" /></label>
-                <label class="inline"><span data-i18n="opt.resize.h">Height</span> <input type="number" id="dstH" min="1" placeholder="auto" /></label>
-                <label class="check"><input type="checkbox" id="keepAspect" checked /> <span data-i18n="opt.resize.keep">Keep aspect ratio</span></label>
-              </div>
-            </div>
-
-            <!-- Background -->
-            <div class="field">
-              <label class="field__label" data-i18n="opt.bg">Background (transparent → fill)</label>
-              <div class="bg-row">
-                <label class="check"><input type="checkbox" id="fillBg" checked /> <span data-i18n="opt.bg.fill">Fill with background color</span></label>
-                <input type="color" id="bgColor" value="#ffffff" class="color" title="Background color" data-i18n-title="opt.bg.title" />
-              </div>
-              <p class="field__note" data-i18n="opt.bg.note">PNG · WEBP · GIF keep transparency. JPG · BMP · ICO don't support transparency, so a background color is used.</p>
-            </div>
-
-            <!-- EXIF -->
-            <div class="field">
-              <label class="field__label" data-i18n="opt.exif">Metadata (EXIF)</label>
-              <div class="seg seg--2">
-                <button class="seg__btn" data-exif="remove" data-i18n="opt.exif.remove">Remove (smaller)</button>
-                <button class="seg__btn" data-exif="keep" data-i18n="opt.exif.keep">Keep (JPG)</button>
-              </div>
-            </div>
-
-            <button id="convertBtn" class="btn btn--primary btn--lg btn--block" disabled>
-              <span data-i18n="opt.convert">Convert</span> <span id="convertCount"></span>
-            </button>
-            <p class="field__note field__note--center" data-i18n="opt.privacy">🔒 All conversions run inside your browser. Nothing is ever sent to or stored on a server.</p>
+            <input type="range" id="optQuality" min="40" max="100" value="90" style="width:100%; accent-color:#4f46e5;" />
+          </div>
+          <div class="studio-opt-box">
+            <label class="opt-title" for="optMaxWidth">최대 가로 폭 (0 = 원본 유지)</label>
+            <input type="number" id="optMaxWidth" class="studio-input" placeholder="예: 1200 (0=원본)" value="0" />
+          </div>
+          <div class="studio-opt-box">
+            <label class="opt-title" for="optMaxHeight">최대 세로 높이 (0 = 원본 유지)</label>
+            <input type="number" id="optMaxHeight" class="studio-input" placeholder="예: 1200 (0=원본)" value="0" />
           </div>
         </div>
 
-        <!-- File list -->
-        <div id="fileListWrap" class="panel fileList hidden">
-          <div class="fileList__head">
-            <h3 class="panel__title"><span data-i18n="list.title">Files</span> <span id="fileCount" class="badge"></span></h3>
-            <button id="clearBtn" class="btn btn--ghost btn--sm" data-i18n="list.clear">Clear all</button>
-          </div>
-          <div id="fileList" class="fileList"></div>
-          <div id="batchBar" class="batch-bar hidden">
-            <div class="batch-bar__info">
-              <span data-i18n="list.total">Total size change</span>
-              <strong id="totalStat">—</strong>
-            </div>
-            <button id="downloadAll" class="btn btn--secondary">
-              <span data-i18n="list.zip">Download all as ZIP</span> <span id="zipCount"></span>
-            </button>
-            <button id="downloadEach" class="btn btn--soft" data-i18n="list.each">Download each</button>
+        <!-- Feature Option 1: Canvas 메타데이터 완전 세탁 -->
+        <div class="feature-card feature-card--green">
+          <div class="feature-card__header">
+            <label class="feature-card__label">
+              <input type="checkbox" id="optRemoveMeta" checked disabled />
+              🧹 원본 메타데이터 완전 무결 세탁 (기본 활성화)
+            </label>
+            <span class="feature-card__hint">Canvas 픽셀 재렌더링으로 기존 AI 생성 태그·중복 GPS·워터마크 흔적 100% 제거</span>
           </div>
         </div>
 
-        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
-        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
+        <!-- Feature Option 2: 스마트폰 카메라 EXIF 주입 -->
+        <div class="feature-card feature-card--blue">
+          <div class="feature-card__header">
+            <label class="feature-card__label">
+              <input type="checkbox" id="optFakeExif" checked />
+              📱 최신 스마트폰 직접 촬영 EXIF 메타데이터 삽입
+            </label>
+            <span class="feature-card__hint">네이버 스마트블록 & 구글 검색엔진의 실촬영 인식률 극대화</span>
+          </div>
+          <div style="margin-top:10px;">
+            <select id="optCameraModel" class="studio-select" style="max-width:380px;">
+              <option value="samsung_s25">삼성 Galaxy S25 Ultra (SM-S938N) [2026 최신형]</option>
+              <option value="samsung_s24" selected>삼성 Galaxy S24 Ultra (SM-S928N) [강력 추천]</option>
+              <option value="samsung_s23">삼성 Galaxy S23 (SM-S911N)</option>
+              <option value="samsung_a55">삼성 Galaxy A55 5G (SM-A556N)</option>
+              <option value="iphone16pro">Apple iPhone 16 Pro (A3294) [2026 최신형]</option>
+              <option value="iphone15pro">Apple iPhone 15 Pro</option>
+              <option value="iphone15">Apple iPhone 15</option>
+              <option value="iphone14">Apple iPhone 14</option>
+              <option value="sony_a7m4">Sony Alpha 7 IV (고급 미러리스 카메라)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Feature Option 3: 사진 촬영 장소(GPS) 주입 -->
+        <div class="feature-card feature-card--purple">
+          <div class="feature-card__header">
+            <label class="feature-card__label">
+              <input type="checkbox" id="optInsertGps" checked />
+              📍 사진 촬영 장소 (GPS 위치 데이터) 주입
+            </label>
+            <span class="feature-card__hint">장소 검색 또는 명소 선택 · 사진마다 자연스러운 미세 오차(±30~70m) 자동 지터링</span>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="gps-search-wrap">
+              <div class="gps-search-input-box">
+                <input type="text" id="gpsSearchInput" class="studio-input" placeholder="전 세계 장소 검색 (예: 성수동 카페, 파리 에펠탑, 제주 애월)..." onkeydown="if(event.key==='Enter'){event.preventDefault();window.doGpsSearch();}" />
+                <div class="gps-results-dropdown" id="gpsResultsBox"></div>
+              </div>
+              <button type="button" class="btn-studio btn-studio--primary" id="btnGpsSearch" onclick="window.doGpsSearch()" style="padding:10px 18px; font-size:13px;">장소 검색</button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:8px;">
+              <span style="font-size:13px; font-weight:700; color:#5b21b6;">빠른 명소 프리셋:</span>
+              <select id="optGpsPreset" class="studio-select" style="max-width:320px;">
+                <option value="random">🎲 대한민국 인기 명소 랜덤 지정</option>
+                <optgroup label="서울 주요 핫플레이스">
+                  <option value="seoul_gangnam" selected>서울 강남역 / 테헤란로</option>
+                  <option value="seoul_hongdae">서울 홍대입구 / 연남동</option>
+                  <option value="seoul_seongsu">서울 성수동 / 서울숲 카페거리</option>
+                  <option value="seoul_myeongdong">서울 명동 / 을지로</option>
+                  <option value="seoul_jamsil">서울 잠실 롯데월드타워 / 석촌호수</option>
+                  <option value="seoul_yeouido">서울 여의도 더현대 / 한강공원</option>
+                  <option value="seoul_jongno">서울 종로 / 광화문 / 인사동</option>
+                  <option value="seoul_itaewon">서울 이태원 / 한남동</option>
+                </optgroup>
+                <optgroup label="경기 · 인천">
+                  <option value="gyeonggi_pangyo">경기 판교테크노밸리</option>
+                  <option value="gyeonggi_suwon">경기 수원 행궁동 / 광교호수공원</option>
+                  <option value="gyeonggi_ilsan">경기 일산 호수공원</option>
+                  <option value="incheon_songdo">인천 송도 센트럴파크</option>
+                </optgroup>
+                <optgroup label="부산 · 대구 · 경상">
+                  <option value="busan_haeundae">부산 해운대 해수욕장</option>
+                  <option value="busan_gwanganri">부산 광안리 해변</option>
+                  <option value="busan_seomyeon">부산 서면 / 전포 카페거리</option>
+                  <option value="daegu_dongseong">대구 동성로 / 수성못</option>
+                  <option value="gyeongju_hwangni">경북 경주 황리단길 / 첨성대</option>
+                  <option value="pohang_space">경북 포항 영일대 / 스페이스워크</option>
+                </optgroup>
+                <optgroup label="강원 · 충청 · 전라">
+                  <option value="gangwon_gangneung">강원 강릉 안목해변 카페거리</option>
+                  <option value="gangwon_sokcho">강원 속초 해변 / 중앙시장</option>
+                  <option value="gangwon_yangyang">강원 양양 서피비치</option>
+                  <option value="daejeon_dunsan">대전 둔산동 / 성심당</option>
+                  <option value="jeonju_hanok">전북 전주 한옥마을</option>
+                  <option value="yeosu_ocean">전남 여수 해양공원 / 오동도</option>
+                </optgroup>
+                <optgroup label="제주도">
+                  <option value="jeju_aewol">제주 애월 한담해변 (서쪽)</option>
+                  <option value="jeju_seongsan">제주 성산일출봉 / 섭지코지</option>
+                  <option value="jeju_jungmun">제주 서귀포 중문관광단지</option>
+                  <option value="jeju_hyeopjae">제주 협재 / 금능 해변</option>
+                </optgroup>
+                <optgroup label="해외 명소">
+                  <option value="japan_tokyo">일본 도쿄 (시부야 스크램블)</option>
+                  <option value="japan_osaka">일본 오사카 (도톤보리)</option>
+                  <option value="vietnam_danang">베트남 다낭 (미케비치)</option>
+                  <option value="thailand_bangkok">태국 방콕 (시암)</option>
+                  <option value="france_paris">프랑스 파리 (에펠탑)</option>
+                  <option value="usa_ny">미국 뉴욕 (타임스퀘어)</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div id="gpsSelectedBadge" class="gps-badge">
+              📍 <strong>서울 강남역 / 테헤란로</strong> (37.4981, 127.0276) 적용 중
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Option 4: 촬영 일시 & 간격 타임스탬프 -->
+        <div class="feature-card feature-card--amber">
+          <div class="feature-card__header">
+            <label class="feature-card__label">
+              <input type="checkbox" id="optCustomDate" checked />
+              📅 사진 촬영 일시 & GPS 기록일 설정
+            </label>
+            <span class="feature-card__hint">연속 촬영 간격(사진마다 60~120초) 자연스러운 시간차 자동 분산 배분</span>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="date-chips">
+              <button type="button" class="date-chip active" data-date="today">오늘 (현재 시각)</button>
+              <button type="button" class="date-chip" data-date="1week">1주일 전</button>
+              <button type="button" class="date-chip" data-date="1month">1개월 전</button>
+              <button type="button" class="date-chip" data-date="3month">3개월 전</button>
+              <button type="button" class="date-chip" data-date="6month">6개월 전</button>
+              <button type="button" class="date-chip" data-date="1year">1년 전</button>
+              <button type="button" class="date-chip" data-date="random">🎲 과거 랜덤</button>
+              <button type="button" class="date-chip" data-date="custom">직접 지정</button>
+            </div>
+            <div id="customDateWrap" style="display:none; margin-top:8px;">
+              <input type="datetime-local" id="optCustomDatetime" class="studio-input" style="max-width:280px;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="studio-actions">
+          <button type="button" class="btn-studio btn-studio--primary" id="btnTab1Start">
+            ⚡ 스마트 변환 시작
+          </button>
+          <button type="button" class="btn-studio btn-studio--accent" id="btnTab1Zip">
+            📦 전체 변환 + ZIP 다운로드
+          </button>
+          <button type="button" class="btn-studio btn-studio--outline" id="btnTab1Clear">
+            🗑️ 목록 초기화
+          </button>
+        </div>
+
+        <div class="studio-status" id="tab1Status"></div>
+
+        <!-- File List -->
+        <div class="studio-file-list" id="tab1FileList"></div>
       </div>
-    </section>
+    </div>
 
-    <!-- ===================== ID Photo Crop ===================== -->
-    <section id="idphoto" class="section idphoto">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-i18n="crop.title">🪪 ID &amp; Passport Photo Resizer</h2>
-          <p class="section__desc" data-i18n="crop.desc">Upload your photo, select a standard preset, and drag the guide box to crop. File size is automatically optimized.</p>
+    <!-- ========================================================
+         TAB 2: 블로그 & 애드센스 규격화 (원클릭 최적화)
+         ======================================================== -->
+    <div class="studio-panel" id="panel-prep">
+      <div class="studio-card">
+        <div class="prep-info-banner">
+          <strong>⚡ 구글 애드센스 심사 통과 & 블로그 포스팅 원클릭 사진 정리</strong><br />
+          직접 찍은 사진이나 캡처본을 긴 쪽 <strong>1200px</strong>로 고화질 리사이즈하고, 파일당 <strong>300KB 이하</strong>로 무손실 스마트 압축합니다.
+          기존 메타데이터는 100% 무결 세탁되며, 입력한 글 슬러그 이름으로 <code>slug-01.jpg</code>, <code>slug-02.jpg</code> 순서대로 일괄 자동 넘버링됩니다.
         </div>
 
-        <div class="converter__grid">
-          <!-- Crop dropzone -->
-          <div class="panel">
-            <h3 class="panel__title" data-i18n="crop.step1">1. Upload Photo</h3>
-            <div id="cropDropzone" class="dropzone dropzone--sm" tabindex="0" role="button" aria-label="Select photo to crop" data-i18n-aria="crop.drop.aria">
-              <input type="file" id="cropFileInput" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif,image/heic,image/heif" hidden />
-              <div class="dropzone__icon">🪪</div>
-              <p class="dropzone__title" data-i18n="crop.drop.title">Drop your photo here</p>
-              <p class="dropzone__sub" data-i18n="crop.drop.sub">or click to browse from device</p>
-            </div>
+        <div class="studio-dropzone" id="tab2DropZone">
+          <span class="studio-dropzone__icon">📁</span>
+          <div class="studio-dropzone__title">정리할 사진을 여기에 끌어놓으세요</div>
+          <div class="studio-dropzone__desc">JPG, PNG, WebP, HEIC 지원 · 원본 파일은 손상되지 않습니다.</div>
+          <input type="file" id="tab2FileInput" multiple accept="image/*,.heic,.heif" style="display:none;" />
+        </div>
 
-            <!-- Presets -->
-            <div class="field" style="margin-top:18px;">
-              <label class="field__label" data-i18n="crop.step2">2. Select Purpose (Presets)</label>
-              <div id="presetGroup" class="preset-grid">
-                <button class="preset active" data-preset="passport" data-w="413" data-h="531">
-                  <span class="preset__name" data-i18n="crop.preset.passport">Passport</span>
-                  <span class="preset__size">3.5×4.5cm</span>
-                  <span class="preset__px">413×531px</span>
-                </button>
-                <button class="preset" data-preset="resume" data-w="354" data-h="472">
-                  <span class="preset__name" data-i18n="crop.preset.resume">Resume</span>
-                  <span class="preset__size">3.0×4.0cm</span>
-                  <span class="preset__px">354×472px</span>
-                </button>
-                <button class="preset" data-preset="visa" data-w="600" data-h="600">
-                  <span class="preset__name" data-i18n="crop.preset.visa">US Visa</span>
-                  <span class="preset__size">2×2 inch</span>
-                  <span class="preset__px">600×600px</span>
-                </button>
-                <button class="preset" data-preset="idcard" data-w="300" data-h="400">
-                  <span class="preset__name" data-i18n="crop.preset.idcard">National ID</span>
-                  <span class="preset__size">2.5×3.5cm</span>
-                  <span class="preset__px">300×400px</span>
-                </button>
-                <button class="preset" data-preset="profile" data-w="600" data-h="600">
-                  <span class="preset__name" data-i18n="crop.preset.profile">Square Profile</span>
-                  <span class="preset__size">3.5×3.5cm</span>
-                  <span class="preset__px">600×600px</span>
-                </button>
-                <button class="preset" data-preset="custom" data-w="0" data-h="0">
-                  <span class="preset__name" data-i18n="crop.preset.custom">Custom</span>
-                  <span class="preset__size" data-i18n="crop.preset.custom.sub">Enter px</span>
-                  <span class="preset__px">—</span>
-                </button>
-              </div>
-              <div id="customPresetBox" class="resize-box hidden">
-                <label class="inline"><span data-i18n="crop.custom.w">Width px</span> <input type="number" id="cropW" min="16" placeholder="413" value="413" /></label>
-                <label class="inline"><span data-i18n="crop.custom.h">Height px</span> <input type="number" id="cropH" min="16" placeholder="531" value="531" /></label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Crop canvas area -->
-          <div class="panel">
-            <h3 class="panel__title" data-i18n="crop.step3">3. Select Area</h3>
-            <div id="cropStage" class="crop-stage">
-              <div class="crop-empty">
-                <div class="result-empty__icon">✂️</div>
-                <p data-i18n="crop.stage.empty">Upload a photo to preview here.<br />Drag the dotted box to fit your face.</p>
-              </div>
-              <div id="cropCanvasWrap" class="crop-canvas-wrap hidden">
-                <canvas id="cropCanvas"></canvas>
-                <div id="cropGuide" class="crop-guide"></div>
-              </div>
-            </div>
-
-            <div class="field" style="margin-top:16px;">
-              <label class="field__label">
-                <span data-i18n="crop.step4">4. Output Quality &amp; Purpose</span>
-                <span id="cropQualityValue" class="field__value">85%</span>
-              </label>
-              <input type="range" id="cropQuality" min="10" max="100" value="85" step="1" class="range" />
-              <div class="range__labels"><span data-i18n="opt.quality.low">Smaller</span><span data-i18n="opt.quality.high">Higher quality</span></div>
-            </div>
-
-            <div class="field">
-              <label class="field__label" data-i18n="crop.step5">5. Save Format</label>
-              <div id="cropFormatGroup" class="seg">
-                <button class="seg__btn active" data-cfmt="jpeg">JPG</button>
-                <button class="seg__btn" data-cfmt="png">PNG</button>
-                <button class="seg__btn" data-cfmt="webp">WEBP</button>
-              </div>
-            </div>
-
-            <button id="cropDownloadBtn" class="btn btn--primary btn--lg btn--block" disabled data-i18n="crop.download">✂️ Crop &amp; Download</button>
-            <p class="field__note field__note--center" id="cropHint" data-i18n="crop.privacy">🔒 Photos are processed locally in your browser only.</p>
+        <div style="margin-bottom:20px;">
+          <label class="opt-title" for="prepSlugInput" style="font-size:14px; font-weight:700; color:#1e293b; display:block; margin-bottom:8px;">
+            게시글 파일명 슬러그 (영문 권장)
+          </label>
+          <input type="text" id="prepSlugInput" class="studio-input" placeholder="예: seongsu-cafe-review, salary-guide-2026" style="max-width:440px;" />
+          <div style="font-size:12px; color:#64748b; margin-top:4px;">
+            * 입력 시 파일명이 자동으로 <code>[슬러그]-01.jpg</code>, <code>[슬러그]-02.jpg</code> 형태로 깔끔하게 부여됩니다.
           </div>
         </div>
 
-        <!-- Ad slot: 애드센스 승인 후 광고 단위 코드가 삽입될 자리 (심사 중 미노출) -->
-        <!-- <div class="ad-slot" aria-label="광고 영역"></div> -->
-      </div>
-    </section>
-
-    <!-- ===================== Features ===================== -->
-    <section id="features" class="section features">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-i18n="feat.title">Why this image converter?</h2>
-          <p class="section__desc" data-i18n="feat.desc">No installation, no sign-up, no uploads.</p>
+        <div class="studio-actions">
+          <button type="button" class="btn-studio btn-studio--primary" id="btnPrepStart">
+            ⚡ 블로그 규격화 시작
+          </button>
+          <button type="button" class="btn-studio btn-studio--accent" id="btnPrepZip">
+            📦 ZIP 일괄 다운로드
+          </button>
+          <button type="button" class="btn-studio btn-studio--outline" id="btnPrepClear">
+            🗑️ 목록 비우기
+          </button>
         </div>
-        <div class="features__grid">
-          <article class="card">
-            <div class="card__icon">⚡</div>
-            <h3 data-i18n="feat.f1.t">Fast &amp; lightweight</h3>
-            <p data-i18n="feat.f1.d">Your browser does the work locally. Zero upload time — even dozens of files in a flash.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🔒</div>
-            <h3 data-i18n="feat.f2.t">100% private</h3>
-            <p data-i18n="feat.f2.d">Not a single photo leaves your device. No servers, no leaks, no tracking.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎨</div>
-            <h3 data-i18n="feat.f3.t">Many formats</h3>
-            <p data-i18n="feat.f3.d">Export to PNG · JPG · WEBP · AVIF · GIF · BMP · ICO. HEIC and TIFF input supported too.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🧰</div>
-            <h3 data-i18n="feat.f4.t">Fine-grained settings</h3>
-            <p data-i18n="feat.f4.d">Quality, resize, background fill, and EXIF keep/remove — exactly the way you want.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">📦</div>
-            <h3 data-i18n="feat.f5.t">Batch &amp; ZIP</h3>
-            <p data-i18n="feat.f5.d">Drag in dozens of files at once and grab the results as a single ZIP archive.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">💸</div>
-            <h3 data-i18n="feat.f6.t">Free &amp; unlimited</h3>
-            <p data-i18n="feat.f6.d">No account, no payment. Use it as many times as you like.</p>
-          </article>
+
+        <!-- Prep Table View -->
+        <div class="prep-table-wrap">
+          <table class="prep-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>원본 파일명</th>
+                <th>구분</th>
+                <th>해상도</th>
+                <th>용량 절감</th>
+                <th>정리된 새 파일명</th>
+                <th>다운로드</th>
+              </tr>
+            </thead>
+            <tbody id="prepTableBody">
+              <tr>
+                <td colspan="7" style="text-align:center; padding:30px; color:#94a3b8;">
+                  정리할 사진을 드래그하거나 선택해 주세요.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ===================== FAQ ===================== -->
-    <section id="faq" class="section faq">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-i18n="faq.title">Frequently asked questions</h2>
-        </div>
-        <div class="faq__list">
-          <details class="faq__item" open>
-            <summary data-i18n="faq.q1">Are my files stored on a server?</summary>
-            <p data-i18n="faq.a1">No. Every conversion happens inside your browser and no file is ever transmitted over the internet. Close the tab and everything is gone.</p>
-          </details>
-          <details class="faq__item">
-            <summary data-i18n="faq.q2">Does it convert HEIC (iPhone photos)?</summary>
-            <p data-i18n="faq.a2">Yes. HEIC/HEIF files can be converted to JPG, PNG, WEBP and more. We recommend a modern browser such as Chrome, Edge or Safari.</p>
-          </details>
-          <details class="faq__item">
-            <summary data-i18n="faq.q3">How many files can I convert at once?</summary>
-            <p data-i18n="faq.a3">There is no per-file limit. Very large batches may take a little longer depending on your computer.</p>
-          </details>
-          <details class="faq__item">
-            <summary data-i18n="faq.q4">Does AVIF work in every browser?</summary>
-            <p data-i18n="faq.a4">AVIF export is supported in Chrome 85+, Edge and Opera. On Safari or Firefox, please choose another format.</p>
-          </details>
-          <details class="faq__item">
-            <summary data-i18n="faq.q5">The quality seems lower after conversion.</summary>
-            <p data-i18n="faq.a5">Try raising the quality slider to 90–100%. PNG is lossless, so there is no quality loss at all.</p>
-          </details>
+    <!-- ========================================================
+         SEO 가이드 & 콘텐츠 섹션 (사용자 방문 유입 극대화)
+         ======================================================== -->
+    <section class="studio-guide-section" id="guide">
+      <h2 class="studio-guide-title">블로그 상위 노출 & 애드센스를 위한 사진 최적화 가이드</h2>
+      <p class="studio-guide-subtitle">
+        검색 포털 알고리즘과 구글 Core Web Vitals 평가 기준을 통과하는 프로들의 실전 노하우를 공개합니다.
+      </p>
+
+      <div class="studio-guide-grid">
+        <div class="studio-guide-card">
+          <div class="studio-guide-card__icon">🧹</div>
+          <h3>1. Canvas 픽셀 재렌더링의 힘</h3>
+          <p>
+            단순 파일 변환 프로그램은 원본의 AI 생성 워터마크 태그나 기존 다운로드 흔적을 그대로 남깁니다. 살라툴 스튜디오는 브라우저 메모리 Canvas에 이미지를 새로 그려내는 방식을 적용하여 이전 메타데이터를 100% 무결 세탁합니다.
+          </p>
         </div>
 
-        <!-- 심층 가이드 연결 -->
-        <div class="blog-related" style="margin-top: 40px; max-width: 860px; margin-left: auto; margin-right: auto;">
-          <h4 class="blog-related__title" data-i18n="guide.title">📚 Helpful Guides on Image Formats</h4>
-          <div class="blog-related__grid">
-            <a href="./guide-webp-en" data-i18n-href="guide.webp.url" class="blog-related__card">
-              <strong data-i18n="guide.webp.title">🖼️ What is WebP? Why You Should Switch from JPG &amp; PNG</strong>
-              <span data-i18n="guide.webp.desc">Compression mechanics, browser compatibility, and real-world loading speed tests</span>
-            </a>
-            <a href="./guide-heic-en" data-i18n-href="guide.heic.url" class="blog-related__card">
-              <strong data-i18n="guide.heic.title">📱 How to Open &amp; Convert HEIC &amp; AVIF Photos</strong>
-              <span data-i18n="guide.heic.desc">3 simple ways to open iPhone HEIC images on Windows PCs without quality loss</span>
-            </a>
-            <a href="./guide-exif-en" data-i18n-href="guide.exif.url" class="blog-related__card">
-              <strong data-i18n="guide.exif.title">📍 How to Strip GPS Location &amp; EXIF Metadata from Photos</strong>
-              <span data-i18n="guide.exif.desc">Protect your home location and privacy by removing hidden GPS tags in 1 second</span>
-            </a>
-            <a href="./guide-compression-en" data-i18n-href="guide.comp.url" class="blog-related__card">
-              <strong data-i18n="guide.comp.title">⚡ The 80% Image Quality Rule &amp; Smart Compression Tips</strong>
-              <span data-i18n="guide.comp.desc">Find the sweet spot to slash image weight by 80% with zero visible quality degradation</span>
-            </a>
-          </div>
+        <div class="studio-guide-card">
+          <div class="studio-guide-card__icon">📱</div>
+          <h3>2. 검색 봇의 실촬영 EXIF 가중치</h3>
+          <p>
+            네이버 스마트블록과 구글 검색엔진은 직접 촬영한 오리지널 사진에 강력한 가산점을 부여합니다. 최신 플래그십 기종(Galaxy S25, iPhone 16 Pro 등)의 셔터스피드, 조리개, ISO 메타데이터를 생성하여 신뢰도를 극대화합니다.
+          </p>
         </div>
+
+        <div class="studio-guide-card">
+          <div class="studio-guide-card__icon">📍</div>
+          <h3>3. 자연스러운 GPS 미세 오차(지터)</h3>
+          <p>
+            실제 사람이 사진을 찍을 때는 걸어 다니며 촬영하므로 모든 사진의 GPS 좌표가 1초의 오차도 없이 똑같을 수 없습니다. 살라툴은 사진마다 자연스러운 미세 오차(±30~70m)와 촬영 시간차를 자동으로 분산 적용합니다.
+          </p>
+        </div>
+
+        <div class="studio-guide-card">
+          <div class="studio-guide-card__icon">⚡</div>
+          <h3>4. 1200px & 300KB 황금 규격</h3>
+          <p>
+            구글 애드센스 심사에서 가장 중요한 Core Web Vitals(LCP 점수)를 통과하려면 고해상도를 유지하면서도 용량은 300KB 안쪽이어야 합니다. 1200px 규격화 탭을 이용하면 화질 손상 없이 완벽한 로딩 속도를 유지합니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="studio-faq" id="faq">
+        <h3 style="font-size:20px; font-weight:800; color:#0f172a; margin-bottom:16px;">자주 묻는 질문 (FAQ)</h3>
+
+        <details class="studio-faq-item" open>
+          <summary>정말 내 사진이 외부 서버로 전송되지 않나요?</summary>
+          <p>
+            네, 100% 안전합니다. 살라툴 이미지 스튜디오는 최신 HTML5 Canvas와 Web Worker 기술을 활용하여 모든 연산이 사용자 본인의 PC/스마트폰 브라우저 안에서만 처리됩니다. 네트워크 탭을 확인해 보셔도 단 1바이트의 이미지 데이터도 외부로 업로드되지 않으므로 개인정보 및 저작권 유출 걱정이 전혀 없습니다.
+          </p>
+        </details>
+
+        <details class="studio-faq-item">
+          <summary>블로그 포스팅 시 JPG와 WebP 중 무엇이 더 유리한가요?</summary>
+          <p>
+            스마트폰 카메라 기종 및 촬영 위치(GPS) 메타데이터를 검색 포털(네이버, 구글)에 인식시키고자 할 때는 <strong>JPG 형식</strong>이 필수적입니다. 반면, 단순 웹사이트 로딩 속도 최적화가 주 목적이라면 고압축 <strong>WebP 형식</strong>이 유리합니다.
+          </p>
+        </details>
+
+        <details class="studio-faq-item">
+          <summary>애드센스 승인 심사용 사진 정리는 어떻게 활용하나요?</summary>
+          <p>
+            '블로그 & 애드센스 규격화' 탭을 선택하고 게시글 제목 슬러그를 입력한 뒤 사진을 넣으세요. 긴 쪽 1200px 리사이즈, 300KB 이하 압축, 파일명 일괄 넘버링(slug-01.jpg)까지 1초 만에 완료되어 심사 기준에 가장 완벽하게 부합하는 사진 세트가 완성됩니다.
+          </p>
+        </details>
+
+        <details class="studio-faq-item">
+          <summary>아이폰 HEIC 사진도 바로 넣을 수 있나요?</summary>
+          <p>
+            네, 아이폰의 기본 포맷인 HEIC 및 HEIF 파일도 별도 변환 프로그램 없이 드래그 앤 드롭하면 브라우저에서 자동으로 해석하여 고화질 JPG/WebP로 안전하게 변환해 드립니다.
+          </p>
+        </details>
       </div>
     </section>
   </main>
 
-  <!-- ===================== Footer ===================== -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="logo__icon">🖼️</span>
-        <span data-i18n="brand">Image Converter</span>
-      </div>
-      <p class="footer__note" data-i18n="footer.note">100% client-side · zero server storage · free</p>
-      <p class="footer__copy">© <span id="year"></span> <span data-i18n="brand">Image Converter</span> · <a href="../" style="color:inherit;text-decoration:underline;" data-i18n="footer.alltools">🧰 All Tools</a> · <span data-i18n="footer.disclaimer">This site is a free tool site operated by an individual developer. Actual financial transactions and legal effects follow the standards of the relevant institutions.</span></p>
+      <div class="footer__brand"><span class="logo__icon">🧰</span> 살라툴 (Salartool)</div>
+      <p class="footer__note">100% 클라이언트 사이드 · 서버 저장 제로 · 완전 무료 크리에이터 스튜디오</p>
+      <p class="footer__copy">© <span id="year"></span> 살라툴 · 본 사이트는 개인 개발자가 운영하는 무료 도구 사이트입니다.</p>
       <p class="footer__links">
-        <a href="../about" data-i18n="footer.about">About &amp; Contact</a>
-        <span style="color:#ccc;margin:0 6px;">|</span>
-        <a href="../terms" data-i18n="footer.terms">Terms of Service</a>
-        <span style="color:#ccc;margin:0 6px;">|</span>
-        <a href="../privacy" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="../about">소개</a> ·
+        <a href="../terms">이용약관</a> ·
+        <a href="../privacy">개인정보처리방침</a>
       </p>
     </div>
   </footer>
 
-  <!-- Toast -->
-  <div id="toast" class="toast" role="status"></div>
-
-  <!-- Progress overlay -->
-  <div id="overlay" class="overlay hidden">
-    <div class="overlay__card">
-      <div class="spinner"></div>
-      <p id="overlayText" data-i18n="overlay.convert">Converting...</p>
-    </div>
-  </div>
-
-  <script src="js/app.js?v=20260922v4"></script>
-  <script src="js/crop.js?v=20260922v4"></script>
+  <!-- Scripts -->
+  <script src="./js/libs/jszip.min.js"></script>
+  <script>window.JSZip || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"><\/script>')</script>
+  <script src="./js/libs/heic2any.min.js"></script>
+  <script>window.heic2any || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js"><\/script>')</script>
+  <script src="./js/libs/piexif.js"></script>
+  <script>window.piexif || document.write('<script src="https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js"><\/script>')</script>
+  <script src="./js/studio.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
