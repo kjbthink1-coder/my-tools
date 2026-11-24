@@ -584,9 +584,20 @@ html_content = f'''<!DOCTYPE html>
         </div>
 
         <div class="form-grid">
-          <div class="form-group">
-            <label for="birth-date">생년월일</label>
-            <input type="date" id="birth-date" value="1990-05-15" required>
+          <div class="form-group" style="grid-column: span 2;">
+            <label>생년월일 (연도 4자리 · 월 · 일)</label>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <div style="flex: 1.4; position: relative;">
+                <input type="number" id="birth-year" value="1990" min="1900" max="2099" placeholder="연도 4자리 (예: 1990)" required style="width: 100%; padding-right: 28px;" oninput="if(this.value.length>4) this.value=this.value.slice(0,4);">
+                <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--sub); pointer-events: none;">년</span>
+              </div>
+              <div style="flex: 1;">
+                <select id="birth-month" required style="width: 100%;"></select>
+              </div>
+              <div style="flex: 1;">
+                <select id="birth-day" required style="width: 100%;"></select>
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="birth-time">태어난 시간 (모르면 비워두기)</label>
@@ -1004,6 +1015,30 @@ html_content = f'''<!DOCTYPE html>
 
     // App Initialization
     function init() {{
+      // Populate Months (1~12)
+      var mSelect = document.getElementById('birth-month');
+      mSelect.innerHTML = Array.from({{length: 12}}, function(_, i) {{
+        var m = i + 1;
+        return '<option value="' + m + '"' + (m === 5 ? ' selected' : '') + '>' + m + '월</option>';
+      }}).join('');
+
+      // Populate Days (1~31)
+      var dSelect = document.getElementById('birth-day');
+      function updateDays() {{
+        var y = parseInt(document.getElementById('birth-year').value, 10) || 1990;
+        var m = parseInt(mSelect.value, 10) || 5;
+        var maxDays = new Date(y, m, 0).getDate();
+        var curVal = parseInt(dSelect.value, 10) || 15;
+        if (curVal > maxDays) curVal = maxDays;
+        dSelect.innerHTML = Array.from({{length: maxDays}}, function(_, i) {{
+          var d = i + 1;
+          return '<option value="' + d + '"' + (d === curVal ? ' selected' : '') + '>' + d + '일</option>';
+        }}).join('');
+      }}
+      updateDays();
+      mSelect.addEventListener('change', updateDays);
+      document.getElementById('birth-year').addEventListener('input', updateDays);
+
       var citySelect = document.getElementById('birth-city');
       citySelect.innerHTML = Object.keys(CITIES).map(function(c) {{
         return '<option value="' + c + '"' + (c === '서울' ? ' selected' : '') + '>' + c + ' (경도 ' + CITIES[c] + '°)</option>';
@@ -1017,7 +1052,18 @@ html_content = f'''<!DOCTYPE html>
         var gender = document.querySelector('input[name="gender"]:checked').value;
         var calType = document.querySelector('input[name="cal-type"]:checked').value;
         var isLeap = document.getElementById('is-leap').checked;
-        var birthDate = document.getElementById('birth-date').value;
+
+        var yInput = document.getElementById('birth-year');
+        var y = parseInt(yInput.value, 10);
+        if (isNaN(y) || y < 1900 || y > 2099) {{
+          alert('연도를 4자리(1900~2099) 숫자로 정확히 입력해 주세요.');
+          yInput.focus();
+          return;
+        }}
+        var m = String(document.getElementById('birth-month').value).padStart(2, '0');
+        var d = String(document.getElementById('birth-day').value).padStart(2, '0');
+        var birthDate = y + '-' + m + '-' + d;
+
         var birthTime = document.getElementById('birth-time').value;
         var cityName = document.getElementById('birth-city').value;
 
