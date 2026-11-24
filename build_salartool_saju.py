@@ -28,10 +28,10 @@ html_content = f'''<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>직장인 무료 만세력 & 타고난 직업·재물 그릇 계산기 | 샐러리툴 (Salartool)</title>
-  <meta name="description" content="내 연봉 실수령액을 계산했다면, 이제 내 타고난 재물복과 이직 타이밍을 계산해 보세요. 100% 무료 정통 만세력과 60갑자 일주 심층 직장인 리포트, A4 PDF 인쇄까지 즉시 제공합니다.">
-  <meta property="og:title" content="직장인 무료 만세력 & 타고난 직업·재물 그릇 계산기 | 샐러리툴">
-  <meta property="og:description" content="0초 즉시 계산! 내 4기둥 사주 원국표와 60갑자 일주 직장인 심층 리포트, A4 PDF 무료 인쇄.">
+  <title>직장인 정통 만세력 & 타고난 직업·재물 그릇 계산기 | 샐러리툴 × 사주문답 궁</title>
+  <meta name="description" content="내 실수령액과 퇴직금을 계산해 보셨다면, 이제 내 타고난 재물 그릇과 이직 타이밍을 계산해 보세요. 정밀 사주 리포트를 무료로 받아볼수 있습니다.">
+  <meta property="og:title" content="직장인 정통 만세력 & 타고난 직업·재물 그릇 계산기 | 샐러리툴 × 사주문답 궁">
+  <meta property="og:description" content="내 4기둥 사주 원국표와 60갑자 일주 직장인 심층 리포트, A4 정밀 리포트 무료 인쇄.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://salartool.com/saju/">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -79,15 +79,15 @@ html_content = f'''<!DOCTYPE html>
       text-decoration: none;
       color: var(--ink);
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16.5px;
     }}
     .header-logo span.badge {{
       background: var(--gold-light);
       color: var(--gold-dark);
       border: 1px solid var(--gold-border);
       font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 999px;
+      padding: 2px 8px;
+      border-radius: 4px;
       font-weight: 600;
     }}
     .header-nav a {{
@@ -124,14 +124,14 @@ html_content = f'''<!DOCTYPE html>
       color: #ffd98a;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       padding: 4px 14px;
       border-radius: 999px;
       margin-bottom: 14px;
     }}
     .hero-banner h1 {{
       font-family: var(--serif);
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 700;
       line-height: 1.35;
       margin-bottom: 12px;
@@ -139,10 +139,11 @@ html_content = f'''<!DOCTYPE html>
     }}
     .hero-banner p {{
       color: #c4cdd8;
-      font-size: 14px;
-      max-width: 620px;
+      font-size: 14.5px;
+      max-width: 650px;
       margin: 0 auto;
       word-break: keep-all;
+      line-height: 1.7;
     }}
 
     .input-card {{
@@ -155,14 +156,20 @@ html_content = f'''<!DOCTYPE html>
     }}
     .input-title {{
       font-family: var(--serif);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 700;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
       border-bottom: 1.5px solid var(--line);
       padding-bottom: 14px;
+    }}
+    .input-title span.sub-note {{
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--sub);
+      font-weight: normal;
     }}
     .form-grid {{
       display: grid;
@@ -280,7 +287,7 @@ html_content = f'''<!DOCTYPE html>
     }}
     .card-title {{
       font-family: var(--serif);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 700;
       margin-bottom: 16px;
       display: flex;
@@ -381,12 +388,9 @@ html_content = f'''<!DOCTYPE html>
       margin-bottom: 18px;
     }}
     .ilju-section h4 {{
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 6px;
       margin-bottom: 6px;
     }}
     .ilju-section p {{
@@ -408,12 +412,9 @@ html_content = f'''<!DOCTYPE html>
     }}
     .master-advice-box h4 {{
       color: var(--gold-dark);
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }}
     .master-advice-box p {{
       font-size: 14px;
@@ -449,7 +450,7 @@ html_content = f'''<!DOCTYPE html>
       font-size: 11px;
       font-weight: 700;
       padding: 3px 10px;
-      border-radius: 999px;
+      border-radius: 4px;
       margin-bottom: 8px;
     }}
     .banner-text h3 {{
@@ -478,7 +479,7 @@ html_content = f'''<!DOCTYPE html>
       font-weight: 700;
       text-decoration: none;
       padding: 14px 24px;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 4px 14px rgba(179, 136, 56, 0.4);
       white-space: nowrap;
       transition: all 0.2s;
@@ -535,8 +536,8 @@ html_content = f'''<!DOCTYPE html>
   <!-- Site Header -->
   <header class="site-header noprint">
     <a href="../" class="header-logo">
-      <span>Salartool</span>
-      <span class="badge">직장인 만세력</span>
+      <span>Salartool × 사주문답 궁</span>
+      <span class="badge">공동 기획</span>
     </a>
     <nav class="header-nav">
       <a href="../">계산기 홈</a>
@@ -550,15 +551,16 @@ html_content = f'''<!DOCTYPE html>
 
     <!-- Hero Banner -->
     <section class="hero-banner noprint">
-      <div class="hero-badge">100% FREE · CLIENT ENGINE</div>
+      <div class="hero-badge">살라툴 × 사주문답 궁 공동 기획</div>
       <h1>직장인 정통 만세력 & 타고난 직업·재물 그릇 계산기</h1>
-      <p>내 실수령액과 퇴직금을 계산해 보셨다면, 이제 내 타고난 재물 그릇과 이직 타이밍을 계산해 보세요. 0초 즉시 계산 및 A4 3페이지 정밀 리포트 무료 인쇄를 지원합니다.</p>
+      <p>내 실수령액과 퇴직금을 계산해 보셨다면, 이제 내 타고난 재물 그릇과 이직 타이밍을 계산해 보세요. 정밀 사주 리포트를 무료로 받아볼수 있습니다.</p>
     </section>
 
     <!-- Input Form Card -->
     <section class="input-card noprint">
       <div class="input-title">
-        <span>📅 나의 출생 정보 입력</span>
+        <span>나의 출생 정보 입력</span>
+        <span class="sub-note">살라툴과 사주문답 궁(宮)이 함께 분석합니다</span>
       </div>
       <form id="saju-form">
         <div class="form-grid">
@@ -610,7 +612,7 @@ html_content = f'''<!DOCTYPE html>
         </div>
 
         <button type="submit" class="btn-submit">
-          ⚡ 0초 만에 나의 직장·재물 사주 원국 풀기
+          나의 직장·재물 사주 원국 풀기
         </button>
       </form>
     </section>
@@ -621,10 +623,10 @@ html_content = f'''<!DOCTYPE html>
       <!-- Action Bar -->
       <div class="action-bar noprint">
         <div class="info-text">
-          ✨ <strong><span id="res-name"></span></strong>님의 정통 만세력 원국과 일주 감명이 완성되었습니다.
+          <strong><span id="res-name"></span></strong>님의 정통 만세력 원국과 일주 감명이 완성되었습니다.
         </div>
         <button class="btn-print" id="btn-print">
-          🖨️ A4 3페이지 정밀 리포트 인쇄 / PDF 저장
+          A4 정밀 리포트 인쇄 / PDF 저장
         </button>
       </div>
 
@@ -632,7 +634,7 @@ html_content = f'''<!DOCTYPE html>
       <div class="wonkook-card noprint">
         <div class="card-title">
           <span>사주 4기둥 원국표 (四柱原局)</span>
-          <span style="font-size:12px; font-family:var(--sans); color:var(--sub);">135도 대경 기준 및 진태양시 정밀 보정</span>
+          <span style="font-size:12px; font-family:var(--sans); color:var(--sub);">살라툴 × 사주문답 궁 정밀 만세력</span>
         </div>
         <div id="wonkook-table-wrap"></div>
         <div id="ohaeng-bar-wrap" style="margin-top:20px;"></div>
@@ -649,37 +651,37 @@ html_content = f'''<!DOCTYPE html>
         </div>
 
         <div class="ilju-section">
-          <h4>🌿 타고난 본성과 천성 (Nature)</h4>
+          <h4>[타고난 본성과 천성]</h4>
           <p id="ilju-nature"></p>
         </div>
         <div class="ilju-section">
-          <h4>💼 직장 및 조직 스타일 (Workplace)</h4>
+          <h4>[직장 및 조직 스타일]</h4>
           <p id="ilju-workplace"></p>
         </div>
         <div class="ilju-section">
-          <h4>💰 재물 그릇과 자산 관리 (Wealth)</h4>
+          <h4>[재물 그릇과 자산 관리]</h4>
           <p id="ilju-money"></p>
         </div>
         <div class="ilju-section">
-          <h4>🚀 이직 및 커리어 변곡점 (Career Shift)</h4>
+          <h4>[이직 및 커리어 변곡점]</h4>
           <p id="ilju-career"></p>
         </div>
 
         <div class="master-advice-box">
-          <h4>📜 혜원(彗圓) 선생의 비전 처방</h4>
+          <h4>혜원(彗圓) 선생의 비전 처방</h4>
           <p id="ilju-advice"></p>
         </div>
       </div>
 
-      <!-- 3. Conversion Banner to Oppasaju (Gung) -->
+      <!-- 3. Conversion Banner to Jieungak Report (Gung) -->
       <section class="conversion-banner noprint">
         <div class="banner-text">
-          <div class="banner-badge">조선 왕실 관상감 비전</div>
+          <div class="banner-badge">정통 명리학 전문관 · 사주문답 궁(宮)</div>
           <h3>올해 이직해야 할까? 내 진짜 10년 대운이 궁금하다면</h3>
           <p>지금 보신 풀이는 그대의 기본 본성(일주)만을 짚은 것입니다. 인생의 변곡점이 되는 <strong>10년 대운의 물길과 올해의 이직·재물 처방전</strong>은 4기둥 전체의 합충을 정밀하게 보아야 비로소 열립니다.</p>
         </div>
         <div class="banner-cta">
-          <a href="https://oppasaju.pages.dev/" target="_blank" rel="noopener" class="btn-gung">
+          <a href="https://jieungak-report.pages.dev/" target="_blank" rel="noopener" class="btn-gung">
             사주문답 궁(宮) 50P 처방전 받기 →
           </a>
           <span style="font-size:11px; color:#a0aec0;">모바일 1:1 맞춤형 감명서</span>
@@ -767,9 +769,9 @@ html_content = f'''<!DOCTYPE html>
         return '<svg xmlns="http://www.w3.org/2000/svg" width="' + PW + '" height="' + PH + '" viewBox="0 0 ' + PW + ' ' + PH + '">' + rect(0, 0, PW, PH, bg || T.paper) + body + '</svg>';
       }};
       var head = function (right) {{
-        return txt(MX, 44, 'SALARTOOL × 觀象監 · ' + d.name + '님 직장·재물 사주 리포트', {{ size: 10.5, fill: T.sub, ls: 0.5 }}) +
+        return txt(MX, 44, 'SALARTOOL × 사주문답 궁 · ' + d.name + '님 직장·재물 사주 리포트', {{ size: 10.5, fill: T.sub, ls: 0.5 }}) +
           txt(PW - MX, 44, right, {{ size: 10.5, fill: T.sub, anchor: 'end' }}) +
-          txt(PW / 2, PH - 30, 'SALARTOOL PRECISION MANSERYEOK · 샐러리툴 직장인 정밀 만세력', {{ size: 9.5, fill: T.sub, anchor: 'middle' }});
+          txt(PW / 2, PH - 30, 'SALARTOOL × 사주문답 궁 공동 기획 · 직장인 정밀 만세력', {{ size: 9.5, fill: T.sub, anchor: 'middle' }});
       }};
       var titleBlock = function (y, kicker, title, size) {{
         return txt(MX, y, kicker, {{ size: 11, fill: T.gold, ls: 2.5, weight: 700 }}) +
@@ -798,13 +800,13 @@ html_content = f'''<!DOCTYPE html>
         titleBlock(240, 'SAJU CAREER MASTER REPORT', d.name + '님의 직장·재물 사주 리포트', 32) +
         txt(MX + 36, 350, d.birthText + ' (' + d.city + ' 출생 · 진태양시 보정)', {{ size: 14.5, fill: T.sub }}) +
         txt(MX + 36, 386, res.yongsin.strength_type + ' · ' + res.yongsin.yongsin_kr + ' 용신 · ' + res.daewoon_info.direction + ' ' + res.daewoon_info.daewoon_num + '대운', {{ size: 14, fill: T.goldDark, weight: 700 }}) +
-        // Seal Emblem
+        // Seal Emblem (사주문답 궁)
         '<circle cx="' + (PW / 2) + '" cy="590" r="76" fill="#fdf6e7" stroke="' + T.gold + '" stroke-width="2"/>' +
         '<circle cx="' + (PW / 2) + '" cy="590" r="68" fill="none" stroke="' + T.gold + '" stroke-width="1" stroke-dasharray="4 3"/>' +
-        txt(PW / 2, 580, '觀象監', {{ size: 28, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700 }}) +
-        txt(PW / 2, 614, '正統萬歲曆', {{ size: 14, fill: T.gold, anchor: 'middle', ls: 3, weight: 600 }}) +
-        txt(PW / 2, 800, 'SALARTOOL PRECISION MANSERYEOK', {{ size: 12, fill: T.sub, anchor: 'middle', ls: 3, weight: 600 }}) +
-        txt(PW / 2, 826, '샐러리툴 직장인 사주 분석 리포트', {{ size: 13, fill: T.ink, anchor: 'middle', weight: 500 }});
+        txt(PW / 2, 580, '사주문답 궁', {{ size: 24, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700 }}) +
+        txt(PW / 2, 614, '正統 萬歲曆', {{ size: 13, fill: T.gold, anchor: 'middle', ls: 3, weight: 600 }}) +
+        txt(PW / 2, 800, 'SALARTOOL × 사주문답 궁', {{ size: 12, fill: T.sub, anchor: 'middle', ls: 3, weight: 600 }}) +
+        txt(PW / 2, 826, '직장인 맞춤 정밀 사주 분석 리포트', {{ size: 13, fill: T.ink, anchor: 'middle', weight: 500 }});
 
       out.push(svg(p1));
 
@@ -896,8 +898,8 @@ html_content = f'''<!DOCTYPE html>
 
       // 5-Section Paragraphs (Clean Line Layout)
       var curY = 264;
-      var renderIljuSection = function(icon, title, bodyText, maxLines) {{
-        var sHtml = txt(MX, curY, icon + ' ' + title, {{ size: 13, fill: T.ink, weight: 700 }});
+      var renderIljuSection = function(title, bodyText, maxLines) {{
+        var sHtml = txt(MX, curY, '[' + title + ']', {{ size: 13, fill: T.ink, weight: 700 }});
         curY += 18;
         var lines = wrapSvgText(bodyText, 52).slice(0, maxLines || 3);
         rect(MX, curY - 14, PW - MX * 2, lines.length * 19 + 10, '#faf9f6', {{ rx: 6, stroke: '#f1ece2' }});
@@ -908,26 +910,26 @@ html_content = f'''<!DOCTYPE html>
         return sHtml;
       }};
 
-      p3 += renderIljuSection('🌿', '타고난 본성과 천성 (Nature)', ilju.nature, 3);
-      p3 += renderIljuSection('💼', '직장 및 조직 스타일 (Workplace)', ilju.workplace, 3);
-      p3 += renderIljuSection('💰', '재물 그릇과 자산 관리 (Wealth)', ilju.money, 3);
-      p3 += renderIljuSection('🚀', '이직 및 커리어 변곡점 (Career Shift)', ilju.career, 3);
+      p3 += renderIljuSection('타고난 본성과 천성', ilju.nature, 3);
+      p3 += renderIljuSection('직장 및 조직 스타일', ilju.workplace, 3);
+      p3 += renderIljuSection('재물 그릇과 자산 관리', ilju.money, 3);
+      p3 += renderIljuSection('이직 및 커리어 변곡점', ilju.career, 3);
 
       // 혜원 선생 비전 처방 박스
       p3 += rect(MX, curY, PW - MX * 2, 70, '#fdf6e7', {{ rx: 8, stroke: '#eed8a1' }}) +
-        txt(MX + 16, curY + 24, '📜 혜원(彗圓) 선생의 비전 처방', {{ size: 12, fill: T.goldDark, weight: 700 }}) +
+        txt(MX + 16, curY + 24, '혜원(彗圓) 선생의 비전 처방', {{ size: 12, fill: T.goldDark, weight: 700 }}) +
         txt(MX + 16, curY + 48, '"' + (ilju.advice || '그대의 본성을 믿고 나아가시게.') + '"', {{ size: 11.5, fill: '#374151' }});
 
       curY += 92;
 
-      // 🔥 Conversion Banner with QR Code to Oppasaju (Gung)
+      // Conversion Banner with QR Code to Jieungak Report (Gung)
       var bh = 150;
       p3 += rect(MX, curY, PW - MX * 2, bh, '#1c202a', {{ rx: 10, stroke: T.gold, sw: 1.5 }}) +
-        txt(MX + 24, curY + 34, '조선 왕실 관상감 비전 · 사주문답 궁(宮)', {{ size: 11, fill: '#ffd98a', weight: 700, ls: 1 }}) +
+        txt(MX + 24, curY + 34, '정통 명리학 전문관 · 사주문답 궁(宮)', {{ size: 11, fill: '#ffd98a', weight: 700, ls: 1 }}) +
         txt(MX + 24, curY + 62, '올해 이직해야 할까? 내 진짜 10년 대운이 궁금하다면', {{ size: 16, fill: '#ffffff', serif: true, weight: 700 }}) +
         txt(MX + 24, curY + 88, '지금 보신 풀이는 그대의 기본 본성(일주)만을 짚은 것입니다.', {{ size: 11, fill: '#cbd5e1' }}) +
         txt(MX + 24, curY + 106, '인생 10년 대운의 물길과 올해의 재물·이직 타이밍은 4기둥 전체를 보아야 열립니다.', {{ size: 11, fill: '#cbd5e1' }}) +
-        txt(MX + 24, curY + 128, '👉 조선 관상감 5대궁 50페이지 정밀 맞춤 감명서: https://oppasaju.pages.dev/', {{ size: 10.5, fill: '#93c5fd', weight: 600 }});
+        txt(MX + 24, curY + 128, '사주문답 궁 50페이지 정밀 맞춤 감명서: https://jieungak-report.pages.dev/', {{ size: 10.5, fill: '#93c5fd', weight: 600 }});
 
       // Embed Crisp Vector QR Code
       var qrBoxX = PW - MX - 128, qrBoxY = curY + 15;
