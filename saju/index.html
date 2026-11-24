@@ -11047,9 +11047,19 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
           txt(PW / 2, PH - 30, 'SALARTOOL × 사주문답 궁 공동 기획 · 직장인 정밀 만세력', { size: 9.5, fill: T.sub, anchor: 'middle' });
       };
       var titleBlock = function (y, kicker, title, size) {
-        return txt(MX, y, kicker, { size: 11, fill: T.gold, ls: 2.5, weight: 700 }) +
+        return txt(MX, y, kicker, { size: 11, fill: T.gold, ls: 2, weight: 700 }) +
           txt(MX, y + 36, title, { size: size || 28, serif: true, weight: 700 }) +
           rect(MX, y + 50, 40, 2.5, T.gold);
+      };
+
+      // 신살 위치 한글화 유틸리티 (hour간 -> 시간, day지 -> 일지 등)
+      var posKr = function(pos) {
+        if (!pos) return '';
+        return String(pos)
+          .replace('hour', '시')
+          .replace('day', '일')
+          .replace('month', '월')
+          .replace('year', '년');
       };
 
       // Get Ilju Data
@@ -11064,22 +11074,25 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
       };
 
       // ==========================================
-      // PAGE 1 : Cover (표지)
+      // PAGE 1 : Cover (표지) - 완벽한 중앙 정렬
       // ==========================================
       var p1 = head('표지') +
         rect(0, 0, PW, 12, T.gold) +
-        rect(MX, 100, PW - MX * 2, PH - 160, '#ffffff', { stroke: T.line, rx: 12 }) +
-        rect(MX + 16, 116, PW - MX * 2 - 32, PH - 192, '#faf8f4', { stroke: T.goldBorder || '#eed8a1', rx: 8 }) +
-        titleBlock(240, 'SAJU CAREER MASTER REPORT', d.name + '님의 직장·재물 사주 리포트', 32) +
-        txt(MX + 36, 350, d.birthText + ' (' + d.city + ' 출생 · 진태양시 보정)', { size: 14.5, fill: T.sub }) +
-        txt(MX + 36, 386, res.yongsin.strength_type + ' · ' + res.yongsin.yongsin_kr + ' 용신 · ' + res.daewoon_info.direction + ' ' + res.daewoon_info.daewoon_num + '대운', { size: 14, fill: T.goldDark, weight: 700 }) +
-        // Seal Emblem (사주문답 궁)
-        '<circle cx="' + (PW / 2) + '" cy="590" r="76" fill="#fdf6e7" stroke="' + T.gold + '" stroke-width="2"/>' +
-        '<circle cx="' + (PW / 2) + '" cy="590" r="68" fill="none" stroke="' + T.gold + '" stroke-width="1" stroke-dasharray="4 3"/>' +
-        txt(PW / 2, 580, '사주문답 궁', { size: 24, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700 }) +
-        txt(PW / 2, 614, '正統 萬歲曆', { size: 13, fill: T.gold, anchor: 'middle', ls: 3, weight: 600 }) +
-        txt(PW / 2, 800, 'SALARTOOL × 사주문답 궁', { size: 12, fill: T.sub, anchor: 'middle', ls: 3, weight: 600 }) +
-        txt(PW / 2, 826, '직장인 맞춤 정밀 사주 분석 리포트', { size: 13, fill: T.ink, anchor: 'middle', weight: 500 });
+        rect(MX, 90, PW - MX * 2, PH - 150, '#ffffff', { stroke: T.line, rx: 12 }) +
+        rect(MX + 14, 104, PW - MX * 2 - 28, PH - 178, '#faf8f4', { stroke: '#eed8a1', rx: 8 }) +
+        // 제목 블록 (완전 중앙 정렬)
+        txt(PW / 2, 224, '[ 직장인 정통 사주 리포트 ]', { size: 12, fill: T.gold, ls: 2.5, weight: 700, anchor: 'middle' }) +
+        txt(PW / 2, 274, d.name + '님의 직장·재물 사주 리포트', { size: 30, serif: true, weight: 700, anchor: 'middle' }) +
+        rect(PW / 2 - 30, 298, 60, 2.5, T.gold) +
+        txt(PW / 2, 348, d.birthText + ' (' + d.city + ' 출생 · 진태양시 보정)', { size: 15, fill: T.sub, anchor: 'middle' }) +
+        txt(PW / 2, 384, res.yongsin.strength_type + ' · ' + res.yongsin.yongsin_kr + ' 용신 · ' + res.daewoon_info.direction + ' ' + res.daewoon_info.daewoon_num + '대운', { size: 14.5, fill: T.goldDark, weight: 700, anchor: 'middle' }) +
+        // 중앙 원형 인장 (사주문답 궁)
+        '<circle cx="' + (PW / 2) + '" cy="570" r="76" fill="#fdf6e7" stroke="' + T.gold + '" stroke-width="2"/>' +
+        '<circle cx="' + (PW / 2) + '" cy="570" r="68" fill="none" stroke="' + T.gold + '" stroke-width="1" stroke-dasharray="4 3"/>' +
+        txt(PW / 2, 560, '사주문답 궁', { size: 24, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700 }) +
+        txt(PW / 2, 594, '正統 萬歲曆', { size: 13, fill: T.gold, anchor: 'middle', ls: 3, weight: 600 }) +
+        txt(PW / 2, 790, 'SALARTOOL × 사주문답 궁', { size: 12, fill: T.sub, anchor: 'middle', ls: 2.5, weight: 600 }) +
+        txt(PW / 2, 818, '직장인 맞춤 정밀 사주 분석 리포트', { size: 13.5, fill: T.ink, anchor: 'middle', weight: 600 });
 
       out.push(svg(p1));
 
@@ -11087,7 +11100,7 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
       // PAGE 2 : 사주 원국표 및 10년 대운
       // ==========================================
       var p2 = head('1. 사주 원국과 대운') +
-        titleBlock(90, 'AT A GLANCE', '사주 원국과 십신·12운성');
+        titleBlock(90, '사주 원국', '사주 원국과 십신·12운성');
 
       var cw = (PW - MX * 2 - 30) / 4;
       var pillarKeys = ['hour', 'day', 'month', 'year'];
@@ -11109,18 +11122,23 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
           txt(cx + cw / 2, 376, pk.hidden_stems ? pk.hidden_stems.initial + '·' + (pk.hidden_stems.middle || '') + '·' + pk.hidden_stems.main : '', { size: 10, fill: '#9ca3af', anchor: 'middle' });
       });
 
-      // 나를 뜻하는 일간 & 오행 밸런스
+      // 나를 뜻하는 일간 & 오행 밸런스 (텍스트 밖으로 안 밀려나게 3줄 분할 및 폭 제어)
       var bw = (PW - MX * 2 - 16) / 2;
       var dm = res.day_master.stem_hanja;
       var dmKr = res.day_master.stem;
-      var dmInfo = [res.day_master.symbol.title, res.day_master.symbol.symbol];
+      var dmTitle = res.day_master.symbol.title || (dmKr + '토');
+      var dmSymbol = res.day_master.symbol.symbol || '';
+      // 텍스트 길이 제한
+      if (dmTitle.length > 14) dmTitle = dmTitle.substring(0, 14) + '..';
+      if (dmSymbol.length > 18) dmSymbol = dmSymbol.substring(0, 18) + '..';
 
       p2 += rect(MX, 412, bw, 170, '#ffffff', { rx: 8, stroke: T.line }) +
         txt(MX + 18, 436, '나를 상징하는 일간(日干)', { size: 12, fill: T.sub, weight: 600 }) +
-        '<circle cx="' + (MX + 62) + '" cy="502" r="38" fill="' + col(dm) + '"/>' +
-        txt(MX + 62, 518, dm, { size: 40, fill: '#ffffff', anchor: 'middle', serif: true, weight: 700 }) +
-        txt(MX + 116, 494, dmKr + (EL_OF[dm] || '') + ' · ' + dmInfo[0], { size: 17, serif: true, weight: 700 }) +
-        txt(MX + 116, 520, dmInfo[1], { size: 12, fill: T.sub });
+        '<circle cx="' + (MX + 56) + '" cy="502" r="36" fill="' + col(dm) + '"/>' +
+        txt(MX + 56, 517, dm, { size: 38, fill: '#ffffff', anchor: 'middle', serif: true, weight: 700 }) +
+        txt(MX + 106, 484, dmKr + (EL_OF[dm] || '') + ' (' + dm + ')', { size: 18, serif: true, weight: 700 }) +
+        txt(MX + 106, 510, dmTitle, { size: 12.5, fill: T.goldDark, weight: 600 }) +
+        txt(MX + 106, 532, dmSymbol, { size: 11, fill: T.sub });
 
       var bx = MX + bw + 16, ks = ['목', '화', '토', '금', '수'];
       var maxOhaeng = Math.max.apply(null, ks.map(function (k) { return res.ohaeng.counts_kr[k]; }).concat([1]));
@@ -11137,7 +11155,7 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
       });
 
       // 10년 대운
-      p2 += titleBlock(616, 'DESTINY FLOW', '10년 대운과 인생 변곡점', 21);
+      p2 += titleBlock(616, '대운 흐름', '10년 대운과 인생 변곡점', 21);
       var dw = (PW - MX * 2 - 35) / 8;
       res.daewoon.forEach(function (dwn, i) {
         var dx = MX + i * (dw + 5);
@@ -11148,38 +11166,38 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
           txt(dx + dw / 2, 742, '[' + dwn.life_stage + ']', { size: 9, fill: '#2563eb', anchor: 'middle', weight: 600 });
       });
 
-      // 신살 요약 바
+      // 신살 요약 바 (한글화 변환 적용)
       p2 += rect(MX, 778, PW - MX * 2, 90, '#ffffff', { rx: 8, stroke: T.line }) +
         txt(MX + 18, 804, '사주에 깃든 핵심 신살(神殺) 및 귀인', { size: 12.5, fill: T.goldDark, weight: 700 }) +
-        txt(MX + 18, 832, res.shinsal.slice(0, 6).map(function(s) { return '• ' + s.name + '(' + s.position + ')'; }).join('   '), { size: 11.5, fill: T.ink }) +
+        txt(MX + 18, 832, res.shinsal.slice(0, 6).map(function(s) { return '• ' + s.name + '(' + posKr(s.position) + ')'; }).join('   '), { size: 11.5, fill: T.ink }) +
         txt(MX + 18, 854, '일주 공망: ' + res.gongmang.day_gongmang.name + '   |   용신: ' + res.yongsin.yongsin_kr + ' (' + res.yongsin.strength_type + ')', { size: 11, fill: T.sub });
 
       out.push(svg(p2));
 
       // ==========================================
-      // PAGE 3 : 나의 일주(日柱) 직장·재물 심층 해단 & 사주문답 궁 연계
+      // PAGE 3 : 나의 일주(日柱) 직장·재물 심층 감명 (폰트 확대 & 가독성 대폭 향상)
       // ==========================================
       var p3 = head('2. 일주 심층 감명') +
-        titleBlock(90, 'SPECIAL READING', '나의 일주(日柱) 직장·재물 심층 감명');
+        titleBlock(90, '심층 감명', '나의 일주(日柱) 직장·재물 심층 감명');
 
       // Top Box : Ilju Header Card
-      p3 += rect(MX, 166, PW - MX * 2, 74, '#fdf6e7', { rx: 8, stroke: '#eed8a1' }) +
-        '<circle cx="' + (MX + 44) + '" cy="203" r="26" fill="' + T.gold + '"/>' +
-        txt(MX + 44, 212, iljuHanja, { size: 18, fill: '#ffffff', anchor: 'middle', serif: true, weight: 700 }) +
-        txt(MX + 86, 196, ilju.title, { size: 18, serif: true, weight: 700, fill: T.ink }) +
-        txt(MX + 86, 222, '일주(日柱): ' + iljuHanja + ' (' + p.day.gan + p.day.zhi + ')  ·  ' + (ilju.ten_god || '정관') + '  ·  12운성: ' + (ilju.stage || '건록'), { size: 12, fill: T.goldDark, weight: 600 });
+      p3 += rect(MX, 160, PW - MX * 2, 70, '#fdf6e7', { rx: 8, stroke: '#eed8a1' }) +
+        '<circle cx="' + (MX + 42) + '" cy="195" r="24" fill="' + T.gold + '"/>' +
+        txt(MX + 42, 203, iljuHanja, { size: 18, fill: '#ffffff', anchor: 'middle', serif: true, weight: 700 }) +
+        txt(MX + 80, 188, ilju.title, { size: 18.5, serif: true, weight: 700, fill: T.ink }) +
+        txt(MX + 80, 213, '일주(日柱): ' + iljuHanja + ' (' + p.day.gan + p.day.zhi + ')  ·  ' + (ilju.ten_god || '정관') + '  ·  12운성: ' + (ilju.stage || '건록'), { size: 12, fill: T.goldDark, weight: 600 });
 
-      // 5-Section Paragraphs (Clean Line Layout)
-      var curY = 264;
+      // 5-Section Paragraphs (시원한 13px 폰트 & 22px 줄간격으로 가독성 극대화)
+      var curY = 252;
       var renderIljuSection = function(title, bodyText, maxLines) {
-        var sHtml = txt(MX, curY, '[' + title + ']', { size: 13, fill: T.ink, weight: 700 });
-        curY += 18;
-        var lines = wrapSvgText(bodyText, 52).slice(0, maxLines || 3);
-        rect(MX, curY - 14, PW - MX * 2, lines.length * 19 + 10, '#faf9f6', { rx: 6, stroke: '#f1ece2' });
+        var sHtml = txt(MX, curY, '[' + title + ']', { size: 14, fill: T.ink, weight: 700 });
+        curY += 19;
+        var lines = wrapSvgText(bodyText, 45).slice(0, maxLines || 3);
+        rect(MX, curY - 14, PW - MX * 2, lines.length * 22 + 10, '#faf9f6', { rx: 6, stroke: '#f1ece2' });
         lines.forEach(function(l, idx) {
-          sHtml += txt(MX + 14, curY + idx * 19 + 2, l, { size: 11.5, fill: '#4b5563' });
+          sHtml += txt(MX + 16, curY + idx * 22 + 4, l, { size: 13, fill: '#374151' });
         });
-        curY += lines.length * 19 + 16;
+        curY += lines.length * 22 + 18;
         return sHtml;
       };
 
@@ -11189,23 +11207,23 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
       p3 += renderIljuSection('이직 및 커리어 변곡점', ilju.career, 3);
 
       // 혜원 선생 비전 처방 박스
-      p3 += rect(MX, curY, PW - MX * 2, 70, '#fdf6e7', { rx: 8, stroke: '#eed8a1' }) +
-        txt(MX + 16, curY + 24, '혜원(彗圓) 선생의 비전 처방', { size: 12, fill: T.goldDark, weight: 700 }) +
-        txt(MX + 16, curY + 48, '"' + (ilju.advice || '그대의 본성을 믿고 나아가시게.') + '"', { size: 11.5, fill: '#374151' });
+      p3 += rect(MX, curY, PW - MX * 2, 74, '#fdf6e7', { rx: 8, stroke: '#eed8a1' }) +
+        txt(MX + 18, curY + 26, '혜원(彗圓) 선생의 비전 처방', { size: 13, fill: T.goldDark, weight: 700 }) +
+        txt(MX + 18, curY + 52, '"' + (ilju.advice || '그대의 본성을 믿고 나아가시게.') + '"', { size: 13, fill: '#1f2937', weight: 500 });
 
-      curY += 92;
+      curY += 96;
 
       // Conversion Banner with QR Code to Jieungak Report (Gung)
-      var bh = 150;
+      var bh = 146;
       p3 += rect(MX, curY, PW - MX * 2, bh, '#1c202a', { rx: 10, stroke: T.gold, sw: 1.5 }) +
-        txt(MX + 24, curY + 34, '정통 명리학 전문관 · 사주문답 궁(宮)', { size: 11, fill: '#ffd98a', weight: 700, ls: 1 }) +
-        txt(MX + 24, curY + 62, '올해 이직해야 할까? 내 진짜 10년 대운이 궁금하다면', { size: 16, fill: '#ffffff', serif: true, weight: 700 }) +
-        txt(MX + 24, curY + 88, '지금 보신 풀이는 그대의 기본 본성(일주)만을 짚은 것입니다.', { size: 11, fill: '#cbd5e1' }) +
-        txt(MX + 24, curY + 106, '인생 10년 대운의 물길과 올해의 재물·이직 타이밍은 4기둥 전체를 보아야 열립니다.', { size: 11, fill: '#cbd5e1' }) +
-        txt(MX + 24, curY + 128, '사주문답 궁 50페이지 정밀 맞춤 감명서: https://jieungak-report.pages.dev/', { size: 10.5, fill: '#93c5fd', weight: 600 });
+        txt(MX + 24, curY + 32, '정통 명리학 전문관 · 사주문답 궁(宮)', { size: 11, fill: '#ffd98a', weight: 700, ls: 1 }) +
+        txt(MX + 24, curY + 58, '올해 이직해야 할까? 내 진짜 10년 대운이 궁금하다면', { size: 16.5, fill: '#ffffff', serif: true, weight: 700 }) +
+        txt(MX + 24, curY + 84, '지금 보신 풀이는 그대의 기본 본성(일주)만을 짚은 것입니다.', { size: 11.5, fill: '#cbd5e1' }) +
+        txt(MX + 24, curY + 104, '인생 10년 대운의 물길과 올해의 재물·이직 타이밍은 4기둥 전체를 보아야 열립니다.', { size: 11.5, fill: '#cbd5e1' }) +
+        txt(MX + 24, curY + 126, '사주문답 궁 50페이지 정밀 맞춤 감명서: https://jieungak-report.pages.dev/', { size: 11, fill: '#93c5fd', weight: 600 });
 
       // Embed Crisp Vector QR Code
-      var qrBoxX = PW - MX - 128, qrBoxY = curY + 15;
+      var qrBoxX = PW - MX - 128, qrBoxY = curY + 13;
       p3 += rect(qrBoxX, qrBoxY, 114, 120, '#ffffff', { rx: 8, stroke: '#e2e8f0' }) +
         '<g transform="translate(' + (qrBoxX + 9) + ', ' + (qrBoxY + 8) + ') scale(3.2)">' +
         '<path d="' + QR_SVG_PATH + '" fill="#000000"/>' +
@@ -11374,7 +11392,7 @@ if (typeof module !== "undefined" && module.exports) { module.exports = ILJU_CAR
 
           document.getElementById('ilju-emblem-text').textContent = iljuHanja;
           document.getElementById('ilju-main-title').textContent = ilju.title;
-          document.getElementById('ilju-sub-title').textContent = '일주(日柱): ' + iljuHanja + '  ·  ' + (ilju.ten_god || '정관') + '  ·  ' + (ilju.stage || '건록');
+          document.getElementById('ilju-sub-title').textContent = '일주(日柱): ' + iljuHanja + '  ·  ' + (ilju.ten_god || '정관') + '  ·  12운성: ' + (ilju.stage || '건록');
           document.getElementById('ilju-nature').textContent = ilju.nature;
           document.getElementById('ilju-workplace').textContent = ilju.workplace;
           document.getElementById('ilju-money').textContent = ilju.money;
