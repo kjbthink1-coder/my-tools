@@ -3,3 +3,4 @@ Thumbs.db
 .DS_Store
 __pycache__/
 qr_path.txt
+seal_b64.txt

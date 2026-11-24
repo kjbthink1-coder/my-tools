@@ -22,6 +22,9 @@ with open(os.path.join(BASE_DIR, "js", "ilju_career_data.js"), "r", encoding="ut
 with open(os.path.join(BASE_DIR, "qr_path.txt"), "r", encoding="utf-8") as f:
     qr_path = f.read().strip()
 
+with open(os.path.join(BASE_DIR, "seal_b64.txt"), "r", encoding="utf-8") as f:
+    seal_b64 = f.read().strip()
+
 # 2. Build full HTML
 html_content = f'''<!DOCTYPE html>
 <html lang="ko">
@@ -728,6 +731,7 @@ html_content = f'''<!DOCTYPE html>
     }};
 
     var QR_SVG_PATH = "{qr_path}";
+    var SEAL_B64 = "{seal_b64}";
 
     // Text Wrap Helper for SVG
     function wrapSvgText(text, maxCharsPerLine) {{
@@ -813,11 +817,11 @@ html_content = f'''<!DOCTYPE html>
         rect(PW / 2 - 30, 298, 60, 2.5, T.gold) +
         txt(PW / 2, 348, d.birthText + ' (' + d.city + ' 출생 · 진태양시 보정)', {{ size: 15, fill: T.sub, anchor: 'middle' }}) +
         txt(PW / 2, 384, res.yongsin.strength_type + ' · ' + res.yongsin.yongsin_kr + ' 용신 · ' + res.daewoon_info.direction + ' ' + res.daewoon_info.daewoon_num + '대운', {{ size: 14.5, fill: T.goldDark, weight: 700, anchor: 'middle' }}) +
-        // 중앙 원형 인장 (사주문답 궁)
-        '<circle cx="' + (PW / 2) + '" cy="570" r="76" fill="#fdf6e7" stroke="' + T.gold + '" stroke-width="2"/>' +
-        '<circle cx="' + (PW / 2) + '" cy="570" r="68" fill="none" stroke="' + T.gold + '" stroke-width="1" stroke-dasharray="4 3"/>' +
-        txt(PW / 2, 560, '사주문답 궁', {{ size: 24, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700 }}) +
-        txt(PW / 2, 594, '正統 萬歲曆', {{ size: 13, fill: T.gold, anchor: 'middle', ls: 3, weight: 600 }}) +
+        // 중앙 원형 인장 (사주문답 궁 + 宮 전서체 인장 도장)
+        '<circle cx="' + (PW / 2) + '" cy="576" r="82" fill="#fdf6e7" stroke="' + T.gold + '" stroke-width="2"/>' +
+        '<circle cx="' + (PW / 2) + '" cy="576" r="74" fill="none" stroke="' + T.gold + '" stroke-width="1" stroke-dasharray="4 3"/>' +
+        txt(PW / 2, 540, '사주문답 궁', {{ size: 21, fill: T.goldDark, anchor: 'middle', serif: true, weight: 700, ls: 1.5 }}) +
+        '<image href="' + SEAL_B64 + '" x="' + (PW / 2 - 27) + '" y="556" width="54" height="54"/>' +
         txt(PW / 2, 790, 'SALARTOOL × 사주문답 궁', {{ size: 12, fill: T.sub, anchor: 'middle', ls: 2.5, weight: 600 }}) +
         txt(PW / 2, 818, '직장인 맞춤 정밀 사주 분석 리포트', {{ size: 13.5, fill: T.ink, anchor: 'middle', weight: 600 }});
 
